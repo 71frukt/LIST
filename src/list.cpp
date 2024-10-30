@@ -6,21 +6,23 @@
 
 ListCtorVal ListCtor(list_t *list, int start_capa)
 {
+    assert(list);
+
     if (start_capa <= 0)
     {
         fprintf(stderr, "start_capa <= 0!\n");
         return CTOR_ERR;
     }
 
+    list->capacity = start_capa;
+    list->head     = 0;
+    list->tail     = 0;
+    list->free     = 1;
+
     // list->capacity =+ ((start_capa > BASE_LIST_CAPA) ? start_capa : BASE_LIST_CAPA);
     list->data = (ListElem_t *) calloc(list->capacity, sizeof(ListElem_t));
     list->next = (int *)        calloc(list->capacity, sizeof(int));
     list->prev = (int *)        calloc(list->capacity, sizeof(int));
-
-    list->capacity = start_capa;
-    list->head     = 1;
-    list->tail     = 1;
-    list->free     = 1;
 
     for (int i = 1; i < list->capacity - 1; i++)     // связный список свободных ячеек
     {
@@ -82,6 +84,9 @@ void ListPasteTail(list_t *list, ListElem_t elem)
     list->next[list->tail]    = free_cell_num;
     list->next[free_cell_num] = 0;
 
+    if (list->tail == 0)
+        list->head = free_cell_num;
+        
     list->tail = free_cell_num;
 
     list->data[free_cell_num] = elem;
@@ -97,6 +102,9 @@ void ListPasteHead(list_t *list, ListElem_t elem)
     list->free = list->next[list->free];
 
     list->next[free_cell_num] = list->head;
+
+    if (list->head == 0)
+        list->tail = free_cell_num;
 
     list->head = free_cell_num;
 

@@ -1,1 +1,3 @@
-build\main.exe
+cd build
+main.exe
+cd ../

@@ -2,38 +2,26 @@
 
 #include "list.h"
 
-int main()
+extern FILE *LogFile;
+
+int main(const int argc, const char *argv[])
 {
+    ON_LIST_DEBUG(OpenLogFile(argc, argv));
+
     list_t list = {};
-    // ListCtor(nullptr, 20);
+    ListCtor(&list, 20);
+    LIST_DUMP(&list);
 
-    fprintf(stderr, "p = %p\n", GetHeadVal(&list));
-    fprintf(stderr, "p = %p\n", GetTailVal(&list));
+    fprintf(stderr, "h = %p\n", GetHeadVal(&list));
+    fprintf(stderr, "t = %p\n", GetTailVal(&list));
 
-    ListPasteTail(&list, 10);
-    for (size_t i = 1; i < 6; i++)
-        fprintf(stderr, "val = %d \th = %d \t t = %d\n", list.data[i], list.head, list.tail);
+    ListPasteHead(&list, 10);
+    ListPasteHead(&list, 20);
+    ListPasteHead(&list, 30);
 
-
-    ListPasteTail(&list, 20);
-    for (size_t i = 1; i < 6; i++)
-        fprintf(stderr, "val = %d \th = %d \t t = %d\n", list.data[i], list.head, list.tail);
-
-    ListPasteTail(&list, 30);
-    for (size_t i = 1; i < 6; i++)
-        fprintf(stderr, "val = %d \th = %d \t t = %d\n", list.data[i], list.head, list.tail);
-
-    ListPasteHead(&list, 3);
-    for (size_t i = 1; i < 6; i++)
-        fprintf(stderr, "val = %d \th = %d \t t = %d\n", list.data[i], list.head, list.tail);
-
-    ListPasteHead(&list, 4);
-    for (size_t i = 1; i < 6; i++)
-        fprintf(stderr, "val = %d \th = %d \t t = %d\n", list.data[i], list.head, list.tail);
-
-    ListPasteHead(&list, 5);
-    for (size_t i = 1; i < 6; i++)
-        fprintf(stderr, "val = %d \th = %d \t t = %d\n", list.data[i], list.head, list.tail);
+    ListPasteTail(&list, 100);
+    ListPasteTail(&list, 200);
+    ListPasteTail(&list, 300);
 
     ListDtor(&list);
     return 0;

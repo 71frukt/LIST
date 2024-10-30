@@ -35,6 +35,8 @@ struct list_t
     int free;
 
     int error;
+
+    FILE *logfile;
 };
 
 
@@ -44,13 +46,19 @@ ListDtorVal ListDtor    (list_t *list);
 ListElem_t *GetHeadVal  (list_t *list);
 ListElem_t *GetTailVal  (list_t *list);
 
-void ListPasteTail      (list_t *list, ListElem_t elem);
 void ListPasteHead      (list_t *list, ListElem_t elem);
+void ListPasteTail      (list_t *list, ListElem_t elem);
 void ListPasteAfter     (list_t *list, ListElem_t elem, int elem_num);
 
 // debug functions
-void ListAssert   (list_t *list, const char *file, int line, const char *func);
-void PrintListErr (int error);
-int  ListVerify   (list_t *list);
+void  ListAssert     (list_t *list, const char *file, int line, const char *func);
+void  PrintListErr   (int error);
+int   ListVerify     (list_t *list);
+char *GetLogfileName (const char *name);
+FILE *OpenLogFile     (const int argc, const char *argv[]);
+void  CloseLogFile   (void);
+
+void  ListDump (list_t *list, const char *file, int line, const char *func);
+
 
 #endif

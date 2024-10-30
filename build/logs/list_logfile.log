@@ -1,0 +1,272 @@
+LIST_DUMP called from src/list.cpp:42  (ListCtor)
+{
+	head = 0
+	tail = 0
+	free = 1
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	
+}
+
+LIST_DUMP called from src/main.cpp:13  (main)
+{
+	head = 0
+	tail = 0
+	free = 1
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	
+}
+
+LIST_DUMP called from src/list.cpp:65  (GetHeadVal)
+{
+	head = 0
+	tail = 0
+	free = 1
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	
+}
+
+LIST_DUMP called from src/list.cpp:72  (GetTailVal)
+{
+	head = 0
+	tail = 0
+	free = 1
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	
+}
+
+LIST_DUMP called from src/list.cpp:99  (ListPasteHead)
+{
+	head = 0
+	tail = 0
+	free = 1
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	
+}
+
+LIST_DUMP called from src/list.cpp:113  (ListPasteHead)
+{
+	head = 1
+	tail = 1
+	free = 2
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 10 
+}
+
+LIST_DUMP called from src/list.cpp:99  (ListPasteHead)
+{
+	head = 1
+	tail = 1
+	free = 2
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 10 
+}
+
+LIST_DUMP called from src/list.cpp:113  (ListPasteHead)
+{
+	head = 2
+	tail = 1
+	free = 3
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10  20   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 20  10 
+}
+
+LIST_DUMP called from src/list.cpp:99  (ListPasteHead)
+{
+	head = 2
+	tail = 1
+	free = 3
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10  20   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 20  10 
+}
+
+LIST_DUMP called from src/list.cpp:113  (ListPasteHead)
+{
+	head = 3
+	tail = 1
+	free = 4
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10  20  30   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 30  20  10 
+}
+
+LIST_DUMP called from src/list.cpp:79  (ListPasteTail)
+{
+	head = 3
+	tail = 1
+	free = 4
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10  20  30   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 30  20  10 
+}
+
+LIST_DUMP called from src/list.cpp:94  (ListPasteTail)
+{
+	head = 3
+	tail = 4
+	free = 5
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10  20  30 100   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   4   1   2   0   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 30  20  10 100 
+}
+
+LIST_DUMP called from src/list.cpp:79  (ListPasteTail)
+{
+	head = 3
+	tail = 4
+	free = 5
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10  20  30 100   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   4   1   2   0   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 30  20  10 100 
+}
+
+LIST_DUMP called from src/list.cpp:94  (ListPasteTail)
+{
+	head = 3
+	tail = 5
+	free = 6
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10  20  30 100 200   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   4   1   2   5   0   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 30  20  10 100 200 
+}
+
+LIST_DUMP called from src/list.cpp:79  (ListPasteTail)
+{
+	head = 3
+	tail = 5
+	free = 6
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10  20  30 100 200   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   4   1   2   5   0   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 30  20  10 100 200 
+}
+
+LIST_DUMP called from src/list.cpp:94  (ListPasteTail)
+{
+	head = 3
+	tail = 6
+	free = 7
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10  20  30 100 200 300   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   4   1   2   5   6   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 30  20  10 100 200 300 
+}
+
+LIST_DUMP called from src/list.cpp:49  (ListDtor)
+{
+	head = 3
+	tail = 6
+	free = 7
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [000002011ebe1450]:	  0  10  20  30 100 200 300   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [000002011ebe14b0]:	  0   4   1   2   5   6   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [000002011ebe1510]:	 30  20  10 100 200 300 
+}
+
