@@ -79,7 +79,7 @@ ListElem_t *GetTailVal(list_t *list)
 int GetNumInData(list_t *list, int num_in_list)
 {
     LIST_ASSERT(list);
-    assert(num_in_list > 0);
+    assert(num_in_list >= 0);
     assert(num_in_list < list->capacity);
 
     int num_in_data = list->head;
@@ -140,6 +140,12 @@ void ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
 {
     assert(elem_num > 0);
     LIST_ASSERT(list);
+
+    if (elem_num == list->tail)
+    {
+        ListPasteTail(list, elem);
+        return;
+    }
 
     int free_cell_num = list->free;
     list->free = list->next[list->free];

@@ -29,7 +29,7 @@ int main(const int argc, const char *argv[])
     ListPasteAfter(&list, 350, 3);
     ListPasteAfter(&list, 250, 2);
 
-    fprintf(stderr, "num in data = %d\n", GetNumInData(&list, 4));
+    fprintf(stderr, "num in data = %d\n", GetNumInData(&list, 7));
 
     ListDtor(&list);
     return 0;
