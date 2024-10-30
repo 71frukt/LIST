@@ -19,15 +19,17 @@ int main(const int argc, const char *argv[])
     // ListPasteHead(&list, 20);
     // ListPasteHead(&list, 30);
 
-    ListPasteTail(&list, 100);
-    ListPasteTail(&list, 200);
-    ListPasteTail(&list, 300);
-    ListPasteTail(&list, 400);
-    ListPasteTail(&list, 500);
+    ListPasteHead(&list, 100);
+    ListPasteHead(&list, 200);
+    ListPasteHead(&list, 300);
+    ListPasteHead(&list, 400);
+    ListPasteHead(&list, 500);
 
     ListPasteAfter(&list, 150, 1);
     ListPasteAfter(&list, 350, 3);
     ListPasteAfter(&list, 250, 2);
+
+    fprintf(stderr, "num in data = %d\n", GetNumInData(&list, 4));
 
     ListDtor(&list);
     return 0;

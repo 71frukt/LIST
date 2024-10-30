@@ -124,7 +124,13 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
     fprintf(LogFile, "\t");
 
     for (int i = 0; i < list->capacity; i++)
-        fprintf(LogFile, "%3d ", list->data[i]);
+    {
+        if (list->data[i] == DATA_POISON)
+            fprintf(LogFile, "DT# ");
+        
+        else
+            fprintf(LogFile, "%3d ", list->data[i]);
+    }
 
 // next
     fprintf(LogFile, "\n\tnext [%p]:", list->next);

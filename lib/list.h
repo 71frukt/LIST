@@ -8,6 +8,7 @@ typedef int ListElem_t;
 
 // const int BASE_LIST_CAPA = 10;
 
+const int DATA_POISON = 0xDEDBEAF;
 const int NEXT_POISON = -0xDEB;
 const int PREV_POISON = -0xEBA; 
 
@@ -50,6 +51,8 @@ void ListBind           (list_t *list, int prev_el_num, int next_el_num);
 void ListPasteHead      (list_t *list, ListElem_t elem);
 void ListPasteTail      (list_t *list, ListElem_t elem);
 void ListPasteAfter     (list_t *list, ListElem_t elem, int elem_num);
+void ListDelElem        (list_t *list, int elem_num);
+int  GetNumInData       (list_t *list, int num_in_list);
 
 // debug functions
 void  ListAssert     (list_t *list, const char *file, int line, const char *func);

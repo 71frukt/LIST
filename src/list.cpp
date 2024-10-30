@@ -32,10 +32,12 @@ ListCtorVal ListCtor(list_t *list, int start_capa)
     if (list->capacity > 0)
         list->next[list->capacity - 1] = 0;             // последн€€ свободна€ €чейка
 
-    for (int i = 0; i < list->capacity; i++)
-    {
-        list->prev[i] = PREV_POISON;
-    }
+    ON_LIST_DEBUG (
+        for (int i = 0; i < list->capacity; i++)
+        {
+            list->data[i] = DATA_POISON;
+            list->prev[i] = PREV_POISON;
+        } )
 
     list->error = 0;
 
@@ -72,6 +74,22 @@ ListElem_t *GetTailVal(list_t *list)
     LIST_ASSERT(list);
 
     return &list->data[list->tail];
+}
+
+int GetNumInData(list_t *list, int num_in_list)
+{
+    LIST_ASSERT(list);
+    assert(num_in_list > 0);
+    assert(num_in_list < list->capacity);
+
+    int num_in_data = list->head;
+
+    for (int i = 0; i < num_in_list; i++)
+    {
+        num_in_data = list->next[num_in_data];
+    }
+
+    return num_in_data;
 }
 
 void ListPasteTail(list_t *list, ListElem_t elem)
@@ -139,14 +157,27 @@ void ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
 
 void ListBind(list_t *list, int prev_el_num, int next_el_num)
 {
+    LIST_ASSERT(list);
+    assert(prev_el_num >= 0);
+    assert(next_el_num >= 0);
+
     list->next[prev_el_num] = next_el_num;
     list->prev[next_el_num] = prev_el_num;
 }
 
-// void ListDelElem(list_t *list, int elem_num)
-// {
-//     assert(list);
-//     assert(elem_num > 0);
+void ListDelElem(list_t *list, int elem_num)
+{
+    LIST_ASSERT(list);
 
+    ON_LIST_DEBUG (
+        list->data[elem_num] = DATA_POISON;
+    )
 
-// }
+    int prev_free = list->free;                 // добавить €чейку к списку пустых
+    list->free = elem_num;
+    ListBind(list, list->free, prev_free);
+
+    ListBind(list, list->prev[elem_num], list->next[elem_num]);
+
+    LIST_ASSERT(list);
+}
