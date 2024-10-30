@@ -81,11 +81,14 @@ void ListPasteTail(list_t *list, ListElem_t elem)
     int free_cell_num = list->free;
     list->free = list->next[list->free];
 
-    list->next[list->tail]    = free_cell_num;
-    list->next[free_cell_num] = 0;
+    // list->next[list->tail]    = free_cell_num;
+    // list->next[free_cell_num] = 0;
 
-    if (list->tail == 0)
+    if (list->tail == 0)                // если первый элемент списка
         list->head = free_cell_num;
+
+    ListBind(list, list->tail, free_cell_num);
+    ListBind(list, free_cell_num, 0);
         
     list->tail = free_cell_num;
 
@@ -101,10 +104,12 @@ void ListPasteHead(list_t *list, ListElem_t elem)
     int free_cell_num = list->free;
     list->free = list->next[list->free];
 
-    list->next[free_cell_num] = list->head;
+    // list->next[free_cell_num] = list->head;
 
-    if (list->head == 0)
+    if (list->head == 0)                // если первый элемент списка
         list->tail = free_cell_num;
+
+    ListBind(list, free_cell_num, list->head);
 
     list->head = free_cell_num;
 
@@ -121,12 +126,21 @@ void ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
     int free_cell_num = list->free;
     list->free = list->next[list->free];
 
-    list->next[free_cell_num] = list->next[elem_num];
-    list->next[elem_num] = free_cell_num;
+    // list->next[free_cell_num] = list->next[elem_num];
+    // list->next[elem_num] = free_cell_num;
+
+    ListBind(list, free_cell_num, list->next[elem_num]);    // queue is important !
+    ListBind(list, elem_num,      free_cell_num);
 
     list->data[free_cell_num] = elem;
 
     LIST_ASSERT(list);
+}
+
+void ListBind(list_t *list, int prev_el_num, int next_el_num)
+{
+    list->next[prev_el_num] = next_el_num;
+    list->prev[next_el_num] = prev_el_num;
 }
 
 // void ListDelElem(list_t *list, int elem_num)

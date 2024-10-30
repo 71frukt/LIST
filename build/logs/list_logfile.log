@@ -7,11 +7,11 @@ LIST_DUMP called from src/list.cpp:42  (ListCtor)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	
+	list [0000025120131510]:	
 }
 
 LIST_DUMP called from src/main.cpp:13  (main)
@@ -23,11 +23,11 @@ LIST_DUMP called from src/main.cpp:13  (main)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	
+	list [0000025120131510]:	
 }
 
 LIST_DUMP called from src/list.cpp:65  (GetHeadVal)
@@ -39,11 +39,11 @@ LIST_DUMP called from src/list.cpp:65  (GetHeadVal)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	
+	list [0000025120131510]:	
 }
 
 LIST_DUMP called from src/list.cpp:72  (GetTailVal)
@@ -55,14 +55,14 @@ LIST_DUMP called from src/list.cpp:72  (GetTailVal)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	
+	list [0000025120131510]:	
 }
 
-LIST_DUMP called from src/list.cpp:99  (ListPasteHead)
+LIST_DUMP called from src/list.cpp:79  (ListPasteTail)
 {
 	head = 0
 	tail = 0
@@ -71,14 +71,14 @@ LIST_DUMP called from src/list.cpp:99  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	
+	list [0000025120131510]:	
 }
 
-LIST_DUMP called from src/list.cpp:113  (ListPasteHead)
+LIST_DUMP called from src/list.cpp:97  (ListPasteTail)
 {
 	head = 1
 	tail = 1
@@ -87,14 +87,14 @@ LIST_DUMP called from src/list.cpp:113  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0  10   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0 100   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  1   0 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	 10 
+	list [0000025120131510]:	100 
 }
 
-LIST_DUMP called from src/list.cpp:99  (ListPasteHead)
+LIST_DUMP called from src/list.cpp:79  (ListPasteTail)
 {
 	head = 1
 	tail = 1
@@ -103,170 +103,234 @@ LIST_DUMP called from src/list.cpp:99  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0  10   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0 100   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  1   0 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	 10 
+	list [0000025120131510]:	100 
 }
 
-LIST_DUMP called from src/list.cpp:113  (ListPasteHead)
+LIST_DUMP called from src/list.cpp:97  (ListPasteTail)
 {
-	head = 2
-	tail = 1
+	head = 1
+	tail = 2
 	free = 3
 	capacity = 20
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0  10  20   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0 100 200   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   2   0   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  2   0   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	 20  10 
-}
-
-LIST_DUMP called from src/list.cpp:99  (ListPasteHead)
-{
-	head = 2
-	tail = 1
-	free = 3
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000002011ebe1450]:	  0  10  20   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000002011ebe1510]:	 20  10 
-}
-
-LIST_DUMP called from src/list.cpp:113  (ListPasteHead)
-{
-	head = 3
-	tail = 1
-	free = 4
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000002011ebe1450]:	  0  10  20  30   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000002011ebe1510]:	 30  20  10 
+	list [0000025120131510]:	100 200 
 }
 
 LIST_DUMP called from src/list.cpp:79  (ListPasteTail)
 {
-	head = 3
-	tail = 1
+	head = 1
+	tail = 2
+	free = 3
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [0000025120131450]:	  0 100 200   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   2   0   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  2   0   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [0000025120131510]:	100 200 
+}
+
+LIST_DUMP called from src/list.cpp:97  (ListPasteTail)
+{
+	head = 1
+	tail = 3
 	free = 4
 	capacity = 20
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0  10  20  30   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0 100 200 300   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   2   3   0   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  3   0   1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	 30  20  10 
+	list [0000025120131510]:	100 200 300 
 }
 
-LIST_DUMP called from src/list.cpp:94  (ListPasteTail)
+LIST_DUMP called from src/list.cpp:79  (ListPasteTail)
 {
-	head = 3
+	head = 1
+	tail = 3
+	free = 4
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [0000025120131450]:	  0 100 200 300   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   2   3   0   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  3   0   1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [0000025120131510]:	100 200 300 
+}
+
+LIST_DUMP called from src/list.cpp:97  (ListPasteTail)
+{
+	head = 1
 	tail = 4
 	free = 5
 	capacity = 20
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0  10  20  30 100   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   4   1   2   0   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0 100 200 300 400   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   2   3   4   0   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  4   0   1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	 30  20  10 100 
+	list [0000025120131510]:	100 200 300 400 
 }
 
 LIST_DUMP called from src/list.cpp:79  (ListPasteTail)
 {
-	head = 3
+	head = 1
 	tail = 4
 	free = 5
 	capacity = 20
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0  10  20  30 100   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   4   1   2   0   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0 100 200 300 400   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   2   3   4   0   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  4   0   1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	 30  20  10 100 
+	list [0000025120131510]:	100 200 300 400 
 }
 
-LIST_DUMP called from src/list.cpp:94  (ListPasteTail)
+LIST_DUMP called from src/list.cpp:97  (ListPasteTail)
 {
-	head = 3
+	head = 1
 	tail = 5
 	free = 6
 	capacity = 20
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0  10  20  30 100 200   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   4   1   2   5   0   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0 100 200 300 400 500   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   2   3   4   5   0   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  5   0   1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	 30  20  10 100 200 
+	list [0000025120131510]:	100 200 300 400 500 
 }
 
-LIST_DUMP called from src/list.cpp:79  (ListPasteTail)
+LIST_DUMP called from src/list.cpp:124  (ListPasteAfter)
 {
-	head = 3
+	head = 1
 	tail = 5
 	free = 6
 	capacity = 20
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0  10  20  30 100 200   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   4   1   2   5   0   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0 100 200 300 400 500   0   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   2   3   4   5   0   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  5   0   1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	 30  20  10 100 200 
+	list [0000025120131510]:	100 200 300 400 500 
 }
 
-LIST_DUMP called from src/list.cpp:94  (ListPasteTail)
+LIST_DUMP called from src/list.cpp:137  (ListPasteAfter)
 {
-	head = 3
-	tail = 6
+	head = 1
+	tail = 5
 	free = 7
 	capacity = 20
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0  10  20  30 100 200 300   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   4   1   2   5   6   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0 100 200 300 400 500 150   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   6   3   4   5   0   2   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  5   0   6   2   3   4   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	 30  20  10 100 200 300 
+	list [0000025120131510]:	100 150 200 300 400 500 
+}
+
+LIST_DUMP called from src/list.cpp:124  (ListPasteAfter)
+{
+	head = 1
+	tail = 5
+	free = 7
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [0000025120131450]:	  0 100 200 300 400 500 150   0   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   6   3   4   5   0   2   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  5   0   6   2   3   4   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [0000025120131510]:	100 150 200 300 400 500 
+}
+
+LIST_DUMP called from src/list.cpp:137  (ListPasteAfter)
+{
+	head = 1
+	tail = 5
+	free = 8
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [0000025120131450]:	  0 100 200 300 400 500 150 350   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   6   3   7   5   0   2   4   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  5   0   6   2   7   4   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [0000025120131510]:	100 150 200 300 350 400 500 
+}
+
+LIST_DUMP called from src/list.cpp:124  (ListPasteAfter)
+{
+	head = 1
+	tail = 5
+	free = 8
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [0000025120131450]:	  0 100 200 300 400 500 150 350   0   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   6   3   7   5   0   2   4   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  5   0   6   2   7   4   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [0000025120131510]:	100 150 200 300 350 400 500 
+}
+
+LIST_DUMP called from src/list.cpp:137  (ListPasteAfter)
+{
+	head = 1
+	tail = 5
+	free = 9
+	capacity = 20
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+
+	data [0000025120131450]:	  0 100 200 300 400 500 150 350 250   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   6   8   7   5   0   2   4   3  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  5   0   6   8   7   4   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+
+	list [0000025120131510]:	100 150 200 250 300 350 400 500 
 }
 
 LIST_DUMP called from src/list.cpp:49  (ListDtor)
 {
-	head = 3
-	tail = 6
-	free = 7
+	head = 1
+	tail = 5
+	free = 9
 	capacity = 20
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [000002011ebe1450]:	  0  10  20  30 100 200 300   0   0   0   0   0   0   0   0   0   0   0   0   0 
-	next [000002011ebe14b0]:	  0   4   1   2   5   6   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000002011ebe1510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [0000025120131450]:	  0 100 200 300 400 500 150 350 250   0   0   0   0   0   0   0   0   0   0   0 
+	next [00000251201314b0]:	  1   6   8   7   5   0   2   4   3  10  11  12  13  14  15  16  17  18  19   0 
+	prev [0000025120131510]:	  5   0   6   8   7   4   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000002011ebe1510]:	 30  20  10 100 200 300 
+	list [0000025120131510]:	100 150 200 250 300 350 400 500 
 }
 

@@ -46,6 +46,7 @@ ListDtorVal ListDtor    (list_t *list);
 ListElem_t *GetHeadVal  (list_t *list);
 ListElem_t *GetTailVal  (list_t *list);
 
+void ListBind           (list_t *list, int prev_el_num, int next_el_num);
 void ListPasteHead      (list_t *list, ListElem_t elem);
 void ListPasteTail      (list_t *list, ListElem_t elem);
 void ListPasteAfter     (list_t *list, ListElem_t elem, int elem_num);
