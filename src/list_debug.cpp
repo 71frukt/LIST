@@ -104,8 +104,6 @@ void CloseLogFile(void)
 
 void ListDump(list_t *list, const char *file, int line, const char *func)
 {
-    
-
     fprintf(LogFile, "LIST_DUMP called from %s:%d  (%s)\n{\n", file, line, func);
 
     fprintf(LogFile, "\thead = %d\n\ttail = %d\n\tfree = %d\n\tcapacity = %d\n\n",
@@ -172,4 +170,6 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
     }
 
     fprintf(LogFile, "\n}\n\n");
+
+    MakeGraph(list);
 }

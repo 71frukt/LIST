@@ -13,7 +13,7 @@ struct graph_arr_t
     size_t size;
 
     FILE **graph_files;
-    FILE  *tmp_dotfile;
+    const char *dotfile_name;
 };
 
 struct node_t

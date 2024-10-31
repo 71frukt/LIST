@@ -73,5 +73,6 @@ void    MakeGraph       (list_t *list);
 void    WriteDotCode    (list_t *list);
 void    DrawGraphInFile (const char *dotfile_name, char *picture_file_name);
 node_t *GetNodesArr     (list_t *list);
+void    MakeEdge        (FILE *dot_file, node_t node_from, node_t node_to);
 
 #endif

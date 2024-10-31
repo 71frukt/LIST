@@ -30,6 +30,6 @@ int main(const int argc, const char *argv[])
 
     fprintf(stderr, "num in data = %d\n", GetNumInData(&list, 7));
 
-    ListDtor(&list);
+    // ListDtor(&list);
     return 0;
 }

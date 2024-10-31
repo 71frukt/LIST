@@ -18,11 +18,12 @@ enum ListError_t
 #define BASE_LOGFILE_NAME  "list_logfile.log"
 #define LOGFILE_FOLDER     "logs/"
 #define DOT_FOLDER         LOGFILE_FOLDER "dot/"
-#define GRAPH_FOLDER       DOT_FOLDER "graphs/"
+#define GRAPH_FOLDER       LOGFILE_FOLDER "graphs/"
 #define TMP_DOTFILE_NAME   "tmp_doc_code.doc"   
 
 const int PATH_NAME_LEN   = 50;
 const int CMD_COMMAND_LEN = 100;
+const int NODE_TEXT_LEN   = 100;
 
 #ifdef LIST_DEBUG
 

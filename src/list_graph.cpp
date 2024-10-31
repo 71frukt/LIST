@@ -13,7 +13,7 @@ void GraphsCtor(graph_arr_t *graphs)
 
     graphs->graph_files = (FILE **) calloc(graphs->size, sizeof(FILE *));
 
-    graphs->tmp_dotfile = fopen(TMP_DOTFILE_NAME, "w");
+    graphs->dotfile_name = TMP_DOTFILE_NAME;
 }
 
 void GraphsDtor(graph_arr_t *graphs)
@@ -25,7 +25,7 @@ void GraphsDtor(graph_arr_t *graphs)
 
     free(graphs->graph_files);
 
-    remove(TMP_DOTFILE_NAME);
+    remove(graphs->dotfile_name);
 }
 
 void MakeGraph(list_t *list)
@@ -47,7 +47,7 @@ void MakeGraph(list_t *list)
 
 void WriteDotCode(list_t *list)
 {
-    FILE *dot_file = list->graphs.tmp_dotfile;
+    FILE *dot_file = fopen(list->graphs.dotfile_name, "w");
 
     node_t *nodes = GetNodesArr(list);
 
@@ -58,11 +58,19 @@ void WriteDotCode(list_t *list)
 
     fprintf(dot_file, "digraph G{ \n");
 
-    fprintf(dot_file, "\tGOVNO -> ZALUPA -> PENIS -> HER -> DAVALKA -> HUI -> BLYADINA;\n");
+    fprintf(dot_file, "rankdir = LR;\n");
+
+    for (int i = 0; i < list->capacity; i++)
+    {
+        MakeEdge(dot_file, nodes[i], nodes[nodes[i].next]);
+        fprintf(stderr, "\t\t i = %d, nx = %d\n", i, nodes[i].next);
+    }
 
     fprintf(dot_file, "} \n");
 
-    fclose(list->graphs.tmp_dotfile);
+    free(nodes);
+
+    fclose(dot_file);
 }
 
 void DrawGraphInFile(const char *dotfile_name, char *picture_file_name)
@@ -75,8 +83,6 @@ void DrawGraphInFile(const char *dotfile_name, char *picture_file_name)
 
 node_t *GetNodesArr(list_t *list)
 {
-    LIST_ASSERT(list);
-
     node_t *nodes = (node_t *) calloc(list->capacity, sizeof(node_t));
 
     for (int i = 0; i < list->capacity; i++)
@@ -90,8 +96,15 @@ node_t *GetNodesArr(list_t *list)
     return nodes;
 }
 
-// void MakeEdge(FILE *dot_file, )
-// {
-// 
-// }
+void MakeEdge(FILE *dot_file, node_t node_from, node_t node_to)
+{
+    char node_from_text[NODE_TEXT_LEN] = {};
+    sprintf(node_from_text, "%d", node_from.ip);
+
+    char node_to_text[NODE_TEXT_LEN] = {};
+    sprintf(node_to_text, "%d", node_to.ip);
+
+    fprintf(dot_file, "%s -> %s; \n", node_from_text, node_to_text);
+    fprintf(stderr, "%s -> %s; \n", node_from_text, node_to_text);
+}
 
