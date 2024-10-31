@@ -7,11 +7,11 @@ LIST_DUMP called from src/list.cpp:44  (ListCtor)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	
+	list [00000225a1911510]:	
 }
 
 LIST_DUMP called from src/main.cpp:13  (main)
@@ -23,11 +23,11 @@ LIST_DUMP called from src/main.cpp:13  (main)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	
+	list [00000225a1911510]:	
 }
 
 LIST_DUMP called from src/list.cpp:67  (GetHeadVal)
@@ -39,11 +39,11 @@ LIST_DUMP called from src/list.cpp:67  (GetHeadVal)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	
+	list [00000225a1911510]:	
 }
 
 LIST_DUMP called from src/list.cpp:74  (GetTailVal)
@@ -55,11 +55,11 @@ LIST_DUMP called from src/list.cpp:74  (GetTailVal)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	
+	list [00000225a1911510]:	
 }
 
 LIST_DUMP called from src/list.cpp:120  (ListPasteHead)
@@ -71,11 +71,11 @@ LIST_DUMP called from src/list.cpp:120  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	
+	list [00000225a1911510]:	
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -87,11 +87,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	
+	list [00000225a1911510]:	
 }
 
 LIST_DUMP called from src/list.cpp:136  (ListPasteHead)
@@ -103,11 +103,11 @@ LIST_DUMP called from src/list.cpp:136  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	100 
+	list [00000225a1911510]:	100 
 }
 
 LIST_DUMP called from src/list.cpp:120  (ListPasteHead)
@@ -119,11 +119,11 @@ LIST_DUMP called from src/list.cpp:120  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	100 
+	list [00000225a1911510]:	100 
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -135,11 +135,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	100 
+	list [00000225a1911510]:	100 
 }
 
 LIST_DUMP called from src/list.cpp:136  (ListPasteHead)
@@ -151,11 +151,11 @@ LIST_DUMP called from src/list.cpp:136  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	200 100 
+	list [00000225a1911510]:	200 100 
 }
 
 LIST_DUMP called from src/list.cpp:120  (ListPasteHead)
@@ -167,11 +167,11 @@ LIST_DUMP called from src/list.cpp:120  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	200 100 
+	list [00000225a1911510]:	200 100 
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -183,11 +183,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	200 100 
+	list [00000225a1911510]:	200 100 
 }
 
 LIST_DUMP called from src/list.cpp:136  (ListPasteHead)
@@ -199,11 +199,11 @@ LIST_DUMP called from src/list.cpp:136  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	300 200 100 
+	list [00000225a1911510]:	300 200 100 
 }
 
 LIST_DUMP called from src/list.cpp:120  (ListPasteHead)
@@ -215,11 +215,11 @@ LIST_DUMP called from src/list.cpp:120  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	300 200 100 
+	list [00000225a1911510]:	300 200 100 
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -231,11 +231,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	300 200 100 
+	list [00000225a1911510]:	300 200 100 
 }
 
 LIST_DUMP called from src/list.cpp:136  (ListPasteHead)
@@ -247,11 +247,11 @@ LIST_DUMP called from src/list.cpp:136  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   2   3   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   2   3   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	400 300 200 100 
+	list [00000225a1911510]:	400 300 200 100 
 }
 
 LIST_DUMP called from src/list.cpp:120  (ListPasteHead)
@@ -263,11 +263,11 @@ LIST_DUMP called from src/list.cpp:120  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   2   3   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   2   3   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	400 300 200 100 
+	list [00000225a1911510]:	400 300 200 100 
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -279,11 +279,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   2   3   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   2   3   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	400 300 200 100 
+	list [00000225a1911510]:	400 300 200 100 
 }
 
 LIST_DUMP called from src/list.cpp:136  (ListPasteHead)
@@ -295,11 +295,11 @@ LIST_DUMP called from src/list.cpp:136  (ListPasteHead)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 200 100 
+	list [00000225a1911510]:	500 400 300 200 100 
 }
 
 LIST_DUMP called from src/list.cpp:142  (ListPasteAfter)
@@ -311,11 +311,11 @@ LIST_DUMP called from src/list.cpp:142  (ListPasteAfter)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 200 100 
+	list [00000225a1911510]:	500 400 300 200 100 
 }
 
 LIST_DUMP called from src/list.cpp:97  (ListPasteTail)
@@ -327,11 +327,11 @@ LIST_DUMP called from src/list.cpp:97  (ListPasteTail)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 200 100 
+	list [00000225a1911510]:	500 400 300 200 100 
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -343,11 +343,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 200 100 
+	list [00000225a1911510]:	500 400 300 200 100 
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -359,11 +359,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  1   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  1   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 200 100 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 
+	list [00000225a1911510]:	500 400 300 200 100 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 
 }
 
 LIST_DUMP called from src/list.cpp:115  (ListPasteTail)
@@ -375,11 +375,11 @@ LIST_DUMP called from src/list.cpp:115  (ListPasteTail)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   1   2   3   4   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   1   2   3   4   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 200 100 150 
+	list [00000225a1911510]:	500 400 300 200 100 150 
 }
 
 LIST_DUMP called from src/list.cpp:142  (ListPasteAfter)
@@ -391,11 +391,11 @@ LIST_DUMP called from src/list.cpp:142  (ListPasteAfter)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   1   2   3   4   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   1   2   3   4   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 200 100 150 
+	list [00000225a1911510]:	500 400 300 200 100 150 
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -407,11 +407,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   1   2   3   4   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   1   2   3   4   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 200 100 150 
+	list [00000225a1911510]:	500 400 300 200 100 150 
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -423,11 +423,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   1   2   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   2   7   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   1   2   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   2   7   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 200 100 150 
+	list [00000225a1911510]:	500 400 300 200 100 150 
 }
 
 LIST_DUMP called from src/list.cpp:161  (ListPasteAfter)
@@ -439,11 +439,11 @@ LIST_DUMP called from src/list.cpp:161  (ListPasteAfter)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   1   7   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   2   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   1   7   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   2   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 350 200 100 150 
+	list [00000225a1911510]:	500 400 300 350 200 100 150 
 }
 
 LIST_DUMP called from src/list.cpp:142  (ListPasteAfter)
@@ -455,11 +455,11 @@ LIST_DUMP called from src/list.cpp:142  (ListPasteAfter)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   1   7   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   2   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   1   7   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   2   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 350 200 100 150 
+	list [00000225a1911510]:	500 400 300 350 200 100 150 
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -471,11 +471,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   1   7   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   2   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   1   7   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   2   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 350 200 100 150 
+	list [00000225a1911510]:	500 400 300 350 200 100 150 
 }
 
 LIST_DUMP called from src/list.cpp:166  (ListBind)
@@ -487,11 +487,11 @@ LIST_DUMP called from src/list.cpp:166  (ListBind)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   1   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   8   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   1   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   8   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 350 200 100 150 
+	list [00000225a1911510]:	500 400 300 350 200 100 150 
 }
 
 LIST_DUMP called from src/list.cpp:161  (ListPasteAfter)
@@ -503,11 +503,11 @@ LIST_DUMP called from src/list.cpp:161  (ListPasteAfter)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 350 250 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   8   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   8   7   4   5 PR#   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 350 250 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   8   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   8   7   4   5 PR#   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 350 200 250 100 150 
+	list [00000225a1911510]:	500 400 300 350 200 250 100 150 
 }
 
 LIST_DUMP called from src/list.cpp:81  (GetNumInData)
@@ -519,11 +519,11 @@ LIST_DUMP called from src/list.cpp:81  (GetNumInData)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 350 250 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   8   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   8   7   4   5 PR#   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 350 250 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   8   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   8   7   4   5 PR#   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 350 200 250 100 150 
+	list [00000225a1911510]:	500 400 300 350 200 250 100 150 
 }
 
 LIST_DUMP called from src/list.cpp:51  (ListDtor)
@@ -535,10 +535,10 @@ LIST_DUMP called from src/list.cpp:51  (ListDtor)
 
 						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
 
-	data [0000023367f61450]:	DT# 100 200 300 400 500 150 350 250 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [0000023367f614b0]:	  0   6   8   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
-	prev [0000023367f61510]:	  6   8   7   4   5 PR#   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [00000225a1911450]:	DT# 100 200 300 400 500 150 350 250 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [00000225a19114b0]:	  0   6   8   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
+	prev [00000225a1911510]:	  6   8   7   4   5 PR#   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [0000023367f61510]:	500 400 300 350 200 250 100 150 
+	list [00000225a1911510]:	500 400 300 350 200 250 100 150 
 }
 

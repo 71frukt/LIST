@@ -15,11 +15,11 @@ enum ListError_t
     FREE_OVERFLOW  = 1 << 7
 };
 
-const char *const BASE_LOGFILE_NAME = "list_logfile.log";
-const char *const LOGFILE_FOLDER    = "logs/";
-const int   LOGFILE_NAME_LEN  = 50;
+#define BASE_LOGFILE_NAME  "list_logfile.log"
+#define LOGFILE_FOLDER     "logs/"
+#define DOT_FOLDER         LOGFILE_FOLDER "dot/"
 
-// #define GET_LOGFILE_NAME(logfile_name)  LOGFILE_FOLDER logfile_name
+const int PATH_NAME_LEN = 50;
 
 #ifdef LIST_DEBUG
 
@@ -30,7 +30,7 @@ const int   LOGFILE_NAME_LEN  = 50;
 #define LIST_ASSERT(list)                                                   \
 {                                                                           \
     ListAssert(list, __FILE__, __LINE__, __func__);                         \
-    LIST_DUMP(list);                                                     \
+    LIST_DUMP(list);                                                        \
 }            
 
 #else

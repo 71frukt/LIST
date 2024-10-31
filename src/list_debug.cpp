@@ -74,14 +74,14 @@ int ListVerify(list_t *list)
     return res_err;
 }
 
-char *GetLogfileName(const char *name)
+char *GetFilePath(const char *name, const char *folder)
 {
-    static char logfile_name[LOGFILE_NAME_LEN] = {};
+    static char file_name[PATH_NAME_LEN] = {};
 
-    strncat(logfile_name, LOGFILE_FOLDER, LOGFILE_NAME_LEN - 1);
-    strncat(logfile_name, name,           LOGFILE_NAME_LEN - strlen(logfile_name) - strlen(name) - 1);
+    strncat(file_name, folder, PATH_NAME_LEN - 1);
+    strncat(file_name, name,   PATH_NAME_LEN - strlen(file_name) - strlen(name) - 1);
 
-    return logfile_name;
+    return file_name;
 }
 
 FILE *OpenLogFile(const int argc, const char *argv[])
@@ -89,10 +89,10 @@ FILE *OpenLogFile(const int argc, const char *argv[])
     char *logfile_name = NULL;
 
     if (argc < 2)
-        logfile_name = GetLogfileName(BASE_LOGFILE_NAME);
+        logfile_name = GetFilePath(BASE_LOGFILE_NAME, LOGFILE_FOLDER);
 
     else
-        logfile_name = GetLogfileName(argv[1]);
+        logfile_name = GetFilePath(argv[1], LOGFILE_FOLDER);
 
     LogFile = fopen(logfile_name, "w");
 
