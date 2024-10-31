@@ -74,25 +74,21 @@ int ListVerify(list_t *list)
     return res_err;
 }
 
-char *GetFilePath(const char *name, const char *folder)
+char *GetFilePath(const char *name, const char *folder, char *path)
 {
-    static char file_name[PATH_NAME_LEN] = {};
-
-    strncat(file_name, folder, PATH_NAME_LEN - 1);
-    strncat(file_name, name,   PATH_NAME_LEN - strlen(file_name) - strlen(name) - 1);
-
-    return file_name;
+    sprintf(path, "%s%s", folder, name);
+    return path;
 }
 
 FILE *OpenLogFile(const int argc, const char *argv[])
 {
-    char *logfile_name = NULL;
+    char logfile_name[PATH_NAME_LEN] = {};
 
     if (argc < 2)
-        logfile_name = GetFilePath(BASE_LOGFILE_NAME, LOGFILE_FOLDER);
+        GetFilePath(BASE_LOGFILE_NAME, LOGFILE_FOLDER, logfile_name);
 
     else
-        logfile_name = GetFilePath(argv[1], LOGFILE_FOLDER);
+        GetFilePath(argv[1], LOGFILE_FOLDER, logfile_name);
 
     LogFile = fopen(logfile_name, "w");
 
@@ -108,6 +104,8 @@ void CloseLogFile(void)
 
 void ListDump(list_t *list, const char *file, int line, const char *func)
 {
+    
+
     fprintf(LogFile, "LIST_DUMP called from %s:%d  (%s)\n{\n", file, line, func);
 
     fprintf(LogFile, "\thead = %d\n\ttail = %d\n\tfree = %d\n\tcapacity = %d\n\n",
@@ -171,8 +169,6 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
     {
         fprintf(LogFile, "%3d ", list->data[num]);
         num = list->next[num];
-
-        fprintf(stderr, "num = %d\n", num);
     }
 
     fprintf(LogFile, "\n}\n\n");

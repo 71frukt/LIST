@@ -32,14 +32,18 @@ ListCtorVal ListCtor(list_t *list, int start_capa)
     if (list->capacity > 0)
         list->next[list->capacity - 1] = 0;             // последн€€ свободна€ €чейка
 
-    ON_LIST_DEBUG (
+    ON_LIST_DEBUG 
+    (
         for (int i = 0; i < list->capacity; i++)
         {
             list->data[i] = DATA_POISON;
             list->prev[i] = PREV_POISON;
-        } )
+        } 
+        
+        GraphsCtor(&list->graphs);
 
-    list->error = 0;
+        MakeGraph(list);
+    );
 
     LIST_ASSERT(list);
 
@@ -53,6 +57,10 @@ ListDtorVal ListDtor(list_t *list)
     free(list->data);
     free(list->next);
     free(list->prev);
+
+    ON_LIST_DEBUG (
+        GraphsDtor(&list->graphs); 
+    );
 
     list->capacity = 0;
     list->head     = 1;

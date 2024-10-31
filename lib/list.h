@@ -3,6 +3,7 @@
 
 #define LIST_DEBUG
 #include "list_debug.h"
+#include "list_graph.h"
 
 typedef int ListElem_t;
 
@@ -35,9 +36,11 @@ struct list_t
     int tail;
     int free;
 
-    int error;
-
-    FILE *logfile;
+    ON_LIST_DEBUG (
+        FILE        *logfile;
+        int          error;
+        graph_arr_t  graphs;
+    );
 };
 
 
@@ -58,11 +61,15 @@ int  GetNumInData       (list_t *list, int num_in_list);
 void  ListAssert   (list_t *list, const char *file, int line, const char *func);
 void  PrintListErr (int error);
 int   ListVerify   (list_t *list);
-char *GetFilePath  (const char *name, const char *folder);
+char *GetFilePath  (const char *name, const char *folder, char *path);
 FILE *OpenLogFile  (const int argc, const char *argv[]);
 void  CloseLogFile (void);
+void  ListDump     (list_t *list, const char *file, int line, const char *func);
 
-void  ListDump (list_t *list, const char *file, int line, const char *func);
-
+// graph functions
+void GraphsCtor   (graph_arr_t *graphs);
+void GraphsDtor   (graph_arr_t *graphs);
+void MakeGraph    (list_t *list);
+void WriteDocCode (list_t *list);
 
 #endif
