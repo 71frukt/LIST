@@ -1,11 +1,11 @@
 #ifndef LIST_H
 #define LIST_H
 
+typedef int ListElem_t;
+
 #define LIST_DEBUG
 #include "list_debug.h"
 #include "list_graph.h"
-
-typedef int ListElem_t;
 
 // const int BASE_LIST_CAPA = 10;
 
@@ -67,9 +67,11 @@ void  CloseLogFile (void);
 void  ListDump     (list_t *list, const char *file, int line, const char *func);
 
 // graph functions
-void GraphsCtor   (graph_arr_t *graphs);
-void GraphsDtor   (graph_arr_t *graphs);
-void MakeGraph    (list_t *list);
-void WriteDocCode (list_t *list);
+void    GraphsCtor      (graph_arr_t *graphs);
+void    GraphsDtor      (graph_arr_t *graphs);
+void    MakeGraph       (list_t *list);
+void    WriteDotCode    (list_t *list);
+void    DrawGraphInFile (const char *dotfile_name, char *picture_file_name);
+node_t *GetNodesArr     (list_t *list);
 
 #endif

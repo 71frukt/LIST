@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 
+#include "list.h"
+
 const int START_GRAPH_ARR_SIZE = 10;
 
 struct graph_arr_t
@@ -11,7 +13,15 @@ struct graph_arr_t
     size_t size;
 
     FILE **graph_files;
-    FILE  *doc_tmp_codefile;
+    FILE  *tmp_dotfile;
+};
+
+struct node_t
+{
+    int ip;
+    ListElem_t val;
+    int next;
+    int prev;
 };
 
 #endif
