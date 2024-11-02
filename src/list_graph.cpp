@@ -64,7 +64,6 @@ GraphFuncStatus WriteDotCode(list_t *list)
 
 // fprintf(stderr, "list [%p]\ngraphs [%p]\ndotf [%s]\n", list, &list->graphs, list->graphs.dotfile_name);
     FILE *dot_file = fopen(TMP_DOTFILE_NAME, "w");
-    fprintf(stderr, "popa\n");
 
     if (dot_file == NULL)
     {
@@ -73,8 +72,8 @@ GraphFuncStatus WriteDotCode(list_t *list)
     }
 
     graph_t *cur_graph = &list->graphs.data[list->graphs.index];
-    
-    cur_graph->nodes   = GetNodesArr(list);
+
+    cur_graph->nodes = GetNodesArr(list);
 
     if (cur_graph->nodes == NULL)
     {
@@ -86,7 +85,7 @@ GraphFuncStatus WriteDotCode(list_t *list)
 
     fprintf(dot_file, "rankdir = LR;\n");
 
-    // InitNodes(cur_graph, dot_file);
+    InitNodes(cur_graph, dot_file);
 
     for (int i = 0; i < list->capacity; i++)
     {
@@ -107,13 +106,16 @@ GraphFuncStatus WriteDotCode(list_t *list)
     return GRAPH_FUNC_OK;
 }
 
-// GraphFuncStatus InitNodes(graph_t graph, FILE *dotfile)
-// {
-    // for (size_t i = 0; i < graph.nodes_num; i++)
-    // {
-        // fprintf(dotfile, "%s", nodes.)
-    // }
-// }
+GraphFuncStatus InitNodes(graph_t *graph, FILE *dotfile)
+{
+    for (size_t i = 0; i < graph->nodes_num; i++)
+    {
+        fprintf(dotfile, "%s [shape = \"record\", label = \" index = %d | value = %" LIST_ELEM_FORMAT " | next = %d | prev = %d\"]\n", 
+            graph->nodes[i].label, graph->nodes->index, graph->nodes->val, graph->nodes->next, graph->nodes->prev);
+    }
+
+    return GRAPH_FUNC_OK;
+}
 
 GraphFuncStatus DrawGraphInFile(const char *dotfile_name, char *picture_file_name)
 {
@@ -139,7 +141,7 @@ node_t *GetNodesArr(list_t *list)
         nodes[i].val   = list->data[i];
         nodes[i].next  = list->next[i];
         nodes[i].prev  = list->prev[i];
-        sprintf(nodes[i].name, "NODE_%d", i);
+        sprintf(nodes[i].label, "NODE_%d", i);
     }
 
     return nodes;
@@ -149,14 +151,14 @@ GraphFuncStatus MakeEdge(FILE *dot_file, node_t node_from, node_t node_to)
 {
     assert(dot_file);
 
-    char node_from_text[NODE_TEXT_LEN] = {};
-    sprintf(node_from_text, "%d", node_from.index);
+    // char node_from_text[NODE_TEXT_LEN] = {};
+    // sprintf(node_from_text, "%d", node_from.index);
 
-    char node_to_text[NODE_TEXT_LEN] = {};
-    sprintf(node_to_text, "%d", node_to.index);
+    // char node_to_text[NODE_TEXT_LEN] = {};
+    // sprintf(node_to_text, "%d", node_to.index);
 
-    fprintf(dot_file, "%s -> %s; \n", node_from_text, node_to_text);
-    fprintf(stderr, "%s -> %s; \n", node_from_text, node_to_text);
+    fprintf(dot_file, "%s -> %s; \n", node_from.label, node_to.label);
+    fprintf(stderr, "%s -> %s; \n", node_from.label, node_to.label);
 
     return GRAPH_FUNC_OK;
 }

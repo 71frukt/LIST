@@ -4,14 +4,14 @@
 #include <stdio.h>
 
 #include "list.h"
-
 const int NODE_NAME_LEN        = 20;
-const int START_GRAPH_ARR_SIZE = 10;
+
+const int START_GRAPH_ARR_SIZE = 100;
 
 struct node_t
 {
     ListElem_t val;
-    char name[NODE_NAME_LEN];
+    char label[NODE_NAME_LEN];
     int  index;
     int  next;
     int  prev;

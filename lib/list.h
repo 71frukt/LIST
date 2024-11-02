@@ -67,5 +67,6 @@ GraphFuncStatus    WriteDotCode    (list_t *list);
 GraphFuncStatus    DrawGraphInFile (const char *dotfile_name, char *picture_file_name);
 GraphFuncStatus    MakeEdge        (FILE *dot_file, node_t node_from, node_t node_to);
 node_t            *GetNodesArr     (list_t *list);
+GraphFuncStatus    InitNodes       (graph_t *graph, FILE *dotfile);
 
 #endif

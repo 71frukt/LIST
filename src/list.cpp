@@ -42,7 +42,7 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
         
         GraphsCtor(&list->graphs);
 
-        for (int i = 0; i < list->graphs.size; i++)
+        for (size_t i = 0; i < list->graphs.size; i++)
         {
             list->graphs.data[i].nodes_num = list->capacity;
         }
