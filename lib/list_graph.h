@@ -6,7 +6,7 @@
 #include "list.h"
 
 const int NODE_NAME_LEN        = 20;
-const int START_GRAPH_ARR_SIZE = 100;
+const int START_GRAPH_ARR_SIZE = 10;
 
 struct node_t
 {
