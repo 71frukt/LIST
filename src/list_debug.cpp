@@ -4,7 +4,7 @@
 
 #include "list.h"
 
-FILE *LogFile;
+FILE *LogFile = NULL;
 
 void ListAssert(list_t *list, const char *file, int line, const char *func)
 {
@@ -30,13 +30,13 @@ void PrintListErr(int error)
     }                                                   
     
     PRINT_ERROR (error, LIST_PTR_ERR);
-    PRINT_ERROR (error, DATA_PTR_ERR);
-    PRINT_ERROR (error, HEAD_UNDERFLOW);
-    PRINT_ERROR (error, HEAD_OVERFLOW);
-    PRINT_ERROR (error, TAIL_UNDERFLOW);
-    PRINT_ERROR (error, TAIL_OVERFLOW);
-    PRINT_ERROR (error, FREE_UNDERFLOW);
-    PRINT_ERROR (error, FREE_OVERFLOW);
+    PRINT_ERROR (error, LIST_DATA_PTR_ERR);
+    PRINT_ERROR (error, LIST_HEAD_UNDERFLOW);
+    PRINT_ERROR (error, LIST_HEAD_OVERFLOW);
+    PRINT_ERROR (error, LIST_TAIL_UNDERFLOW);
+    PRINT_ERROR (error, LIST_TAIL_OVERFLOW);
+    PRINT_ERROR (error, LIST_FREE_UNDERFLOW);
+    PRINT_ERROR (error, LIST_FREE_OVERFLOW);
 
     #undef PRINT_ERROR  
 
@@ -51,25 +51,25 @@ int ListVerify(list_t *list)
         return LIST_PTR_ERR;
 
     if (list->data == NULL)
-        res_err |= DATA_PTR_ERR;
+        res_err |= LIST_DATA_PTR_ERR;
 
     if (list->head >= list->capacity)
-        res_err |= HEAD_OVERFLOW;
+        res_err |= LIST_HEAD_OVERFLOW;
 
     if (list->head < 0)
-        res_err |= HEAD_UNDERFLOW;
+        res_err |= LIST_HEAD_UNDERFLOW;
 
     if (list->tail >= list->capacity)
-        res_err |= TAIL_OVERFLOW;
+        res_err |= LIST_TAIL_OVERFLOW;
 
     if (list->tail < 0)
-        res_err |= TAIL_UNDERFLOW;    
+        res_err |= LIST_TAIL_UNDERFLOW;    
         
     if (list->free >= list->capacity)
-        res_err |= FREE_OVERFLOW;
+        res_err |= LIST_FREE_OVERFLOW;
 
     if (list->free < 1)
-        res_err |= FREE_UNDERFLOW;
+        res_err |= LIST_FREE_UNDERFLOW;
 
     return res_err;
 }
@@ -165,7 +165,7 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
 
     while (num != 0)
     {
-        fprintf(LogFile, "%3d ", list->data[num]);
+        fprintf(LogFile, "%3" LIST_ELEM_FORMAT, list->data[num]);
         num = list->next[num];
     }
 

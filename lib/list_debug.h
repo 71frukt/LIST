@@ -5,14 +5,14 @@ enum ListError_t
 {
     LIST_OK = 0,
 
-    LIST_PTR_ERR   = 1 << 0,
-    DATA_PTR_ERR   = 1 << 1,
-    HEAD_UNDERFLOW = 1 << 2,
-    HEAD_OVERFLOW  = 1 << 3,
-    TAIL_UNDERFLOW = 1 << 4,
-    TAIL_OVERFLOW  = 1 << 5,
-    FREE_UNDERFLOW = 1 << 6,
-    FREE_OVERFLOW  = 1 << 7
+    LIST_PTR_ERR        = 1 << 0,
+    LIST_DATA_PTR_ERR   = 1 << 1,
+    LIST_HEAD_UNDERFLOW = 1 << 2,
+    LIST_HEAD_OVERFLOW  = 1 << 3,
+    LIST_TAIL_UNDERFLOW = 1 << 4,
+    LIST_TAIL_OVERFLOW  = 1 << 5,
+    LIST_FREE_UNDERFLOW = 1 << 6,
+    LIST_FREE_OVERFLOW  = 1 << 7
 };
 
 #define BASE_LOGFILE_NAME  "list_logfile.log"

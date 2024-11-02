@@ -2,6 +2,7 @@
 #define LIST_H
 
 typedef int ListElem_t;
+#define LIST_ELEM_FORMAT "d"
 
 #define LIST_DEBUG
 #include "list_debug.h"
@@ -10,20 +11,8 @@ typedef int ListElem_t;
 // const int BASE_LIST_CAPA = 10;
 
 const int DATA_POISON = 0xDEDBEAF;
-const int NEXT_POISON = -0xDEB;
-const int PREV_POISON = -0xEBA; 
-
-enum ListCtorVal
-{
-    CTOR_OK,
-    CTOR_ERR
-};
-
-enum ListDtorVal
-{
-    DTOR_OK,
-    DTOR_ERR
-};
+const int NEXT_POISON = 0xDEB11;
+const int PREV_POISON = 0xEBA110B; 
 
 struct list_t
 {
@@ -43,19 +32,23 @@ struct list_t
     );
 };
 
+enum ListFuncStatus
+{
+    LIST_FUNC_OK,
+    LIST_FUNC_ERR
+};
 
-ListCtorVal ListCtor    (list_t *list, int start_capa);
-ListDtorVal ListDtor    (list_t *list);
+ListFuncStatus ListCtor    (list_t *list, int start_capa);
+ListFuncStatus ListDtor    (list_t *list);
 
-ListElem_t *GetHeadVal  (list_t *list);
-ListElem_t *GetTailVal  (list_t *list);
-
-void ListBind           (list_t *list, int prev_el_num, int next_el_num);
-void ListPasteHead      (list_t *list, ListElem_t elem);
-void ListPasteTail      (list_t *list, ListElem_t elem);
-void ListPasteAfter     (list_t *list, ListElem_t elem, int elem_num);
-void ListDelElem        (list_t *list, int elem_num);
-int  GetNumInData       (list_t *list, int num_in_list);
+ListElem_t    *GetHeadVal  (list_t *list);
+ListElem_t    *GetTailVal  (list_t *list);
+ListFuncStatus ListBind           (list_t *list, int prev_el_num, int next_el_num);
+ListFuncStatus ListPasteHead      (list_t *list, ListElem_t elem);
+ListFuncStatus ListPasteTail      (list_t *list, ListElem_t elem);
+ListFuncStatus ListPasteAfter     (list_t *list, ListElem_t elem, int elem_num);
+ListFuncStatus ListDelElem        (list_t *list, int elem_num);
+int            GetNumInData       (list_t *list, int num_in_list);
 
 // debug functions
 void  ListAssert   (list_t *list, const char *file, int line, const char *func);
@@ -67,12 +60,12 @@ void  CloseLogFile (void);
 void  ListDump     (list_t *list, const char *file, int line, const char *func);
 
 // graph functions
-void    GraphsCtor      (graph_arr_t *graphs);
-void    GraphsDtor      (graph_arr_t *graphs);
-void    MakeGraph       (list_t *list);
-void    WriteDotCode    (list_t *list);
-void    DrawGraphInFile (const char *dotfile_name, char *picture_file_name);
-node_t *GetNodesArr     (list_t *list);
-void    MakeEdge        (FILE *dot_file, node_t node_from, node_t node_to);
+GraphFuncStatus    GraphsCtor      (graph_arr_t *graphs);
+GraphFuncStatus    GraphsDtor      (graph_arr_t *graphs);
+GraphFuncStatus    MakeGraph       (list_t *list);
+GraphFuncStatus    WriteDotCode    (list_t *list);
+GraphFuncStatus    DrawGraphInFile (const char *dotfile_name, char *picture_file_name);
+GraphFuncStatus    MakeEdge        (FILE *dot_file, node_t node_from, node_t node_to);
+node_t            *GetNodesArr     (list_t *list);
 
 #endif

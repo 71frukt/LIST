@@ -4,14 +4,14 @@
 
 #include "list.h"
 
-ListCtorVal ListCtor(list_t *list, int start_capa)
+ListFuncStatus ListCtor(list_t *list, int start_capa)
 {
     assert(list);
 
     if (start_capa <= 0)
     {
         fprintf(stderr, "start_capa <= 0!\n");
-        return CTOR_ERR;
+        return LIST_FUNC_ERR;
     }
 
     list->capacity = start_capa;
@@ -42,15 +42,20 @@ ListCtorVal ListCtor(list_t *list, int start_capa)
         
         GraphsCtor(&list->graphs);
 
+        for (int i = 0; i < list->capacity; i++)
+        {
+            list->graphs.data[i].nodes_num = list->capacity;
+        }
+
         MakeGraph(list);
     );
 
     LIST_ASSERT(list);
 
-    return CTOR_OK;
+    return LIST_FUNC_OK;
 }
 
-ListDtorVal ListDtor(list_t *list)
+ListFuncStatus ListDtor(list_t *list)
 {
     LIST_ASSERT(list);
 
@@ -67,7 +72,7 @@ ListDtorVal ListDtor(list_t *list)
     list->tail     = 1;
     list->free     = 1;
 
-    return DTOR_OK;
+    return LIST_FUNC_OK;
 }
 
 ListElem_t *GetHeadVal(list_t *list)
@@ -100,7 +105,7 @@ int GetNumInData(list_t *list, int num_in_list)
     return num_in_data;
 }
 
-void ListPasteTail(list_t *list, ListElem_t elem)
+ListFuncStatus ListPasteTail(list_t *list, ListElem_t elem)
 {
     LIST_ASSERT(list);
 
@@ -121,9 +126,11 @@ void ListPasteTail(list_t *list, ListElem_t elem)
     list->data[free_cell_num] = elem;
 
     LIST_ASSERT(list);
+
+    return LIST_FUNC_OK;
 }
 
-void ListPasteHead(list_t *list, ListElem_t elem)
+ListFuncStatus ListPasteHead(list_t *list, ListElem_t elem)
 {
     LIST_ASSERT(list);
 
@@ -142,17 +149,18 @@ void ListPasteHead(list_t *list, ListElem_t elem)
     list->data[free_cell_num] = elem;
 
     LIST_ASSERT(list);
+    return LIST_FUNC_OK;
 }
 
-void ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
+ListFuncStatus ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
 {
-    assert(elem_num > 0);
     LIST_ASSERT(list);
+    assert(elem_num > 0);
 
     if (elem_num == list->tail)
     {
         ListPasteTail(list, elem);
-        return;
+        return LIST_FUNC_OK;
     }
 
     int free_cell_num = list->free;
@@ -167,9 +175,10 @@ void ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
     list->data[free_cell_num] = elem;
 
     LIST_ASSERT(list);
+    return LIST_FUNC_OK;
 }
 
-void ListBind(list_t *list, int prev_el_num, int next_el_num)
+ListFuncStatus ListBind(list_t *list, int prev_el_num, int next_el_num)
 {
     LIST_ASSERT(list);
     assert(prev_el_num >= 0);
@@ -177,11 +186,15 @@ void ListBind(list_t *list, int prev_el_num, int next_el_num)
 
     list->next[prev_el_num] = next_el_num;
     list->prev[next_el_num] = prev_el_num;
+
+    LIST_ASSERT(list);
+    return LIST_FUNC_OK;
 }
 
-void ListDelElem(list_t *list, int elem_num)
+ListFuncStatus ListDelElem(list_t *list, int elem_num)
 {
     LIST_ASSERT(list);
+    assert(elem_num > 0);
 
     ON_LIST_DEBUG (
         list->data[elem_num] = DATA_POISON;
@@ -194,4 +207,6 @@ void ListDelElem(list_t *list, int elem_num)
     ListBind(list, list->prev[elem_num], list->next[elem_num]);
 
     LIST_ASSERT(list);
+
+    return LIST_FUNC_OK;
 }
