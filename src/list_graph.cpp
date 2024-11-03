@@ -52,8 +52,6 @@ GraphFuncStatus MakeGraph(list_t *list)
 cur_graph->nodes[0].next = list->head;  // KOLHOS!!!!
 cur_graph->nodes[0].prev = list->tail;
 
-fprintf(stderr, "tail = %d\n\n\n", list->tail);
-
     WriteDotCode(cur_graph);
 
     char graph_file_name[PATH_NAME_LEN] = {};

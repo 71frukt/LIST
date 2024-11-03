@@ -52,7 +52,7 @@ const char *const END_OF_FREE_MARK = "FREE_END";
 #define LIST_ASSERT(list)                                                   \
 {                                                                           \
     ListAssert(list, __FILE__, __LINE__, __func__);                         \
-    LIST_DUMP(list);                                                        \
+    /*LIST_DUMP(list);*/                                                    \
 }            
 
 #else

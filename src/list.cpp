@@ -51,6 +51,7 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
     );
 
     LIST_ASSERT(list);
+    LIST_DUMP(list);
 
     return LIST_FUNC_OK;
 }
@@ -58,6 +59,7 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
 ListFuncStatus ListDtor(list_t *list)
 {
     LIST_ASSERT(list);
+    LIST_DUMP(list);
 
     free(list->data);
     free(list->next);
@@ -124,9 +126,9 @@ ListFuncStatus ListPasteTail(list_t *list, ListElem_t elem)
     list->tail = free_cell_num;
 
     list->data[free_cell_num] = elem;
-
+    fprintf(stderr, "\n\t\tIn Paste tail: free_cell_num = %d, head = %d\n", free_cell_num, list->head);
     LIST_ASSERT(list);
-
+    LIST_DUMP(list);
     return LIST_FUNC_OK;
 }
 
@@ -151,6 +153,7 @@ ListFuncStatus ListPasteHead(list_t *list, ListElem_t elem)
     list->data[free_cell_num] = elem;
 
     LIST_ASSERT(list);
+    LIST_DUMP(list);
     fprintf(stderr, "end of paste head\n");
     return LIST_FUNC_OK;
 }
@@ -160,6 +163,7 @@ ListFuncStatus ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
     LIST_ASSERT(list);
     assert(elem_num > 0);
 
+fprintf(stderr, "\n\nin paste after\n");
     if (elem_num == list->tail)
     {
         ListPasteTail(list, elem);
@@ -176,8 +180,8 @@ ListFuncStatus ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
     ListBind(list, elem_num,      free_cell_num);
 
     list->data[free_cell_num] = elem;
-
     LIST_ASSERT(list);
+    LIST_DUMP(list);
     return LIST_FUNC_OK;
 }
 
@@ -210,6 +214,7 @@ ListFuncStatus ListDelElem(list_t *list, int elem_num)
     ListBind(list, list->prev[elem_num], list->next[elem_num]);
 
     LIST_ASSERT(list);
+    LIST_DUMP(list);
 
     return LIST_FUNC_OK;
 }

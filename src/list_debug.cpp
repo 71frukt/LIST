@@ -105,7 +105,8 @@ void CloseLogFile(void)
 
 void ListDump(list_t *list, const char *file, int line, const char *func)
 {
-    fprintf(stderr, "Start of DUMP\n");
+    fprintf(stderr, "start of dump\n");
+
     fprintf(LogFile, "LIST_DUMP called from %s:%d  (%s)\n{\n", file, line, func);
 
     fprintf(LogFile, "\thead = %d\n\ttail = %d\n\tfree = %d\n\tcapacity = %d\n\n",
@@ -167,17 +168,18 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
 
     int num = list->head;
 
+    fprintf(stderr, "head = %d, free = %d\n", list->head, list->free);
+
     while (num != 0)
     {
-        fprintf(stderr, "num = %d, tail = %d\n", num, list->tail);
         fprintf(LogFile, "%3" LIST_ELEM_FORMAT " ", list->data[num]);
-        fprintf(stderr, "%3" LIST_ELEM_FORMAT " ", list->data[num]);
+        fprintf(stderr, "num = %d, next[num] = %d\n", num, list->next[num]);
         num = list->next[num];
     } 
 
     fprintf(LogFile, "\n}\n\n");
 
-    fprintf(stderr, "End of DUMP\n");
     MakeGraph(list);
 
+    fprintf(stderr, "end of dump\n");
 }
