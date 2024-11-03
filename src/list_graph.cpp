@@ -89,7 +89,7 @@ GraphFuncStatus WriteDotCode(list_t *list)
 
     for (int i = 0; i < list->capacity; i++)
     {
-        MakeEdge(dot_file, cur_graph->nodes[i], cur_graph->nodes[cur_graph->nodes[i].next]);
+        MakeEdge(dot_file, cur_graph->nodes[i], cur_graph->nodes[cur_graph->nodes[i].next], EDGE_PREV_COLOR, 1);
         fprintf(stderr, "\t i = %d, nx = %d\n", i, cur_graph->nodes[i].next);
     }
 
@@ -108,10 +108,35 @@ GraphFuncStatus WriteDotCode(list_t *list)
 
 GraphFuncStatus InitNodes(graph_t *graph, FILE *dotfile)
 {
+    assert(graph);
+    assert(dotfile);
+
+    node_t *nodes = graph->nodes;
+
+
     for (size_t i = 0; i < graph->nodes_num; i++)
     {
-        fprintf(dotfile, "%s [shape = \"record\", label = \" index = %d | value = %" LIST_ELEM_FORMAT " | next = %d | prev = %d\"]\n", 
-            graph->nodes[i].label, graph->nodes->index, graph->nodes->val, graph->nodes->next, graph->nodes->prev);
+        char next_val_str[10] = {};
+        VALUE_TO_STR(nodes[i].next, "d", NEXT_POISON, NEXT_POISON_MARK, next_val_str);
+
+        char prev_val_str[10] = {};
+        VALUE_TO_STR(nodes[i].prev, "d", PREV_POISON, PREV_POISON_MARK, prev_val_str);
+
+        char node_val_str[10] = {};
+        VALUE_TO_STR(nodes[i].val, LIST_ELEM_FORMAT, DATA_POISON, DATA_POISON_MARK, node_val_str);
+
+        // if (nodes[i].next == NEXT_POISON)
+            // sprintf(next_val_str, "%s", NEXT_POISON_MARK);
+        // else 
+            // sprintf(next_val_str, "%d", nodes[i].next);
+
+        fprintf(dotfile, "%s [shape = \"record\", label = \" index = %d | value = %s | next = %s | prev = %s\"]\n", 
+            nodes[i].label, nodes[i].index, node_val_str, next_val_str, prev_val_str);
+    }
+
+    for (size_t i = 0; i < graph->nodes_num - 1; i++)
+    {
+        MakeEdge(dotfile, nodes[i], nodes[i + 1], "white", 1000);
     }
 
     return GRAPH_FUNC_OK;
@@ -120,6 +145,7 @@ GraphFuncStatus InitNodes(graph_t *graph, FILE *dotfile)
 GraphFuncStatus DrawGraphInFile(const char *dotfile_name, char *picture_file_name)
 {
     assert(dotfile_name);
+    assert(picture_file_name);
 
     char cmd_command[CMD_COMMAND_LEN] = {};
     sprintf(cmd_command, "dot %s -T png -o %s", dotfile_name, picture_file_name);
@@ -147,19 +173,13 @@ node_t *GetNodesArr(list_t *list)
     return nodes;
 }
 
-GraphFuncStatus MakeEdge(FILE *dot_file, node_t node_from, node_t node_to)
+GraphFuncStatus MakeEdge(FILE *dot_file, node_t node_from, node_t node_to, const char *edge_color, size_t edge_weight)
 {
     assert(dot_file);
+    assert(edge_color);
 
-    // char node_from_text[NODE_TEXT_LEN] = {};
-    // sprintf(node_from_text, "%d", node_from.index);
-
-    // char node_to_text[NODE_TEXT_LEN] = {};
-    // sprintf(node_to_text, "%d", node_to.index);
-
-    fprintf(dot_file, "%s -> %s; \n", node_from.label, node_to.label);
+    fprintf(dot_file, "%s -> %s[color = \"%s\", weight = %lld]; \n", node_from.label, node_to.label, edge_color, edge_weight);
     fprintf(stderr, "%s -> %s; \n", node_from.label, node_to.label);
 
     return GRAPH_FUNC_OK;
 }
-

@@ -1,23 +1,47 @@
 digraph G{ 
 rankdir = LR;
-0 -> 0; 
-1 -> 2; 
-2 -> 3; 
-3 -> 4; 
-4 -> 5; 
-5 -> 6; 
-6 -> 7; 
-7 -> 8; 
-8 -> 9; 
-9 -> 10; 
-10 -> 11; 
-11 -> 12; 
-12 -> 13; 
-13 -> 14; 
-14 -> 15; 
-15 -> 16; 
-16 -> 17; 
-17 -> 18; 
-18 -> 19; 
-19 -> 0; 
+NODE_0 [shape = "record", label = " index = 0 | value = DT# | next = 0 | prev = 1"]
+NODE_1 [shape = "record", label = " index = 1 | value = 100 | next = 0 | prev = 2"]
+NODE_2 [shape = "record", label = " index = 2 | value = 200 | next = 1 | prev = 3"]
+NODE_3 [shape = "record", label = " index = 3 | value = 300 | next = 2 | prev = 4"]
+NODE_4 [shape = "record", label = " index = 4 | value = 400 | next = 3 | prev = 5"]
+NODE_5 [shape = "record", label = " index = 5 | value = 500 | next = 4 | prev = PR#"]
+NODE_6 [shape = "record", label = " index = 6 | value = DT# | next = 7 | prev = PR#"]
+NODE_7 [shape = "record", label = " index = 7 | value = DT# | next = 8 | prev = PR#"]
+NODE_8 [shape = "record", label = " index = 8 | value = DT# | next = 9 | prev = PR#"]
+NODE_9 [shape = "record", label = " index = 9 | value = DT# | next = 10 | prev = PR#"]
+NODE_10 [shape = "record", label = " index = 10 | value = DT# | next = 11 | prev = PR#"]
+NODE_11 [shape = "record", label = " index = 11 | value = DT# | next = 12 | prev = PR#"]
+NODE_12 [shape = "record", label = " index = 12 | value = DT# | next = 13 | prev = PR#"]
+NODE_13 [shape = "record", label = " index = 13 | value = DT# | next = 14 | prev = PR#"]
+NODE_14 [shape = "record", label = " index = 14 | value = DT# | next = 0 | prev = PR#"]
+NODE_0 -> NODE_1[color = "white", weight = 1000]; 
+NODE_1 -> NODE_2[color = "white", weight = 1000]; 
+NODE_2 -> NODE_3[color = "white", weight = 1000]; 
+NODE_3 -> NODE_4[color = "white", weight = 1000]; 
+NODE_4 -> NODE_5[color = "white", weight = 1000]; 
+NODE_5 -> NODE_6[color = "white", weight = 1000]; 
+NODE_6 -> NODE_7[color = "white", weight = 1000]; 
+NODE_7 -> NODE_8[color = "white", weight = 1000]; 
+NODE_8 -> NODE_9[color = "white", weight = 1000]; 
+NODE_9 -> NODE_10[color = "white", weight = 1000]; 
+NODE_10 -> NODE_11[color = "white", weight = 1000]; 
+NODE_11 -> NODE_12[color = "white", weight = 1000]; 
+NODE_12 -> NODE_13[color = "white", weight = 1000]; 
+NODE_13 -> NODE_14[color = "white", weight = 1000]; 
+NODE_0 -> NODE_0[color = "darkcyan", weight = 1]; 
+NODE_1 -> NODE_0[color = "darkcyan", weight = 1]; 
+NODE_2 -> NODE_1[color = "darkcyan", weight = 1]; 
+NODE_3 -> NODE_2[color = "darkcyan", weight = 1]; 
+NODE_4 -> NODE_3[color = "darkcyan", weight = 1]; 
+NODE_5 -> NODE_4[color = "darkcyan", weight = 1]; 
+NODE_6 -> NODE_7[color = "darkcyan", weight = 1]; 
+NODE_7 -> NODE_8[color = "darkcyan", weight = 1]; 
+NODE_8 -> NODE_9[color = "darkcyan", weight = 1]; 
+NODE_9 -> NODE_10[color = "darkcyan", weight = 1]; 
+NODE_10 -> NODE_11[color = "darkcyan", weight = 1]; 
+NODE_11 -> NODE_12[color = "darkcyan", weight = 1]; 
+NODE_12 -> NODE_13[color = "darkcyan", weight = 1]; 
+NODE_13 -> NODE_14[color = "darkcyan", weight = 1]; 
+NODE_14 -> NODE_0[color = "darkcyan", weight = 1]; 
 } 

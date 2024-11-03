@@ -10,10 +10,6 @@ typedef int ListElem_t;
 
 // const int BASE_LIST_CAPA = 10;
 
-const int DATA_POISON = 0xDEDBEAF;
-const int NEXT_POISON = 0xDEB11;
-const int PREV_POISON = 0xEBA110B; 
-
 struct list_t
 {
     ListElem_t *data;
@@ -65,7 +61,7 @@ GraphFuncStatus    GraphsDtor      (graph_arr_t *graphs);
 GraphFuncStatus    MakeGraph       (list_t *list);
 GraphFuncStatus    WriteDotCode    (list_t *list);
 GraphFuncStatus    DrawGraphInFile (const char *dotfile_name, char *picture_file_name);
-GraphFuncStatus    MakeEdge        (FILE *dot_file, node_t node_from, node_t node_to);
+GraphFuncStatus    MakeEdge        (FILE *dot_file, node_t node_from, node_t node_to, const char *edge_color, size_t edge_weight);
 node_t            *GetNodesArr     (list_t *list);
 GraphFuncStatus    InitNodes       (graph_t *graph, FILE *dotfile);
 

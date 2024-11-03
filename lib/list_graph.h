@@ -4,8 +4,12 @@
 #include <stdio.h>
 
 #include "list.h"
-const int NODE_NAME_LEN        = 20;
 
+const char *const BACKGROUND_COLOR = "white";
+const char *const EDGE_NEXT_COLOR  = "darkgreen";
+const char *const EDGE_PREV_COLOR  = "darkcyan";
+
+const int NODE_NAME_LEN        = 20;
 const int START_GRAPH_ARR_SIZE = 100;
 
 struct node_t

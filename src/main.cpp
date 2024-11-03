@@ -9,7 +9,7 @@ int main(const int argc, const char *argv[])
     // TODO: remove 
     ON_LIST_DEBUG(OpenLogFile(argc, argv));
     list_t list = {};
-    ListCtor(&list, 20);
+    ListCtor(&list, 15);
     LIST_DUMP(&list);
 
     fprintf(stderr, "h = %p\n", GetHeadVal(&list));
@@ -31,6 +31,6 @@ int main(const int argc, const char *argv[])
 
     fprintf(stderr, "num in data = %d\n", GetNumInData(&list, 7));
 
-    ListDtor(&list);
+    // ListDtor(&list);
     return 0;
 }

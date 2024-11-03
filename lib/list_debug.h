@@ -19,11 +19,27 @@ enum ListError_t
 #define LOGFILE_FOLDER     "logs/"
 #define DOT_FOLDER         LOGFILE_FOLDER "dot/"
 #define GRAPH_FOLDER       LOGFILE_FOLDER "graphs/"
-#define TMP_DOTFILE_NAME   "tmp_doc_code.doc"   
+#define TMP_DOTFILE_NAME   "tmp_doc_code.doc"  
 
 const int PATH_NAME_LEN   = 50;
 const int CMD_COMMAND_LEN = 100;
 const int NODE_TEXT_LEN   = 100;
+
+const ListElem_t  DATA_POISON = 0xDEDBEAF;
+const int         NEXT_POISON = 0xDEB11;
+const int         PREV_POISON = 0xEBA110B; 
+
+const char *const DATA_POISON_MARK = "DT#";
+const char *const NEXT_POISON_MARK = "NX#";
+const char *const PREV_POISON_MARK = "PR#";
+
+#define VALUE_TO_STR(val, val_type_specifier, poison_val, poison_mark, res_str)             \
+{                                                                                           \
+    if (val == poison_val)                                                                  \
+        sprintf(res_str, "%s", poison_mark);                                                 \
+    else                                                                                    \
+        sprintf(res_str, "%" val_type_specifier, val);                                       \
+}
 
 #ifdef LIST_DEBUG
 
