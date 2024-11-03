@@ -27,11 +27,13 @@ const int NODE_TEXT_LEN   = 100;
 
 const ListElem_t  DATA_POISON = 0xDEDBEAF;
 const int         NEXT_POISON = 0xDEB11;
-const int         PREV_POISON = 0xEBA110B; 
+const int         PREV_POISON = 0xEBA110B;
+const int         END_OF_FREE = 0xF3EEE7D;
 
-const char *const DATA_POISON_MARK = "DT#";
-const char *const NEXT_POISON_MARK = "NX#";
-const char *const PREV_POISON_MARK = "PR#";
+const char *const DATA_POISON_MARK = "DATA#";
+const char *const NEXT_POISON_MARK = "NEXT#";
+const char *const PREV_POISON_MARK = "PREV#";
+const char *const END_OF_FREE_MARK = "FREE_END";
 
 #define VALUE_TO_STR(val, val_type_specifier, poison_val, poison_mark, res_str)             \
 {                                                                                           \

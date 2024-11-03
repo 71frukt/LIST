@@ -41,9 +41,20 @@ GraphFuncStatus MakeGraph(list_t *list)
 {
     assert(list);
 
-    size_t graph_num = list->graphs.index;
+    size_t graph_num = list->graphs.index++;
+    graph_t *cur_graph = &list->graphs.data[graph_num];
 
-    WriteDotCode(list);
+    cur_graph->nodes = GetNodesArr(list);
+
+    sprintf(cur_graph->node_free.label, "free");
+    cur_graph->node_free.next = list->free;
+
+cur_graph->nodes[0].next = list->head;  // KOLHOS!!!!
+cur_graph->nodes[0].prev = list->tail;
+
+fprintf(stderr, "tail = %d\n\n\n", list->tail);
+
+    WriteDotCode(cur_graph);
 
     char graph_file_name[PATH_NAME_LEN] = {};
     sprintf(graph_file_name, "graph_%llu.png", graph_num);
@@ -54,15 +65,13 @@ GraphFuncStatus MakeGraph(list_t *list)
 
     DrawGraphInFile(TMP_DOTFILE_NAME, graph_file_fullname);
 
-    list->graphs.index++;
     return GRAPH_FUNC_OK;
 }
 
-GraphFuncStatus WriteDotCode(list_t *list)
+GraphFuncStatus WriteDotCode(graph_t *graph)
 {
-    assert(list);
+    assert(graph);
 
-// fprintf(stderr, "list [%p]\ngraphs [%p]\ndotf [%s]\n", list, &list->graphs, list->graphs.dotfile_name);
     FILE *dot_file = fopen(TMP_DOTFILE_NAME, "w");
 
     if (dot_file == NULL)
@@ -71,31 +80,37 @@ GraphFuncStatus WriteDotCode(list_t *list)
         return GRAPH_FUNC_ERR;
     }
 
-    graph_t *cur_graph = &list->graphs.data[list->graphs.index];
+    fprintf(dot_file, "digraph G{         \n"   
+                        "rankdir = LR;    \n"  
+                        "bgcolor   = \"%s\";" , BACKGROUND_COLOR);
 
-    cur_graph->nodes = GetNodesArr(list);
+    InitNodes(graph, dot_file);
+    
+// head
+    MakeEdge(dot_file, graph->nodes[0], graph->nodes[graph->nodes[0].next], EDGE_HEAD_COLOR, 1);
 
-    if (cur_graph->nodes == NULL)
+// зан€тые €чейки
+    for (size_t i = graph->nodes[0].next; graph->nodes[i].index != graph->nodes[0].index; i = graph->nodes[i].next)
     {
-        fprintf(stderr, "cur_graph.nodes == NULL in WriteDotCode()\n");
-        return GRAPH_FUNC_ERR;
+        if (graph->nodes[i].next != NEXT_POISON)
+            MakeEdge(dot_file, graph->nodes[i], graph->nodes[graph->nodes[i].next], EDGE_NEXT_COLOR, 1);
+
+        fprintf(stderr, "not free: i = %lld\n", i);
     }
+// свободные €чейки
+    int free_index = graph->node_free.next;
+    MakeEdge(dot_file, graph->node_free, graph->nodes[free_index], EDGE_FREE_COLOR, 1);
 
-    fprintf(dot_file, "digraph G{               \n   \
-                        rankdir = LR;           \n   \
-                        bgcolor   = \"%s\";" , BACKGROUND_COLOR);
-
-    InitNodes(cur_graph, dot_file);
-
-    for (int i = 0; i < list->capacity; i++)
+    for (size_t i = graph->node_free.next; graph->nodes[i].next != END_OF_FREE; i = graph->nodes[i].next)
     {
-        MakeEdge(dot_file, cur_graph->nodes[i], cur_graph->nodes[cur_graph->nodes[i].next], EDGE_PREV_COLOR, 1);
-        fprintf(stderr, "\t i = %d, nx = %d\n", i, cur_graph->nodes[i].next);
+        fprintf(stderr, "free: i = %lld, [i].next = %d, [0].prev = %d\n", i, graph->nodes[i].next, graph->nodes[0].prev);
+        MakeEdge(dot_file, graph->nodes[i], graph->nodes[graph->nodes[i].next], EDGE_FREE_COLOR, 1);
     }
+    
 
     fprintf(dot_file, "} \n");
 
-    free(cur_graph->nodes);
+    free(graph->nodes);
 
     if (fclose(dot_file) != 0)
     {
@@ -113,31 +128,31 @@ GraphFuncStatus InitNodes(graph_t *graph, FILE *dotfile)
 
     node_t *nodes = graph->nodes;
 
-
-    for (size_t i = 0; i < graph->nodes_num; i++)
+    for (size_t i = 0; i < graph->nodes_count; i++)
     {
         char next_val_str[10] = {};
-        VALUE_TO_STR(nodes[i].next, "d", NEXT_POISON, NEXT_POISON_MARK, next_val_str);
-
-        char prev_val_str[10] = {};
-        VALUE_TO_STR(nodes[i].prev, "d", PREV_POISON, PREV_POISON_MARK, prev_val_str);
-
         char node_val_str[10] = {};
-        VALUE_TO_STR(nodes[i].val, LIST_ELEM_FORMAT, DATA_POISON, DATA_POISON_MARK, node_val_str);
+        char prev_val_str[10] = {};
 
-        // if (nodes[i].next == NEXT_POISON)
-            // sprintf(next_val_str, "%s", NEXT_POISON_MARK);
-        // else 
-            // sprintf(next_val_str, "%d", nodes[i].next);
+        VALUE_TO_STR(nodes[i].next, "d",              NEXT_POISON, NEXT_POISON_MARK, next_val_str);
+        VALUE_TO_STR(nodes[i].next, "d",              END_OF_FREE, END_OF_FREE_MARK, next_val_str);
+        VALUE_TO_STR(nodes[i].prev, "d",              PREV_POISON, PREV_POISON_MARK, prev_val_str);
+        VALUE_TO_STR(nodes[i].val,  LIST_ELEM_FORMAT, DATA_POISON, DATA_POISON_MARK, node_val_str);
 
-        fprintf(dotfile, "%s [shape = \"record\", label = \" index = %d | value = %s | next = %s | prev = %s\"]\n", 
+        fprintf(dotfile, "%s [shape = \"record\", label = \"index = %d | value = %s | next = %s | prev = %s\"]\n", 
             nodes[i].label, nodes[i].index, node_val_str, next_val_str, prev_val_str);
     }
 
-    for (size_t i = 0; i < graph->nodes_num - 1; i++)
+    node_t node_free = graph->node_free;
+    fprintf(dotfile, "%s [shape = \"component\", label = \"%s:\\n %d\"]\n", 
+            node_free.label, node_free.label, node_free.next);
+
+    for (size_t i = 0; i < graph->nodes_count - 1; i++)
     {
         MakeEdge(dotfile, nodes[i], nodes[i + 1], BACKGROUND_COLOR, 1000);
     }
+
+    fprintf(dotfile, " { rank = same; %s; %s; }\n", node_free.label, nodes[0].label);
 
     return GRAPH_FUNC_OK;
 }
@@ -179,7 +194,7 @@ GraphFuncStatus MakeEdge(FILE *dot_file, node_t node_from, node_t node_to, const
     assert(edge_color);
 
     fprintf(dot_file, "%s -> %s[color = \"%s\", weight = %lld]; \n", node_from.label, node_to.label, edge_color, edge_weight);
-    fprintf(stderr, "%s -> %s; \n", node_from.label, node_to.label);
+    // fprintf(stderr, "%s -> %s; \n", node_from.label, node_to.label);
 
     return GRAPH_FUNC_OK;
 }

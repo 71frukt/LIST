@@ -5,9 +5,11 @@
 
 #include "list.h"
 
-const char *const BACKGROUND_COLOR = "#AEF8FD";
-const char *const EDGE_NEXT_COLOR  = "darkgreen";
-const char *const EDGE_PREV_COLOR  = "darkcyan";
+const char *const BACKGROUND_COLOR = "#FFF3D1";
+const char *const EDGE_NEXT_COLOR  = "darkcyan";
+const char *const EDGE_PREV_COLOR  = "darkred";
+const char *const EDGE_FREE_COLOR  = "darkgreen";
+const char *const EDGE_HEAD_COLOR  = "#0000CC";
 
 const int NODE_NAME_LEN        = 20;
 const int START_GRAPH_ARR_SIZE = 100;
@@ -23,8 +25,9 @@ struct node_t
 
 struct graph_t
 {
-    size_t  nodes_num;
+    size_t  nodes_count;
     node_t *nodes;
+    node_t  node_free;
 };
 
 struct graph_arr_t

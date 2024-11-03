@@ -34,17 +34,17 @@ enum ListFuncStatus
     LIST_FUNC_ERR
 };
 
-ListFuncStatus ListCtor    (list_t *list, int start_capa);
-ListFuncStatus ListDtor    (list_t *list);
+ListFuncStatus ListCtor (list_t *list, int start_capa);
+ListFuncStatus ListDtor (list_t *list);
 
-ListElem_t    *GetHeadVal  (list_t *list);
-ListElem_t    *GetTailVal  (list_t *list);
-ListFuncStatus ListBind           (list_t *list, int prev_el_num, int next_el_num);
-ListFuncStatus ListPasteHead      (list_t *list, ListElem_t elem);
-ListFuncStatus ListPasteTail      (list_t *list, ListElem_t elem);
-ListFuncStatus ListPasteAfter     (list_t *list, ListElem_t elem, int elem_num);
-ListFuncStatus ListDelElem        (list_t *list, int elem_num);
-int            GetNumInData       (list_t *list, int num_in_list);
+ListElem_t    *GetHeadVal     (list_t *list);
+ListElem_t    *GetTailVal     (list_t *list);
+ListFuncStatus ListBind       (list_t *list, int prev_el_num, int next_el_num);
+ListFuncStatus ListPasteHead  (list_t *list, ListElem_t elem);
+ListFuncStatus ListPasteTail  (list_t *list, ListElem_t elem);
+ListFuncStatus ListPasteAfter (list_t *list, ListElem_t elem, int elem_num);
+ListFuncStatus ListDelElem    (list_t *list, int elem_num);
+int            GetNumInData   (list_t *list, int num_in_list);
 
 // debug functions
 void  ListAssert   (list_t *list, const char *file, int line, const char *func);
@@ -59,7 +59,7 @@ void  ListDump     (list_t *list, const char *file, int line, const char *func);
 GraphFuncStatus    GraphsCtor      (graph_arr_t *graphs);
 GraphFuncStatus    GraphsDtor      (graph_arr_t *graphs);
 GraphFuncStatus    MakeGraph       (list_t *list);
-GraphFuncStatus    WriteDotCode    (list_t *list);
+GraphFuncStatus    WriteDotCode    (graph_t *graph);
 GraphFuncStatus    DrawGraphInFile (const char *dotfile_name, char *picture_file_name);
 GraphFuncStatus    MakeEdge        (FILE *dot_file, node_t node_from, node_t node_to, const char *edge_color, size_t edge_weight);
 node_t            *GetNodesArr     (list_t *list);

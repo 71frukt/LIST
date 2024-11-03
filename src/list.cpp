@@ -30,7 +30,7 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
     }
 
     if (list->capacity > 0)
-        list->next[list->capacity - 1] = 0;             // последн€€ свободна€ €чейка
+        list->next[list->capacity - 1] = END_OF_FREE;             // последн€€ свободна€ €чейка
 
     ON_LIST_DEBUG 
     (
@@ -44,7 +44,7 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
 
         for (size_t i = 0; i < list->graphs.size; i++)
         {
-            list->graphs.data[i].nodes_num = list->capacity;
+            list->graphs.data[i].nodes_count = list->capacity;
         }
 
         MakeGraph(list);
@@ -140,15 +140,18 @@ ListFuncStatus ListPasteHead(list_t *list, ListElem_t elem)
     // list->next[free_cell_num] = list->head;
 
     if (list->head == 0)                // если первый элемент списка
+    {
         list->tail = free_cell_num;
-
+    }
+    
     ListBind(list, free_cell_num, list->head);
-
+    
     list->head = free_cell_num;
 
     list->data[free_cell_num] = elem;
 
     LIST_ASSERT(list);
+    fprintf(stderr, "end of paste head\n");
     return LIST_FUNC_OK;
 }
 

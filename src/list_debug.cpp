@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
 
 #include "list.h"
 
@@ -9,14 +10,14 @@ FILE *LogFile = NULL;
 void ListAssert(list_t *list, const char *file, int line, const char *func)
 {
     int error = ListVerify(list);
-
+        fprintf(stderr, "in my assertion in\t%s:%d\t(%s)\n", file, line, func);
     if (list != NULL)
         list->error |= error;
     if (error != LIST_OK)
     {
         fprintf(stderr, "my assertion failed in\t%s:%d\t(%s)\nErrors:\t", file, line, func);
         PrintListErr(error);
-        abort();
+        assert(0);
     }
 }
 
@@ -104,6 +105,7 @@ void CloseLogFile(void)
 
 void ListDump(list_t *list, const char *file, int line, const char *func)
 {
+    fprintf(stderr, "Start of DUMP\n");
     fprintf(LogFile, "LIST_DUMP called from %s:%d  (%s)\n{\n", file, line, func);
 
     fprintf(LogFile, "\thead = %d\n\ttail = %d\n\tfree = %d\n\tcapacity = %d\n\n",
@@ -127,7 +129,6 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
         else
             fprintf(LogFile, "%3d ", list->data[i]);
     }
-
 // next
     fprintf(LogFile, "\n\tnext [%p]:", list->next);
 
@@ -137,6 +138,9 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
     {
         if (list->next[i] == NEXT_POISON)
             fprintf(LogFile, "NX# ");
+
+        if (list->next[i] == END_OF_FREE)
+            fprintf(LogFile, END_OF_FREE_MARK);
 
         else
             fprintf(LogFile, "%3d ", list->next[i]);
@@ -165,11 +169,15 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
 
     while (num != 0)
     {
-        fprintf(LogFile, "%3" LIST_ELEM_FORMAT, list->data[num]);
+        fprintf(stderr, "num = %d, tail = %d\n", num, list->tail);
+        fprintf(LogFile, "%3" LIST_ELEM_FORMAT " ", list->data[num]);
+        fprintf(stderr, "%3" LIST_ELEM_FORMAT " ", list->data[num]);
         num = list->next[num];
-    }
+    } 
 
     fprintf(LogFile, "\n}\n\n");
 
+    fprintf(stderr, "End of DUMP\n");
     MakeGraph(list);
+
 }

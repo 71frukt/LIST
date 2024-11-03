@@ -18,8 +18,8 @@ int main(const int argc, const char *argv[])
     // ListPasteHead(&list, 10);
     // ListPasteHead(&list, 20);
     // ListPasteHead(&list, 30);
-
     ListPasteHead(&list, 100);
+fprintf(stderr, "padaet zdes\n");
     ListPasteHead(&list, 200);
     ListPasteHead(&list, 300);
     ListPasteHead(&list, 400);
@@ -31,6 +31,6 @@ int main(const int argc, const char *argv[])
 
     fprintf(stderr, "num in data = %d\n", GetNumInData(&list, 7));
 
-    // ListDtor(&list);
+    ListDtor(&list);
     return 0;
 }
