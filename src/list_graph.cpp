@@ -81,9 +81,9 @@ GraphFuncStatus WriteDotCode(list_t *list)
         return GRAPH_FUNC_ERR;
     }
 
-    fprintf(dot_file, "digraph G{ \n");
-
-    fprintf(dot_file, "rankdir = LR;\n");
+    fprintf(dot_file, "digraph G{               \n   \
+                        rankdir = LR;           \n   \
+                        bgcolor   = \"%s\";" , BACKGROUND_COLOR);
 
     InitNodes(cur_graph, dot_file);
 
@@ -136,7 +136,7 @@ GraphFuncStatus InitNodes(graph_t *graph, FILE *dotfile)
 
     for (size_t i = 0; i < graph->nodes_num - 1; i++)
     {
-        MakeEdge(dotfile, nodes[i], nodes[i + 1], "white", 1000);
+        MakeEdge(dotfile, nodes[i], nodes[i + 1], BACKGROUND_COLOR, 1000);
     }
 
     return GRAPH_FUNC_OK;

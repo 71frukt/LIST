@@ -5,7 +5,7 @@
 
 #include "list.h"
 
-const char *const BACKGROUND_COLOR = "white";
+const char *const BACKGROUND_COLOR = "#AEF8FD";
 const char *const EDGE_NEXT_COLOR  = "darkgreen";
 const char *const EDGE_PREV_COLOR  = "darkcyan";
 
