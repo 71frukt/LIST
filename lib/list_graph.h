@@ -10,6 +10,7 @@ const char *const EDGE_NEXT_COLOR  = "darkcyan";
 const char *const EDGE_PREV_COLOR  = "darkred";
 const char *const EDGE_FREE_COLOR  = "darkgreen";
 const char *const EDGE_HEAD_COLOR  = "#0000CC";
+const char *const EDGE_TAIL_COLOR  = "#B701EF";
 
 const int NODE_NAME_LEN        = 20;
 const int START_GRAPH_ARR_SIZE = 100;
@@ -28,6 +29,8 @@ struct graph_t
     size_t  nodes_count;
     node_t *nodes;
     node_t  node_free;
+    node_t  node_head;
+    node_t  node_tail;
 };
 
 struct graph_arr_t
