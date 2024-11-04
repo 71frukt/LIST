@@ -1,0 +1,57 @@
+digraph G{           
+rankdir = LR;      
+bgcolor = "#FFF3D1";  
+NODE_0 [label = "manager"]
+NODE_1 [shape = "record", label = "index = 1 | value = 10 | next = 9 | prev = 11"]
+NODE_2 [shape = "record", label = "index = 2 | value = 20 | next = 11 | prev = 10"]
+NODE_3 [shape = "record", label = "index = 3 | value = 30 | next = 10 | prev = 4"]
+NODE_4 [shape = "record", label = "index = 4 | value = 100 | next = 3 | prev = 5"]
+NODE_5 [shape = "record", label = "index = 5 | value = 200 | next = 4 | prev = 6"]
+NODE_6 [shape = "record", label = "index = 6 | value = 300 | next = 5 | prev = 7"]
+NODE_7 [shape = "record", label = "index = 7 | value = 400 | next = 6 | prev = 8"]
+NODE_8 [shape = "record", label = "index = 8 | value = 500 | next = 7 | prev = PREV#"]
+NODE_9 [shape = "record", label = "index = 9 | value = 150 | next = 0 | prev = 1"]
+NODE_10 [shape = "record", label = "index = 10 | value = 350 | next = 2 | prev = 3"]
+NODE_11 [shape = "record", label = "index = 11 | value = 250 | next = 1 | prev = 2"]
+NODE_12 [shape = "record", label = "index = 12 | value = DATA# | next = 13 | prev = PREV#"]
+NODE_13 [shape = "record", label = "index = 13 | value = DATA# | next = 14 | prev = PREV#"]
+NODE_14 [shape = "record", label = "index = 14 | value = DATA# | next = FREE_END | prev = PREV#"]
+NODE_0 -> NODE_1[color = "#FFF3D1", weight = 1000]; 
+NODE_1 -> NODE_2[color = "#FFF3D1", weight = 1000]; 
+NODE_2 -> NODE_3[color = "#FFF3D1", weight = 1000]; 
+NODE_3 -> NODE_4[color = "#FFF3D1", weight = 1000]; 
+NODE_4 -> NODE_5[color = "#FFF3D1", weight = 1000]; 
+NODE_5 -> NODE_6[color = "#FFF3D1", weight = 1000]; 
+NODE_6 -> NODE_7[color = "#FFF3D1", weight = 1000]; 
+NODE_7 -> NODE_8[color = "#FFF3D1", weight = 1000]; 
+NODE_8 -> NODE_9[color = "#FFF3D1", weight = 1000]; 
+NODE_9 -> NODE_10[color = "#FFF3D1", weight = 1000]; 
+NODE_10 -> NODE_11[color = "#FFF3D1", weight = 1000]; 
+NODE_11 -> NODE_12[color = "#FFF3D1", weight = 1000]; 
+NODE_12 -> NODE_13[color = "#FFF3D1", weight = 1000]; 
+NODE_13 -> NODE_14[color = "#FFF3D1", weight = 1000]; 
+head [shape = "component", label = "head:\n 8"]
+tail [shape = "component", label = "tail:\n 9"]
+free [shape = "component", label = "free:\n 12"]
+ { rank = same; head; tail; free; NODE_0; }
+head -> tail[color = "#FFF3D1", weight = 1000]; 
+tail -> free[color = "#FFF3D1", weight = 1000]; 
+free -> NODE_0[color = "#FFF3D1", weight = 1000]; 
+head -> NODE_8[color = "#0000CC", weight = 1]; 
+tail -> NODE_9[color = "#B701EF", weight = 1]; 
+free -> NODE_12[color = "darkgreen", weight = 1]; 
+NODE_0 -> NODE_8[color = "darkcyan", weight = 1]; 
+NODE_8 -> NODE_7[color = "darkcyan", weight = 1]; 
+NODE_7 -> NODE_6[color = "darkcyan", weight = 1]; 
+NODE_6 -> NODE_5[color = "darkcyan", weight = 1]; 
+NODE_5 -> NODE_4[color = "darkcyan", weight = 1]; 
+NODE_4 -> NODE_3[color = "darkcyan", weight = 1]; 
+NODE_3 -> NODE_10[color = "darkcyan", weight = 1]; 
+NODE_10 -> NODE_2[color = "darkcyan", weight = 1]; 
+NODE_2 -> NODE_11[color = "darkcyan", weight = 1]; 
+NODE_11 -> NODE_1[color = "darkcyan", weight = 1]; 
+NODE_1 -> NODE_9[color = "darkcyan", weight = 1]; 
+NODE_9 -> NODE_0[color = "darkcyan", weight = 1]; 
+NODE_12 -> NODE_13[color = "darkgreen", weight = 1]; 
+NODE_13 -> NODE_14[color = "darkgreen", weight = 1]; 
+} 

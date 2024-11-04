@@ -37,8 +37,8 @@ enum ListFuncStatus
 ListFuncStatus ListCtor (list_t *list, int start_capa);
 ListFuncStatus ListDtor (list_t *list);
 
-ListElem_t    *GetHeadVal     (list_t *list);
-ListElem_t    *GetTailVal     (list_t *list);
+ListElem_t     GetHeadVal     (list_t *list);
+ListElem_t     GetTailVal     (list_t *list);
 ListFuncStatus ListBind       (list_t *list, int prev_el_num, int next_el_num);
 ListFuncStatus ListPasteHead  (list_t *list, ListElem_t elem);
 ListFuncStatus ListPasteTail  (list_t *list, ListElem_t elem);

@@ -10,9 +10,10 @@ FILE *LogFile = NULL;
 void ListAssert(list_t *list, const char *file, int line, const char *func)
 {
     int error = ListVerify(list);
-        fprintf(stderr, "in my assertion in\t%s:%d\t(%s)\n", file, line, func);
+
     if (list != NULL)
         list->error |= error;
+
     if (error != LIST_OK)
     {
         fprintf(stderr, "my assertion failed in\t%s:%d\t(%s)\nErrors:\t", file, line, func);
@@ -173,7 +174,6 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
     while (num != 0)
     {
         fprintf(LogFile, "%3" LIST_ELEM_FORMAT " ", list->data[num]);
-        fprintf(stderr, "num = %d, next[num] = %d\n", num, list->next[num]);
         num = list->next[num];
     } 
 

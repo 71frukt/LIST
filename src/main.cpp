@@ -12,8 +12,8 @@ int main(const int argc, const char *argv[])
     ListCtor(&list, 15);
     LIST_DUMP(&list);
 
-    // fprintf(stderr, "h = %p\n", GetHeadVal(&list));
-    // fprintf(stderr, "t = %p\n", GetTailVal(&list));
+    // fprintf(stderr, "h = %d\n", GetHeadVal(&list));
+    // fprintf(stderr, "t = %d\n", GetTailVal(&list));
 
     ListPasteHead(&list, 10);
     ListPasteHead(&list, 20);
@@ -32,7 +32,7 @@ int main(const int argc, const char *argv[])
 
     LIST_DUMP(&list);
     LIST_DUMP(&list);
-    ListDtor(&list);
+    // ListDtor(&list);
 
     fprintf(stderr, "END!\n");
     return 0;

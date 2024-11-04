@@ -15,16 +15,22 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
     }
 
     list->capacity = start_capa;
-    list->head     = 0;
-    list->tail     = 0;
-    list->free     = 1;
 
     // list->capacity =+ ((start_capa > BASE_LIST_CAPA) ? start_capa : BASE_LIST_CAPA);
     list->data = (ListElem_t *) calloc(list->capacity, sizeof(ListElem_t));
     list->next = (int *)        calloc(list->capacity, sizeof(int));
     list->prev = (int *)        calloc(list->capacity, sizeof(int));
 
-    for (int i = 1; i < list->capacity - 1; i++)     // св€зный список свободных €чеек
+    list->free     = 1;
+
+    list->next[0]  = 0;                                         //aka head
+    list->prev[0]  = 0;                                         //aka tail
+    list->data[0]  = DATA_POISON;
+
+    list->head     = list->next[0];
+    list->tail     = list->prev[0];
+
+    for (int i = 1; i < list->capacity - 1; i++)                // св€зный список свободных €чеек
     {
         list->next[i] = i + 1;
     }
@@ -34,7 +40,7 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
 
     ON_LIST_DEBUG 
     (
-        for (int i = 0; i < list->capacity; i++)
+        for (int i = 1; i < list->capacity; i++)
         {
             list->data[i] = DATA_POISON;
             list->prev[i] = PREV_POISON;
@@ -46,8 +52,6 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
         {
             list->graphs.data[i].nodes_count = list->capacity;
         }
-
-        MakeGraph(list);
     );
 
     LIST_ASSERT(list);
@@ -70,25 +74,27 @@ ListFuncStatus ListDtor(list_t *list)
     );
 
     list->capacity = 0;
-    list->head     = 1;
-    list->tail     = 1;
     list->free     = 1;
+    list->head     = 0;
+    list->tail     = 0;
 
     return LIST_FUNC_OK;
 }
 
-ListElem_t *GetHeadVal(list_t *list)
+ListElem_t GetHeadVal(list_t *list)
 {
     LIST_ASSERT(list);
 
-    return &list->data[list->head];
+    // return list->data[list->next[0]];
+    return list->data[list->head];
 }
 
-ListElem_t *GetTailVal(list_t *list)
+ListElem_t GetTailVal(list_t *list)
 {
     LIST_ASSERT(list);
 
-    return &list->data[list->tail];
+    // return list->data[list->prev[0]];
+    return list->data[list->tail];
 }
 
 int GetNumInData(list_t *list, int num_in_list)
@@ -105,31 +111,6 @@ int GetNumInData(list_t *list, int num_in_list)
     }
 
     return num_in_data;
-}
-
-ListFuncStatus ListPasteTail(list_t *list, ListElem_t elem)
-{
-    LIST_ASSERT(list);
-
-    int free_cell_num = list->free;
-    list->free = list->next[list->free];
-
-    // list->next[list->tail]    = free_cell_num;
-    // list->next[free_cell_num] = 0;
-
-    if (list->tail == 0)                // если первый элемент списка
-        list->head = free_cell_num;
-
-    ListBind(list, list->tail, free_cell_num);
-    ListBind(list, free_cell_num, 0);
-        
-    list->tail = free_cell_num;
-
-    list->data[free_cell_num] = elem;
-    fprintf(stderr, "\n\t\tIn Paste tail: free_cell_num = %d, head = %d\n", free_cell_num, list->head);
-    LIST_ASSERT(list);
-    LIST_DUMP(list);
-    return LIST_FUNC_OK;
 }
 
 ListFuncStatus ListPasteHead(list_t *list, ListElem_t elem)
@@ -155,6 +136,31 @@ ListFuncStatus ListPasteHead(list_t *list, ListElem_t elem)
     LIST_ASSERT(list);
     LIST_DUMP(list);
     fprintf(stderr, "end of paste head\n");
+    return LIST_FUNC_OK;
+}
+
+ListFuncStatus ListPasteTail(list_t *list, ListElem_t elem)
+{
+    LIST_ASSERT(list);
+
+    int free_cell_num = list->free;
+    list->free = list->next[list->free];
+
+    // list->next[list->tail]    = free_cell_num;
+    // list->next[free_cell_num] = 0;
+
+    if (list->tail == 0)                // если первый элемент списка
+        list->head = free_cell_num;
+
+    ListBind(list, list->tail, free_cell_num);
+    ListBind(list, free_cell_num, 0);
+        
+    list->tail = free_cell_num;
+
+    list->data[free_cell_num] = elem;
+    fprintf(stderr, "\n\t\tIn Paste tail: free_cell_num = %d, head = %d\n", free_cell_num, list->head);
+    LIST_ASSERT(list);
+    LIST_DUMP(list);
     return LIST_FUNC_OK;
 }
 

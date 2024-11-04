@@ -86,24 +86,36 @@ GraphFuncStatus WriteDotCode(graph_t *graph)
 
     fprintf(dot_file, "digraph G{           \n"   
                         "rankdir = LR;      \n"  
-                        "bgcolor   = \"%s\";\n" , BACKGROUND_COLOR);
+                        "bgcolor = \"%s\";  \n" , BACKGROUND_COLOR);
 
     InitNodes(graph, dot_file);
     
-    if (graph->node_head.next != 0)
-        MakeEdge(dot_file, graph->node_head, graph->nodes[graph->node_head.next], EDGE_HEAD_COLOR, 1);
-
-    if (graph->node_tail.next != 0) 
-        MakeEdge(dot_file, graph->node_tail, graph->nodes[graph->node_tail.next], EDGE_TAIL_COLOR, 1);
-
-    if (graph->node_free.next != 0)
-        MakeEdge(dot_file, graph->node_free, graph->nodes[graph->node_free.next], EDGE_FREE_COLOR, 1);
+    MakeEdge(dot_file, graph->node_head, graph->nodes[graph->node_head.next], EDGE_HEAD_COLOR, 1);
+    MakeEdge(dot_file, graph->node_tail, graph->nodes[graph->node_tail.next], EDGE_TAIL_COLOR, 1);
+    MakeEdge(dot_file, graph->node_free, graph->nodes[graph->node_free.next], EDGE_FREE_COLOR, 1);
 
 // зан€тые €чейки
-    for (size_t i = graph->nodes[0].next; graph->nodes[i].index != graph->nodes[0].index; i = graph->nodes[i].next)
+    // for (size_t i = 0; ; i = graph->nodes[i].next)
+    // {
+    //     fprintf(stderr, "NODES[%lld] NEXT = %d\n\n", i, graph->nodes[i].next);
+    //     if (graph->nodes[i].next != NEXT_POISON)
+    //         MakeEdge(dot_file, graph->nodes[i], graph->nodes[graph->nodes[i].next], EDGE_NEXT_COLOR, 1);
+
+    //     if (graph->nodes[i].index == graph->nodes[0].index)
+    //         break;
+    // }
+
+    size_t index = 0;
+    while (true)
     {
-        if (graph->nodes[i].next != NEXT_POISON && graph->nodes[i].next != 0)
-            MakeEdge(dot_file, graph->nodes[i], graph->nodes[graph->nodes[i].next], EDGE_NEXT_COLOR, 1);
+        fprintf(stderr, "NODES[%lld] NEXT = %d\n\n", index, graph->nodes[index].next);
+        if (graph->nodes[index].next != NEXT_POISON)
+            MakeEdge(dot_file, graph->nodes[index], graph->nodes[graph->nodes[index].next], EDGE_NEXT_COLOR, 1);
+
+        index = graph->nodes[index].next;
+
+        if (graph->nodes[index].index == graph->nodes[0].index)
+            break;
     }
 
 // свободные €чейки    
@@ -133,7 +145,7 @@ GraphFuncStatus InitNodes(graph_t *graph, FILE *dotfile)
 
     node_t *nodes = graph->nodes;
 
-    fprintf(dotfile, "%s [shape = \"plaintext\", label = \"\"]\n", 
+    fprintf(dotfile, "%s [label = \"manager\"]\n", 
             nodes[0].label);
 
     for (size_t i = 1; i < graph->nodes_count; i++)
@@ -194,7 +206,6 @@ node_t *GetNodesArr(list_t *list)
     assert(list);
 
     node_t *nodes = (node_t *) calloc(list->capacity, sizeof(node_t));
-
 
     for (int i = 0; i < list->capacity; i++)
     {

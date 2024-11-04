@@ -47,13 +47,8 @@ const char *const END_OF_FREE_MARK = "FREE_END";
 
 #define ON_LIST_DEBUG(...) __VA_ARGS__
 
-#define LIST_DUMP(list)  ListDump(list, __FILE__, __LINE__, __func__)
-
-#define LIST_ASSERT(list)                                                   \
-{                                                                           \
-    ListAssert(list, __FILE__, __LINE__, __func__);                         \
-    /*LIST_DUMP(list);*/                                                    \
-}            
+#define LIST_DUMP(list)    ListDump  (list, __FILE__, __LINE__, __func__)
+#define LIST_ASSERT(list)  ListAssert(list, __FILE__, __LINE__, __func__)            
 
 #else
 #define ON_LIST_DEBUG(...)
