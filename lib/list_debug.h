@@ -15,7 +15,7 @@ enum ListError_t
     LIST_FREE_OVERFLOW  = 1 << 7
 };
 
-#define BASE_LOGFILE_NAME  "list_logfile.log"
+#define BASE_LOGFILE_NAME  "list_logfile.html"
 #define LOGFILE_FOLDER     "logs/"
 #define DOT_FOLDER         LOGFILE_FOLDER "dot/"
 #define GRAPH_FOLDER       LOGFILE_FOLDER "graphs/"

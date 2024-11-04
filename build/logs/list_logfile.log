@@ -1,560 +1,270 @@
-LIST_DUMP called from src/list_graph.cpp:78  (GetNodesArr)
+<html>                                            
+	<head>                                   
+	<title>List Logs</title>                 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+	</head>                                  
+	<body>                                   
+	<title>List Logs</title>                 
+	<div class="jumbotron text-center">    
+		<h1>List logs</h1>                     
+	</div>                                   
+	<pre>                                    
+LIST_DUMP called from src/list.cpp:58  (ListCtor)
 {
 	head = 0
 	tail = 0
 	free = 1
-	capacity = 20
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  0 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	
+	list [000001c4016614f0]:	
 }
 
-LIST_DUMP called from src/list.cpp:48  (ListCtor)
+LIST_DUMP called from src/main.cpp:13  (main)
 {
 	head = 0
 	tail = 0
 	free = 1
-	capacity = 20
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  0 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	
+	list [000001c4016614f0]:	
 }
 
-LIST_DUMP called from src/main.cpp:12  (main)
-{
-	head = 0
-	tail = 0
-	free = 1
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	
-}
-
-LIST_DUMP called from src/list.cpp:75  (GetHeadVal)
-{
-	head = 0
-	tail = 0
-	free = 1
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	
-}
-
-LIST_DUMP called from src/list.cpp:82  (GetTailVal)
-{
-	head = 0
-	tail = 0
-	free = 1
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	
-}
-
-LIST_DUMP called from src/list.cpp:128  (ListPasteHead)
-{
-	head = 0
-	tail = 0
-	free = 1
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	
-}
-
-LIST_DUMP called from src/list.cpp:174  (ListBind)
-{
-	head = 0
-	tail = 1
-	free = 2
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	
-}
-
-LIST_DUMP called from src/list.cpp:144  (ListPasteHead)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 1
 	tail = 1
 	free = 2
-	capacity = 20
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  1   0   3   4   5   6   7   8   9  10  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  1   0 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	100 
+	list [000001c4016614f0]:	 10 
 }
 
-LIST_DUMP called from src/list.cpp:128  (ListPasteHead)
-{
-	head = 1
-	tail = 1
-	free = 2
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	100 
-}
-
-LIST_DUMP called from src/list.cpp:174  (ListBind)
-{
-	head = 1
-	tail = 1
-	free = 3
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	100 
-}
-
-LIST_DUMP called from src/list.cpp:144  (ListPasteHead)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 2
 	tail = 1
 	free = 3
-	capacity = 20
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  2   0   1   4   5   6   7   8   9  10  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  1   2   0 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	200 100 
+	list [000001c4016614f0]:	 20  10 
 }
 
-LIST_DUMP called from src/list.cpp:128  (ListPasteHead)
-{
-	head = 2
-	tail = 1
-	free = 3
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	200 100 
-}
-
-LIST_DUMP called from src/list.cpp:174  (ListBind)
-{
-	head = 2
-	tail = 1
-	free = 4
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	200 100 
-}
-
-LIST_DUMP called from src/list.cpp:144  (ListPasteHead)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 3
 	tail = 1
 	free = 4
-	capacity = 20
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 300 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20  30 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  3   0   1   2   5   6   7   8   9  10  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  1   2   3   0 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	300 200 100 
+	list [000001c4016614f0]:	 30  20  10 
 }
 
-LIST_DUMP called from src/list.cpp:128  (ListPasteHead)
-{
-	head = 3
-	tail = 1
-	free = 4
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	300 200 100 
-}
-
-LIST_DUMP called from src/list.cpp:174  (ListBind)
-{
-	head = 3
-	tail = 1
-	free = 5
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   2   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	300 200 100 
-}
-
-LIST_DUMP called from src/list.cpp:144  (ListPasteHead)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 4
 	tail = 1
 	free = 5
-	capacity = 20
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 300 400 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   2   3   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20  30 100 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  4   0   1   2   3   6   7   8   9  10  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  1   2   3   4   0 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	400 300 200 100 
+	list [000001c4016614f0]:	100  30  20  10 
 }
 
-LIST_DUMP called from src/list.cpp:128  (ListPasteHead)
-{
-	head = 4
-	tail = 1
-	free = 5
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 400 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   2   3   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	400 300 200 100 
-}
-
-LIST_DUMP called from src/list.cpp:174  (ListBind)
-{
-	head = 4
-	tail = 1
-	free = 6
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 400 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   2   3   6   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3   4 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	400 300 200 100 
-}
-
-LIST_DUMP called from src/list.cpp:144  (ListPasteHead)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 5
 	tail = 1
 	free = 6
-	capacity = 20
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20  30 100 200 DT# DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  5   0   1   2   3   4   7   8   9  10  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  1   2   3   4   5   0 PR# PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	500 400 300 200 100 
+	list [000001c4016614f0]:	200 100  30  20  10 
 }
 
-LIST_DUMP called from src/list.cpp:150  (ListPasteAfter)
-{
-	head = 5
-	tail = 1
-	free = 6
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	500 400 300 200 100 
-}
-
-LIST_DUMP called from src/list.cpp:105  (ListPasteTail)
-{
-	head = 5
-	tail = 1
-	free = 6
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	500 400 300 200 100 
-}
-
-LIST_DUMP called from src/list.cpp:174  (ListBind)
-{
-	head = 5
-	tail = 1
-	free = 7
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   0   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3   4   5 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	500 400 300 200 100 
-}
-
-LIST_DUMP called from src/list.cpp:174  (ListBind)
-{
-	head = 5
-	tail = 1
-	free = 7
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   1   2   3   4   7   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  1   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	500 400 300 200 100 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 233684655 
-}
-
-LIST_DUMP called from src/list.cpp:123  (ListPasteTail)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 5
 	tail = 6
 	free = 7
-	capacity = 20
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   1   2   3   4   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20  30 100 200 150 DT# DT# DT# DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  5   6   1   2   3   4   0   8   9  10  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  6   2   3   4   5   0   1 PR# PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	500 400 300 200 100 150 
+	list [000001c4016614f0]:	200 100  30  20  10 150 
 }
 
-LIST_DUMP called from src/list.cpp:150  (ListPasteAfter)
-{
-	head = 5
-	tail = 6
-	free = 7
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   1   2   3   4   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	500 400 300 200 100 150 
-}
-
-LIST_DUMP called from src/list.cpp:174  (ListBind)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 5
 	tail = 6
 	free = 8
-	capacity = 20
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   1   2   3   4   0   8   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   2   3   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20  30 100 200 150 350 DT# DT# DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  5   6   1   7   3   4   0   2   9  10  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  6   2   7   4   5   0   1   3 PR# PR# PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	500 400 300 200 100 150 
+	list [000001c4016614f0]:	200 100  30 350  20  10 150 
 }
 
-LIST_DUMP called from src/list.cpp:174  (ListBind)
-{
-	head = 5
-	tail = 6
-	free = 8
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   1   2   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   2   7   4   5 PR#   1 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	500 400 300 200 100 150 
-}
-
-LIST_DUMP called from src/list.cpp:169  (ListPasteAfter)
-{
-	head = 5
-	tail = 6
-	free = 8
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   1   7   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   2   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	500 400 300 350 200 100 150 
-}
-
-LIST_DUMP called from src/list.cpp:150  (ListPasteAfter)
-{
-	head = 5
-	tail = 6
-	free = 8
-	capacity = 20
-
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   1   7   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   2   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
-
-	list [000001d9e1511510]:	500 400 300 350 200 100 150 
-}
-
-LIST_DUMP called from src/list.cpp:174  (ListBind)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 5
 	tail = 6
 	free = 9
-	capacity = 20
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   1   7   3   4   0   2   9  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   2   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20  30 100 200 150 350 250 DT# DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  5   6   8   7   3   4   0   2   1  10  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  6   8   7   4   5   0   1   3   2 PR# PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	500 400 300 350 200 100 150 
+	list [000001c4016614f0]:	200 100  30 350  20 250  10 150 
 }
 
-LIST_DUMP called from src/list.cpp:174  (ListBind)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 5
-	tail = 6
-	free = 9
-	capacity = 20
+	tail = 9
+	free = 10
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 350 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   1   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   8   7   4   5 PR#   1   3 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20  30 100 200 150 350 250 444 DT# DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  5   6   8   7   3   4   9   2   1   0  11  12  13  14 FREE_END
+	prev [000001c4016614f0]:	  9   8   7   4   5   0   1   3   2   6 PR# PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	500 400 300 350 200 100 150 
+	list [000001c4016614f0]:	200 100  30 350  20 250  10 150 444 
 }
 
-LIST_DUMP called from src/list.cpp:169  (ListPasteAfter)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 5
-	tail = 6
-	free = 9
-	capacity = 20
+	tail = 10
+	free = 11
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 350 250 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   8   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   8   7   4   5 PR#   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20  30 100 200 150 350 250 444 555 DT# DT# DT# DT# 
+	next [000001c4016614a0]:	  5   6   8   7   3   4   9   2   1  10   0  12  13  14 FREE_END
+	prev [000001c4016614f0]:	 10   8   7   4   5   0   1   3   2   6   9 PR# PR# PR# PR# 
 
-	list [000001d9e1511510]:	500 400 300 350 200 250 100 150 
+	list [000001c4016614f0]:	200 100  30 350  20 250  10 150 444 555 
 }
 
-LIST_DUMP called from src/list.cpp:89  (GetNumInData)
+LIST_DUMP called from src/list.cpp:151  (ListPasteAfter)
 {
 	head = 5
-	tail = 6
-	free = 9
-	capacity = 20
+	tail = 11
+	free = 12
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 350 250 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   8   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   8   7   4   5 PR#   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20  30 100 200 150 350 250 444 555 666 DT# DT# DT# 
+	next [000001c4016614a0]:	  5   6   8   7   3   4   9   2   1  10  11   0  13  14 FREE_END
+	prev [000001c4016614f0]:	 11   8   7   4   5   0   1   3   2   6   9  10 PR# PR# PR# 
 
-	list [000001d9e1511510]:	500 400 300 350 200 250 100 150 
+	list [000001c4016614f0]:	200 100  30 350  20 250  10 150 444 555 666 
 }
 
-LIST_DUMP called from src/list.cpp:55  (ListDtor)
+LIST_DUMP called from src/main.cpp:41  (main)
 {
 	head = 5
-	tail = 6
-	free = 9
-	capacity = 20
+	tail = 11
+	free = 12
+	capacity = 15
 
-						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 
-	data [000001d9e1511450]:	DT# 100 200 300 400 500 150 350 250 DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# DT# 
-	next [000001d9e15114b0]:	  0   6   8   7   3   4   0   2   1  10  11  12  13  14  15  16  17  18  19   0 
-	prev [000001d9e1511510]:	  6   8   7   4   5 PR#   1   3   2 PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# PR# 
+	data [000001c401661450]:	DT#  10  20  30 100 200 150 350 250 444 555 666 DT# DT# DT# 
+	next [000001c4016614a0]:	  5   6   8   7   3   4   9   2   1  10  11   0  13  14 FREE_END
+	prev [000001c4016614f0]:	 11   8   7   4   5   0   1   3   2   6   9  10 PR# PR# PR# 
 
-	list [000001d9e1511510]:	500 400 300 350 200 250 100 150 
+	list [000001c4016614f0]:	200 100  30 350  20 250  10 150 444 555 666 
 }
 
+LIST_DUMP called from src/main.cpp:42  (main)
+{
+	head = 5
+	tail = 11
+	free = 12
+	capacity = 15
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
+
+	data [000001c401661450]:	DT#  10  20  30 100 200 150 350 250 444 555 666 DT# DT# DT# 
+	next [000001c4016614a0]:	  5   6   8   7   3   4   9   2   1  10  11   0  13  14 FREE_END
+	prev [000001c4016614f0]:	 11   8   7   4   5   0   1   3   2   6   9  10 PR# PR# PR# 
+
+	list [000001c4016614f0]:	200 100  30 350  20 250  10 150 444 555 666 
+}
+
+LIST_DUMP called from src/list.cpp:66  (ListDtor)
+{
+	head = 5
+	tail = 11
+	free = 12
+	capacity = 15
+
+						¹		  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
+
+	data [000001c401661450]:	DT#  10  20  30 100 200 150 350 250 444 555 666 DT# DT# DT# 
+	next [000001c4016614a0]:	  5   6   8   7   3   4   9   2   1  10  11   0  13  14 FREE_END
+	prev [000001c4016614f0]:	 11   8   7   4   5   0   1   3   2   6   9  10 PR# PR# PR# 
+
+	list [000001c4016614f0]:	200 100  30 350  20 250  10 150 444 555 666 
+}
+
+		</pre>     
+	</body       
+</html>

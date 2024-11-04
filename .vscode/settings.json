@@ -2,11 +2,18 @@
     "cSpell.words": [
         "CAPA",
         "codefile",
+        "curgraph",
+        "darkcyan",
+        "darkgreen",
+        "darkred",
         "dotcode",
         "onexit",
-        "whyyyyyyy"
+        "rankdir",
+        "whyyyyyyy",
+        "zalupa"
     ],
     "files.associations": {
-        "list": "cpp"
+        "list": "cpp",
+        "xstring": "cpp"
     }
 }
