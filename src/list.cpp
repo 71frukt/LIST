@@ -117,6 +117,11 @@ ListFuncStatus ListPasteHead(list_t *list, ListElem_t elem)
 {
     LIST_ASSERT(list);
 
+    ListPasteAfter(list, elem, 0);
+
+    return LIST_FUNC_OK;
+
+    /*
     int free_cell_num = list->free;
     list->free = list->next[list->free];
 
@@ -137,12 +142,17 @@ ListFuncStatus ListPasteHead(list_t *list, ListElem_t elem)
     LIST_DUMP(list);
     fprintf(stderr, "end of paste head\n");
     return LIST_FUNC_OK;
+    */
 }
 
 ListFuncStatus ListPasteTail(list_t *list, ListElem_t elem)
 {
     LIST_ASSERT(list);
 
+    ListPasteAfter(list, elem, list->tail);
+
+    return LIST_FUNC_OK;
+    /*
     int free_cell_num = list->free;
     list->free = list->next[list->free];
 
@@ -162,19 +172,20 @@ ListFuncStatus ListPasteTail(list_t *list, ListElem_t elem)
     LIST_ASSERT(list);
     LIST_DUMP(list);
     return LIST_FUNC_OK;
+    */
 }
 
 ListFuncStatus ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
 {
     LIST_ASSERT(list);
-    assert(elem_num > 0);
+    assert(elem_num >= 0);
 
 fprintf(stderr, "\n\nin paste after\n");
-    if (elem_num == list->tail)
-    {
-        ListPasteTail(list, elem);
-        return LIST_FUNC_OK;
-    }
+    // if (elem_num == list->tail)
+    // {
+        // ListPasteTail(list, elem);
+        // return LIST_FUNC_OK;
+    // }
 
     int free_cell_num = list->free;
     list->free = list->next[list->free];
@@ -184,6 +195,9 @@ fprintf(stderr, "\n\nin paste after\n");
 
     ListBind(list, free_cell_num, list->next[elem_num]);    // queue is important !
     ListBind(list, elem_num,      free_cell_num);
+
+    list->head = list->next[0];
+    list->tail = list->prev[0];
 
     list->data[free_cell_num] = elem;
     LIST_ASSERT(list);

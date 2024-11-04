@@ -15,18 +15,20 @@ int main(const int argc, const char *argv[])
     // fprintf(stderr, "h = %d\n", GetHeadVal(&list));
     // fprintf(stderr, "t = %d\n", GetTailVal(&list));
 
-    ListPasteHead(&list, 10);
+    // ListPasteHead(&list, 10);
+    ListPasteAfter(&list, 10, 0);
     ListPasteHead(&list, 20);
     ListPasteHead(&list, 30);
     ListPasteHead(&list, 100);
     ListPasteHead(&list, 200);
-    ListPasteHead(&list, 300);
-    ListPasteHead(&list, 400);
-    ListPasteHead(&list, 500);
 
-    ListPasteAfter(&list, 150, 1);
-    ListPasteAfter(&list, 350, 3);
-    ListPasteAfter(&list, 250, 2);
+    // ListPasteAfter(&list, 150, 1);
+    // ListPasteAfter(&list, 350, 3);
+    // ListPasteAfter(&list, 250, 2);
+
+    ListPasteTail(&list, 444);
+    ListPasteTail(&list, 555);
+    ListPasteTail(&list, 666);
 
     fprintf(stderr, "num in data = %d\n", GetNumInData(&list, 7));
 

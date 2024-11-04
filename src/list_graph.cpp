@@ -89,45 +89,47 @@ GraphFuncStatus WriteDotCode(graph_t *graph)
                         "bgcolor = \"%s\";  \n" , BACKGROUND_COLOR);
 
     InitNodes(graph, dot_file);
+    node_t *nodes = graph->nodes;
     
-    MakeEdge(dot_file, graph->node_head, graph->nodes[graph->node_head.next], EDGE_HEAD_COLOR, 1);
-    MakeEdge(dot_file, graph->node_tail, graph->nodes[graph->node_tail.next], EDGE_TAIL_COLOR, 1);
-    MakeEdge(dot_file, graph->node_free, graph->nodes[graph->node_free.next], EDGE_FREE_COLOR, 1);
+    MakeEdge(dot_file, graph->node_head, nodes[graph->node_head.next], EDGE_HEAD_COLOR, 1);
+    MakeEdge(dot_file, graph->node_tail, nodes[graph->node_tail.next], EDGE_TAIL_COLOR, 1);
+    MakeEdge(dot_file, graph->node_free, nodes[graph->node_free.next], EDGE_FREE_COLOR, 1);
+
+// manager
+    MakeEdge(dot_file, nodes[0], nodes[nodes[0].next], EDGE_MANAGER_COLOR, 1);
+    MakeEdge(dot_file, nodes[nodes[0].prev], nodes[0], EDGE_MANAGER_COLOR, 1);
 
 // зан€тые €чейки
-    // for (size_t i = 0; ; i = graph->nodes[i].next)
-    // {
-    //     fprintf(stderr, "NODES[%lld] NEXT = %d\n\n", i, graph->nodes[i].next);
-    //     if (graph->nodes[i].next != NEXT_POISON)
-    //         MakeEdge(dot_file, graph->nodes[i], graph->nodes[graph->nodes[i].next], EDGE_NEXT_COLOR, 1);
-
-    //     if (graph->nodes[i].index == graph->nodes[0].index)
-    //         break;
-    // }
-
-    size_t index = 0;
-    while (true)
+    for (size_t i = nodes[0].next; nodes[i].index != nodes[0].index; i = nodes[i].next)
     {
-        fprintf(stderr, "NODES[%lld] NEXT = %d\n\n", index, graph->nodes[index].next);
-        if (graph->nodes[index].next != NEXT_POISON)
-            MakeEdge(dot_file, graph->nodes[index], graph->nodes[graph->nodes[index].next], EDGE_NEXT_COLOR, 1);
-
-        index = graph->nodes[index].next;
-
-        if (graph->nodes[index].index == graph->nodes[0].index)
-            break;
+        fprintf(stderr, "NODES[%lld] NEXT = %d\n\n", i, nodes[i].next);
+        if (nodes[i].next != NEXT_POISON && nodes[i].next != nodes[0].index)
+            MakeEdge(dot_file, nodes[i], nodes[nodes[i].next], EDGE_NEXT_COLOR, 1);
     }
 
+    // size_t index = 0;
+    // while (true)
+    // {
+        // fprintf(stderr, "NODES[%lld] NEXT = %d\n\n", index, nodes[index].next);
+        // if (nodes[index].next != NEXT_POISON)
+            // MakeEdge(dot_file, nodes[index], nodes[nodes[index].next], EDGE_NEXT_COLOR, 1);
+// 
+        // index = nodes[index].next;
+// 
+        // if (nodes[index].index == nodes[0].index)
+            // break;
+    // }
+
 // свободные €чейки    
-    for (size_t i = graph->node_free.next; graph->nodes[i].next != END_OF_FREE; i = graph->nodes[i].next)
+    for (size_t i = graph->node_free.next; nodes[i].next != END_OF_FREE; i = nodes[i].next)
     {
-        // fprintf(stderr, "free: i = %lld, [i].next = %d, [0].prev = %d\n", i, graph->nodes[i].next, graph->nodes[0].prev);
-        MakeEdge(dot_file, graph->nodes[i], graph->nodes[graph->nodes[i].next], EDGE_FREE_COLOR, 1);
+        // fprintf(stderr, "free: i = %lld, [i].next = %d, [0].prev = %d\n", i, nodes[i].next, nodes[0].prev);
+        MakeEdge(dot_file, nodes[i], nodes[nodes[i].next], EDGE_FREE_COLOR, 1);
     }
     
     fprintf(dot_file, "} \n");
 
-    free(graph->nodes);
+    free(nodes);
 
     if (fclose(dot_file) != 0)
     {

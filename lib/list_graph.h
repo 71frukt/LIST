@@ -5,12 +5,13 @@
 
 #include "list.h"
 
-const char *const BACKGROUND_COLOR = "#FFF3D1";
-const char *const EDGE_NEXT_COLOR  = "darkcyan";
-const char *const EDGE_PREV_COLOR  = "darkred";
-const char *const EDGE_FREE_COLOR  = "darkgreen";
-const char *const EDGE_HEAD_COLOR  = "#0000CC";
-const char *const EDGE_TAIL_COLOR  = "#B701EF";
+const char *const BACKGROUND_COLOR   = "#FFF3D1";
+const char *const EDGE_NEXT_COLOR    = "darkcyan";
+// const char *const EDGE_PREV_COLOR    = "darkred";
+const char *const EDGE_FREE_COLOR    = "darkgreen";
+const char *const EDGE_HEAD_COLOR    = "#0000CC";
+const char *const EDGE_TAIL_COLOR    = "#B701EF";
+const char *const EDGE_MANAGER_COLOR = "darkred";
 
 const int NODE_NAME_LEN        = 20;
 const int START_GRAPH_ARR_SIZE = 100;
