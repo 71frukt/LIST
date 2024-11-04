@@ -140,12 +140,25 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
 {
     fprintf(stderr, "start of dump\n");
 
-    fprintf(LogFile, "LIST_DUMP called from %s:%d  (%s)\n{\n", file, line, func);
+    fprintf(LogFile, "  LIST_DUMP called from %s:%d  (%s)\n  {\n", file, line, func);
 
     fprintf(LogFile, "\thead = %d\n\ttail = %d\n\tfree = %d\n\tcapacity = %d\n\n",
                        list->head, list->tail, list->free, list->capacity);
 
-    fprintf(LogFile, "</pre>\n<table border width = \"85%\"style=\"margin-left: 3%;>\"\n");
+// list
+    fprintf(LogFile, "\tlist [%p]:   ", list->prev);
+
+    int num = list->head;
+
+    while (num != 0)
+    {
+        // fprintf(stderr, "data[%d] = %3" LIST_ELEM_FORMAT " \n", num, list->data[num]);
+        fprintf(LogFile, "%3" LIST_ELEM_FORMAT " ", list->data[num]);
+        num = list->next[num];
+    } 
+
+// table
+    fprintf(LogFile, "</pre>\n<table border width = \"85%\"style=\"margin-left: 3%\">\n");
 
     fprintf(LogFile, "<tr>\n");
 
@@ -229,24 +242,15 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
 
     fprintf(LogFile, "</table>\n<pre>\n");
 
-// list
-    fprintf(LogFile, "\n\n\tlist [%p]:", list->prev);
 
-    fprintf(LogFile, "\t");
+    fprintf(LogFile, "\n\n\tGraph\n");
+    MakeGraph(list);
 
-    int num = list->head;
+    fprintf(LogFile, "<img src = " GRAPH_FOLDER  "%s width = \"85%\" style=\"margin-left: 3%\">", list->graphs.data[list->graphs.index - 1].name);
+    fprintf(stderr, "<img src = " GRAPH_FOLDER  "%s width = \"85%\" style=\"margin-left: 3%\">", list->graphs.data[list->graphs.index - 1].name);
 
-    fprintf(stderr, "head = %d, free = %d\n", list->head, list->free);
+    fprintf(LogFile, "\n  }\n\n");
+
 
     fprintf(stderr, "end of dump\n");
-    while (num != 0)
-    {
-        fprintf(stderr, "data[%d] = %3" LIST_ELEM_FORMAT " \n", num, list->data[num]);
-        fprintf(LogFile, "%3" LIST_ELEM_FORMAT " ", list->data[num]);
-        num = list->next[num];
-    } 
-
-    fprintf(LogFile, "\n}\n\n");
-
-    MakeGraph(list);
 }

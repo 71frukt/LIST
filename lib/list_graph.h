@@ -14,6 +14,7 @@ const char *const EDGE_TAIL_COLOR    = "#B701EF";
 const char *const EDGE_MANAGER_COLOR = "darkred";
 
 const int NODE_NAME_LEN        = 20;
+const int GRAPH_NAME_LEN       = 20;
 const int START_GRAPH_ARR_SIZE = 100;
 
 struct node_t
@@ -27,16 +28,19 @@ struct node_t
 
 struct graph_t
 {
+    char    name[GRAPH_NAME_LEN];
+    
     size_t  nodes_count;
-    node_t *nodes;
     node_t  node_free;
     node_t  node_head;
     node_t  node_tail;
+ 
+    node_t *nodes;
 };
 
 struct graph_arr_t
 {
-    size_t index;
+    size_t index;           // указывает на первый пустой граф
     size_t size;
 
     graph_t *data;

@@ -62,12 +62,11 @@ cur_graph->nodes[0].prev = list->tail;
 
     WriteDotCode(cur_graph);
 
-    char graph_file_name[PATH_NAME_LEN] = {};
-    sprintf(graph_file_name, "graph_%llu.png", graph_num);
+    sprintf(cur_graph->name, GRAPH_NAME_PREFIX "%llu.png", graph_num);
 
-    // GetFilePath(graph_name, GRAPH_FOLDER, graph_name);
+    // GetFilePath(graph_name, LOGFILE_FOLDER GRAPH_FOLDER, graph_name);
     char graph_file_fullname[PATH_NAME_LEN] = {};
-    GetFilePath(graph_file_name, GRAPH_FOLDER, graph_file_fullname);
+    GetFilePath(cur_graph->name, LOGFILE_FOLDER GRAPH_FOLDER, graph_file_fullname);
 
     DrawGraphInFile(TMP_DOTFILE_NAME, graph_file_fullname);
 
