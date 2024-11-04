@@ -47,13 +47,14 @@ ListFuncStatus ListDelElem    (list_t *list, int elem_num);
 int            GetNumInData   (list_t *list, int num_in_list);
 
 // debug functions
-void  ListAssert   (list_t *list, const char *file, int line, const char *func);
-void  PrintListErr (int error);
-int   ListVerify   (list_t *list);
-char *GetFilePath  (const char *name, const char *folder, char *path);
-FILE *OpenLogFile  (const int argc, const char *argv[]);
-void  CloseLogFile (void);
-void  ListDump     (list_t *list, const char *file, int line, const char *func);
+void  ListAssert         (list_t *list, const char *file, int line, const char *func);
+void  ListSegfaultAssert (list_t *list, int index, const char *file, int line, const char *func);
+void  PrintListErr       (int error);
+int   ListVerify         (list_t *list);
+char *GetFilePath        (const char *name, const char *folder, char *path);
+FILE *OpenLogFile        (const int argc, const char *argv[]);
+void  CloseLogFile       (void);
+void  ListDump           (list_t *list, const char *file, int line, const char *func);
 
 // graph functions
 GraphFuncStatus    GraphsCtor      (graph_arr_t *graphs);

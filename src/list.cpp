@@ -85,7 +85,6 @@ ListElem_t GetHeadVal(list_t *list)
 {
     LIST_ASSERT(list);
 
-    // return list->data[list->next[0]];
     return list->data[list->head];
 }
 
@@ -93,7 +92,6 @@ ListElem_t GetTailVal(list_t *list)
 {
     LIST_ASSERT(list);
 
-    // return list->data[list->prev[0]];
     return list->data[list->tail];
 }
 
@@ -120,29 +118,6 @@ ListFuncStatus ListPasteHead(list_t *list, ListElem_t elem)
     ListPasteAfter(list, elem, 0);
 
     return LIST_FUNC_OK;
-
-    /*
-    int free_cell_num = list->free;
-    list->free = list->next[list->free];
-
-    // list->next[free_cell_num] = list->head;
-
-    if (list->head == 0)                // если первый элемент списка
-    {
-        list->tail = free_cell_num;
-    }
-    
-    ListBind(list, free_cell_num, list->head);
-    
-    list->head = free_cell_num;
-
-    list->data[free_cell_num] = elem;
-
-    LIST_ASSERT(list);
-    LIST_DUMP(list);
-    fprintf(stderr, "end of paste head\n");
-    return LIST_FUNC_OK;
-    */
 }
 
 ListFuncStatus ListPasteTail(list_t *list, ListElem_t elem)
@@ -152,46 +127,18 @@ ListFuncStatus ListPasteTail(list_t *list, ListElem_t elem)
     ListPasteAfter(list, elem, list->tail);
 
     return LIST_FUNC_OK;
-    /*
-    int free_cell_num = list->free;
-    list->free = list->next[list->free];
-
-    // list->next[list->tail]    = free_cell_num;
-    // list->next[free_cell_num] = 0;
-
-    if (list->tail == 0)                // если первый элемент списка
-        list->head = free_cell_num;
-
-    ListBind(list, list->tail, free_cell_num);
-    ListBind(list, free_cell_num, 0);
-        
-    list->tail = free_cell_num;
-
-    list->data[free_cell_num] = elem;
-    fprintf(stderr, "\n\t\tIn Paste tail: free_cell_num = %d, head = %d\n", free_cell_num, list->head);
-    LIST_ASSERT(list);
-    LIST_DUMP(list);
-    return LIST_FUNC_OK;
-    */
 }
 
 ListFuncStatus ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
 {
     LIST_ASSERT(list);
+    LIST_SEGFAULT_ASSERT(list, elem_num);
     assert(elem_num >= 0);
 
 fprintf(stderr, "\n\nin paste after\n");
-    // if (elem_num == list->tail)
-    // {
-        // ListPasteTail(list, elem);
-        // return LIST_FUNC_OK;
-    // }
 
     int free_cell_num = list->free;
     list->free = list->next[list->free];
-
-    // list->next[free_cell_num] = list->next[elem_num];
-    // list->next[elem_num] = free_cell_num;
 
     ListBind(list, free_cell_num, list->next[elem_num]);    // queue is important !
     ListBind(list, elem_num,      free_cell_num);
@@ -227,9 +174,9 @@ ListFuncStatus ListDelElem(list_t *list, int elem_num)
         list->data[elem_num] = DATA_POISON;
     )
 
-    int prev_free = list->free;                 // добавить €чейку к списку пустых
+    int prev_free = list->free;                                     // добавить €чейку к списку пустых
     list->free = elem_num;
-    ListBind(list, list->prev[elem_num], list->next[elem_num]);
+    ListBind(list, list->prev[elem_num], list->next[elem_num]);     // queue is important !
     ListBind(list, list->free, prev_free);
 
     list->head = list->next[0];

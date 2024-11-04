@@ -22,6 +22,22 @@ void ListAssert(list_t *list, const char *file, int line, const char *func)
     }
 }
 
+void ListSegfaultAssert(list_t *list, int index, const char *file, int line, const char *func)
+{
+    int *next = list->next;
+    int  free = list->free;
+
+    for (int i = free; i != END_OF_FREE; i = next[i])
+    {
+        if (i == index)
+        {
+            fprintf(stderr, "\nsegfault in\t%s:%d\t(%s)\n", file, line, func);
+            fprintf(stderr, "accessing a non-existent list item with an index = %d\n", index);
+            assert(0);
+        }
+    }
+}
+
 void PrintListErr(int error)
 {   
     #define PRINT_ERROR(err, code)                      \
@@ -182,5 +198,4 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
     fprintf(LogFile, "\n}\n\n");
 
     MakeGraph(list);
-
 }
