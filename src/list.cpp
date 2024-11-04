@@ -40,6 +40,8 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
 
     ON_LIST_DEBUG 
     (
+        OpenLogFile();
+
         for (int i = 1; i < list->capacity; i++)
         {
             list->data[i] = DATA_POISON;

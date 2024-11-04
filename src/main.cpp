@@ -4,10 +4,8 @@
 
 extern FILE *LogFile;
 
-int main(const int argc, const char *argv[])
+int main()
 {
-    // TODO: remove 
-    ON_LIST_DEBUG(OpenLogFile(argc, argv));
     list_t list = {};
     ListCtor(&list, 15);
     LIST_DUMP(&list);

@@ -98,29 +98,25 @@ char *GetFilePath(const char *name, const char *folder, char *path)
     return path;
 }
 
-FILE *OpenLogFile(const int argc, const char *argv[])
+FILE *OpenLogFile()
 {
     char logfile_name[PATH_NAME_LEN] = {};
 
-    if (argc < 2)
-        GetFilePath(BASE_LOGFILE_NAME, LOGFILE_FOLDER, logfile_name);
-
-    else
-        GetFilePath(argv[1], LOGFILE_FOLDER, logfile_name);
+    GetFilePath(LOGFILE_NAME, LOGFILE_FOLDER, logfile_name);
 
     LogFile = fopen(logfile_name, "w");
 
-    fprintf(LogFile, "<html>                                            \n"
-                            "\t<head>                                   \n"
-                            "\t<title>List Logs</title>                 \n"
+    fprintf(LogFile, "<html>                                                                                                            \n"
+                            "\t<head>                                                                                                   \n"
+                            "\t<title>List Logs</title>                                                                                 \n"
                             "\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\"> \n"
-                            "\t</head>                                  \n"
-                            "\t<body>                                   \n"
-                            "\t<title>List Logs</title>                 \n"
-                            "\t<div class=\"jumbotron text-center\">    \n"
-                            "\t\t<h1>List logs</h1>                     \n"
-                            "\t</div>                                   \n"
-                            "\t<pre>                                    \n");
+                            "\t</head>                                                                                                  \n"
+                            "\t<body>                                                                                                   \n"
+                            "\t<title>List Logs</title>                                                                                 \n"
+                            "\t<div class=\"jumbotron text-center\">                                                                    \n"
+                            "\t\t<h1>List logs</h1>                                                                                     \n"
+                            "\t</div>                                                                                                   \n"
+                            "\t<pre>                                                                                                    \n");
     atexit(CloseLogFile);
 
     return LogFile;

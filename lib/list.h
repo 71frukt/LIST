@@ -52,7 +52,7 @@ void  ListSegfaultAssert (list_t *list, int index, const char *file, int line, c
 void  PrintListErr       (int error);
 int   ListVerify         (list_t *list);
 char *GetFilePath        (const char *name, const char *folder, char *path);
-FILE *OpenLogFile        (const int argc, const char *argv[]);
+FILE *OpenLogFile        ();
 void  CloseLogFile       (void);
 void  ListDump           (list_t *list, const char *file, int line, const char *func);
 
