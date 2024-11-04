@@ -20,6 +20,8 @@ GraphFuncStatus GraphsCtor(graph_arr_t *graphs)
 
     graphs->dotfile_name = TMP_DOTFILE_NAME;
 
+    system("cd logs/graphs\nrmdir . /s /q 2>nul\ncd ..\\ \n cd ..\\ \n");
+
     return GRAPH_FUNC_OK;
 }
 

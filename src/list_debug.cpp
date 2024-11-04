@@ -171,8 +171,10 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
 
     fprintf(stderr, "head = %d, free = %d\n", list->head, list->free);
 
+    fprintf(stderr, "end of dump\n");
     while (num != 0)
     {
+        fprintf(stderr, "data[%d] = %3" LIST_ELEM_FORMAT " \n", num, list->data[num]);
         fprintf(LogFile, "%3" LIST_ELEM_FORMAT " ", list->data[num]);
         num = list->next[num];
     } 
@@ -181,5 +183,4 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
 
     MakeGraph(list);
 
-    fprintf(stderr, "end of dump\n");
 }

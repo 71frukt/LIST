@@ -45,7 +45,7 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
             list->data[i] = DATA_POISON;
             list->prev[i] = PREV_POISON;
         } 
-        
+
         GraphsCtor(&list->graphs);
 
         for (size_t i = 0; i < list->graphs.size; i++)
@@ -229,9 +229,11 @@ ListFuncStatus ListDelElem(list_t *list, int elem_num)
 
     int prev_free = list->free;                 // добавить €чейку к списку пустых
     list->free = elem_num;
+    ListBind(list, list->prev[elem_num], list->next[elem_num]);
     ListBind(list, list->free, prev_free);
 
-    ListBind(list, list->prev[elem_num], list->next[elem_num]);
+    list->head = list->next[0];
+    list->tail = list->prev[0];
 
     LIST_ASSERT(list);
     LIST_DUMP(list);
