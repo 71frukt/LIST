@@ -62,7 +62,7 @@ GraphFuncStatus    GraphsDtor      (graph_arr_t *graphs);
 GraphFuncStatus    MakeGraph       (list_t *list);
 GraphFuncStatus    WriteDotCode    (graph_t *graph);
 GraphFuncStatus    DrawGraphInFile (const char *dotfile_name, char *picture_file_name);
-GraphFuncStatus    MakeEdge        (FILE *dot_file, node_t node_from, node_t node_to, const char *edge_color, size_t edge_weight);
+GraphFuncStatus    MakeEdge        (FILE *dot_file, node_t node_from, node_t node_to, const char *color, const char *stile, const char *arrowhead, size_t weight);
 node_t            *GetNodesArr     (list_t *list);
 GraphFuncStatus    InitNodes       (graph_t *graph, FILE *dotfile);
 

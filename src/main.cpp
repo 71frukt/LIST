@@ -22,25 +22,25 @@ int main(const int argc, const char *argv[])
     ListPasteHead(&list, 100);
     ListPasteHead(&list, 200);
 
-    ListDelElem(&list, 5);
-    ListDelElem(&list, 4);
-    ListDelElem(&list, 3);
-    ListDelElem(&list, 2);
-    ListDelElem(&list, 1);
+    // ListDelElem(&list, 5);
+    // ListDelElem(&list, 4);
+    // ListDelElem(&list, 3);
+    // ListDelElem(&list, 2);
+    // ListDelElem(&list, 1);
 
-    // ListPasteAfter(&list, 150, 1);
-    // ListPasteAfter(&list, 350, 3);
-    // ListPasteAfter(&list, 250, 2);
+    ListPasteAfter(&list, 150, 1);
+    ListPasteAfter(&list, 350, 3);
+    ListPasteAfter(&list, 250, 2);
 
-    // ListPasteTail(&list, 444);
-    // ListPasteTail(&list, 555);
-    // ListPasteTail(&list, 666);
+    ListPasteTail(&list, 444);
+    ListPasteTail(&list, 555);
+    ListPasteTail(&list, 666);
 
     fprintf(stderr, "num in data = %d\n", GetNumInData(&list, 7));
 
     LIST_DUMP(&list);
     LIST_DUMP(&list);
-    // ListDtor(&list);
+    ListDtor(&list);
 
     fprintf(stderr, "END!\n");
     return 0;
