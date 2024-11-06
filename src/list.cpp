@@ -129,7 +129,7 @@ ListFuncStatus ListPasteTail(list_t *list, ListElem_t elem)
 ListFuncStatus ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
 {
     LIST_ASSERT(list);
-    LIST_SEGFAULT_ASSERT(list, elem_num);
+    LIST_DREE_USAGE_ASSERT(list, elem_num);
     assert(elem_num >= 0);
 
 fprintf(stderr, "\n\nin paste after\n");

@@ -22,7 +22,7 @@ void ListAssert(list_t *list, const char *file, int line, const char *func)
     }
 }
 
-void ListSegfaultAssert(list_t *list, int index, const char *file, int line, const char *func)
+void ListFreeUsageInData(list_t *list, int index, const char *file, int line, const char *func)
 {
     int *next = list->next;
     int  free = list->free;
@@ -89,6 +89,8 @@ int ListVerify(list_t *list)
     if (list->free < 1)
         res_err |= LIST_FREE_UNDERFLOW;
 
+    // TODO: check connections
+
     return res_err;
 }
 
@@ -154,7 +156,7 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
     } 
 
 // table
-    fprintf(LogFile, "</pre>\n<table border width = \"85%\"style=\"margin-left: 3%\">\n");
+    fprintf(LogFile, "</pre>\n<table border width = \"85%%\"style=\"margin-left: 3%%\">\n");
 
     fprintf(LogFile, "<tr>\n");
 
@@ -242,8 +244,8 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
     fprintf(LogFile, "\n\n\tGraph\n");
     MakeGraph(list);
 
-    fprintf(LogFile, "<img src = " GRAPH_FOLDER  "%s width = \"85%\" style=\"margin-left: 3%\">", list->graphs.data[list->graphs.index - 1].name);
-    fprintf(stderr,  "<img src = " GRAPH_FOLDER  "%s width = \"85%\" style=\"margin-left: 3%\">", list->graphs.data[list->graphs.index - 1].name);
+    fprintf(LogFile, "<img src = " GRAPH_FOLDER  "%s width = \"%d%%\" style=\"margin-left: 3%%\">", list->graphs.data[list->graphs.index - 1].name, GRAPH_PICTURE_WIDTH);
+    fprintf(stderr,  "<img src = " GRAPH_FOLDER  "%s width = \"%d%%\" style=\"margin-left: 3%%\">", list->graphs.data[list->graphs.index - 1].name, GRAPH_PICTURE_WIDTH);
 
     fprintf(LogFile, "\n  }\n\n");
 

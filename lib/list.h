@@ -50,19 +50,20 @@ ListFuncStatus ListDelElem    (list_t *list, int elem_num);
 int            GetNumInData   (list_t *list, int num_in_list);
 
 // debug functions
-void  ListAssert         (list_t *list, const char *file, int line, const char *func);
-void  ListSegfaultAssert (list_t *list, int index, const char *file, int line, const char *func);
-void  PrintListErr       (int error);
-int   ListVerify         (list_t *list);
-char *GetFilePath        (const char *name, const char *folder, char *path);
-FILE *OpenLogFile        ();
-void  CloseLogFile       (void);
-void  ListDump           (list_t *list, const char *file, int line, const char *func);
+void  ListAssert          (list_t *list, const char *file, int line, const char *func);
+void  ListFreeUsageInData (list_t *list, int index, const char *file, int line, const char *func);
+void  PrintListErr        (int error);
+int   ListVerify          (list_t *list);
+char *GetFilePath         (const char *name, const char *folder, char *path);
+FILE *OpenLogFile         ();
+void  CloseLogFile        (void);
+void  ListDump            (list_t *list, const char *file, int line, const char *func);
 
 // graph functions
 GraphFuncStatus    GraphsCtor      (graph_arr_t *graphs);
 GraphFuncStatus    GraphsDtor      (graph_arr_t *graphs);
 GraphFuncStatus    MakeGraph       (list_t *list);
+GraphFuncStatus    FillManagerInfo (graph_t *graph, list_t *list);
 GraphFuncStatus    WriteDotCode    (graph_t *graph);
 GraphFuncStatus    DrawGraphInFile (const char *dotfile_name, char *picture_file_name);
 GraphFuncStatus    MakeEdge        (FILE *dot_file, node_t node_from, node_t node_to, const char *color, const char *stile, const char *arrowhead, size_t weight);

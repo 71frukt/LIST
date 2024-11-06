@@ -22,6 +22,8 @@ const int NODE_NAME_LEN        = 20;
 const int GRAPH_NAME_LEN       = 20;
 const int START_GRAPH_ARR_SIZE = 100;
 
+const int GRAPH_PICTURE_WIDTH = 85;     // (%)
+
 struct node_t
 {
     ListElem_t val;

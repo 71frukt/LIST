@@ -46,14 +46,7 @@ GraphFuncStatus MakeGraph(list_t *list)
 
     cur_graph->nodes = GetNodesArr(list);
 
-    sprintf(cur_graph->node_head.label, "head");
-    cur_graph->node_head.next = list->head;
-
-    sprintf(cur_graph->node_tail.label, "tail");
-    cur_graph->node_tail.next = list->tail;
-
-    sprintf(cur_graph->node_free.label, "free");
-    cur_graph->node_free.next = list->free;
+    FillManagerInfo(cur_graph, list);
 
     WriteDotCode(cur_graph);
 
@@ -64,6 +57,23 @@ GraphFuncStatus MakeGraph(list_t *list)
     GetFilePath(cur_graph->name, LOGFILE_FOLDER GRAPH_FOLDER, graph_file_fullname);
 
     DrawGraphInFile(TMP_DOTFILE_NAME, graph_file_fullname);
+
+    return GRAPH_FUNC_OK;
+}
+
+GraphFuncStatus FillManagerInfo(graph_t *graph, list_t *list)
+{
+    assert(graph);
+    LIST_ASSERT(list);
+
+    sprintf(graph->node_head.label, "head");
+    graph->node_head.next = list->head;
+
+    sprintf(graph->node_tail.label, "tail");
+    graph->node_tail.next = list->tail;
+
+    sprintf(graph->node_free.label, "free");
+    graph->node_free.next = list->free;
 
     return GRAPH_FUNC_OK;
 }
