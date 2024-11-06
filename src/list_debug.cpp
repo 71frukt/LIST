@@ -14,10 +14,10 @@ void ListAssert(list_t *list, const char *file, int line, const char *func)
     if (list != NULL)
         list->error |= error;
 
-    if (error != LIST_OK)
+    if (list->error != LIST_OK)
     {
         fprintf(stderr, "my assertion failed in\t%s:%d\t(%s)\nErrors:\t", file, line, func);
-        PrintListErr(error);
+        PrintListErr(list->error);
         assert(0);
     }
 }
@@ -243,10 +243,9 @@ void ListDump(list_t *list, const char *file, int line, const char *func)
     MakeGraph(list);
 
     fprintf(LogFile, "<img src = " GRAPH_FOLDER  "%s width = \"85%\" style=\"margin-left: 3%\">", list->graphs.data[list->graphs.index - 1].name);
-    fprintf(stderr, "<img src = " GRAPH_FOLDER  "%s width = \"85%\" style=\"margin-left: 3%\">", list->graphs.data[list->graphs.index - 1].name);
+    fprintf(stderr,  "<img src = " GRAPH_FOLDER  "%s width = \"85%\" style=\"margin-left: 3%\">", list->graphs.data[list->graphs.index - 1].name);
 
     fprintf(LogFile, "\n  }\n\n");
-
 
     fprintf(stderr, "end of dump\n");
 }

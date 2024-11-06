@@ -5,6 +5,11 @@
 
 #include "list.h"
 
+#define DOT_FOLDER         LOGFILE_FOLDER "dot/"
+#define GRAPH_FOLDER       "graphs/"
+#define TMP_DOTFILE_NAME   "tmp_doc_code.doc"
+#define GRAPH_NAME_PREFIX  "graph_"
+
 const char *const BACKGROUND_COLOR   = "#FFF3D1";
 const char *const EDGE_NEXT_COLOR    = "darkcyan";
 // const char *const EDGE_PREV_COLOR    = "darkred";
@@ -44,9 +49,6 @@ struct graph_arr_t
     size_t size;
 
     graph_t *data;
-
-    const char *dotfile_name;
-    // FILE **graph_files;
 };
 
 enum GraphFuncStatus

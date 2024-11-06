@@ -15,12 +15,8 @@ enum ListError_t
     LIST_FREE_OVERFLOW  = 1 << 7
 };
 
-#define LOGFILE_NAME  "list_logfile.html"
-#define LOGFILE_FOLDER     "logs/"
-#define DOT_FOLDER         LOGFILE_FOLDER "dot/"
-#define GRAPH_FOLDER       "graphs/"
-#define TMP_DOTFILE_NAME   "tmp_doc_code.doc"
-#define GRAPH_NAME_PREFIX  "graph_"
+#define LOGFILE_NAME   "list_logfile.html"
+#define LOGFILE_FOLDER "logs/"  
 
 const int PATH_NAME_LEN   = 50;
 const int CMD_COMMAND_LEN = 100;
@@ -39,9 +35,9 @@ const char *const END_OF_FREE_MARK = "FREE_END";
 #define VALUE_TO_STR(val, val_type_specifier, poison_val, poison_mark, res_str)             \
 {                                                                                           \
     if (val == poison_val)                                                                  \
-        sprintf(res_str, "%s", poison_mark);                                                 \
+        sprintf(res_str, "%s", poison_mark);                                                \
     else                                                                                    \
-        sprintf(res_str, "%" val_type_specifier, val);                                       \
+        sprintf(res_str, "%" val_type_specifier, val);                                      \
 }
 
 #ifdef LIST_DEBUG
@@ -57,6 +53,7 @@ const char *const END_OF_FREE_MARK = "FREE_END";
 #define ON_LIST_DEBUG(...)
 #define LIST_DUMP(list_ptr)
 #define LIST_ASSERT(list)
+#define LIST_SEGFAULT_ASSERT(list, index)
 
 #endif
 

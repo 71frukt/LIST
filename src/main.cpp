@@ -7,7 +7,7 @@ extern FILE *LogFile;
 int main()
 {
     list_t list = {};
-    ListCtor(&list, 15);
+    ListCtor(&list, BASE_LIST_CAPA);
     LIST_DUMP(&list);
 
     // fprintf(stderr, "h = %d\n", GetHeadVal(&list));

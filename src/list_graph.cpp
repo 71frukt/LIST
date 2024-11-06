@@ -18,8 +18,6 @@ GraphFuncStatus GraphsCtor(graph_arr_t *graphs)
         return GRAPH_FUNC_ERR;
     }
 
-    graphs->dotfile_name = TMP_DOTFILE_NAME;
-
     system("cd logs/graphs\nrmdir . /s /q 2>nul\ncd ..\\ \n cd ..\\ \n");
 
     return GRAPH_FUNC_OK;
@@ -34,7 +32,7 @@ GraphFuncStatus GraphsDtor(graph_arr_t *graphs)
 
     free(graphs->data);
 
-    remove(graphs->dotfile_name);
+    remove(TMP_DOTFILE_NAME);
 
     return GRAPH_FUNC_OK;
 }
@@ -56,9 +54,6 @@ GraphFuncStatus MakeGraph(list_t *list)
 
     sprintf(cur_graph->node_free.label, "free");
     cur_graph->node_free.next = list->free;
-
-cur_graph->nodes[0].next = list->head;  // KOLHOS!!!!
-cur_graph->nodes[0].prev = list->tail;
 
     WriteDotCode(cur_graph);
 
@@ -100,7 +95,7 @@ GraphFuncStatus WriteDotCode(graph_t *graph)
     MakeEdge(dot_file, nodes[0], nodes[nodes[0].next], EDGE_MANAGER_COLOR, "dashed", "", 1);
     MakeEdge(dot_file, nodes[nodes[0].prev], nodes[0], EDGE_MANAGER_COLOR, "dashed", "", 1);
 
-// зан€тые €чейки"", "", 
+// зан€тые €чейки
     for (size_t i = nodes[0].next; nodes[i].index != nodes[0].index; i = nodes[i].next)
     {
         fprintf(stderr, "NODES[%lld] NEXT = %d\n\n", i, nodes[i].next);
@@ -140,13 +135,13 @@ GraphFuncStatus InitNodes(graph_t *graph, FILE *dotfile)
 
     for (size_t i = 1; i < graph->nodes_count; i++)
     {
-        char next_val_str[10] = {};
+        char next_val_str[10] = {};                 // TODO куда деть 10
         char node_val_str[10] = {};
         char prev_val_str[10] = {};
 
-        VALUE_TO_STR(nodes[i].next, "d",              NEXT_POISON, NEXT_POISON_MARK, next_val_str);
-        VALUE_TO_STR(nodes[i].next, "d",              END_OF_FREE, END_OF_FREE_MARK, next_val_str);
-        VALUE_TO_STR(nodes[i].prev, "d",              PREV_POISON, PREV_POISON_MARK, prev_val_str);
+        VALUE_TO_STR(nodes[i].next, INT_FORMAT,       NEXT_POISON, NEXT_POISON_MARK, next_val_str);
+        VALUE_TO_STR(nodes[i].next, INT_FORMAT,       END_OF_FREE, END_OF_FREE_MARK, next_val_str);
+        VALUE_TO_STR(nodes[i].prev, INT_FORMAT,       PREV_POISON, PREV_POISON_MARK, prev_val_str);
         VALUE_TO_STR(nodes[i].val,  LIST_ELEM_FORMAT, DATA_POISON, DATA_POISON_MARK, node_val_str);
 
         fprintf(dotfile, "%s [shape = \"record\", label = \"No %d | value = %s | next = %s | prev = %s\"]\n", 

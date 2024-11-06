@@ -4,11 +4,14 @@
 typedef int ListElem_t;
 #define LIST_ELEM_FORMAT "d"
 
+#define INT_FORMAT  "d"
+
 #define LIST_DEBUG
+
 #include "list_debug.h"
 #include "list_graph.h"
 
-// const int BASE_LIST_CAPA = 10;
+const int BASE_LIST_CAPA = 15;
 
 struct list_t
 {

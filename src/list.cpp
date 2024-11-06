@@ -7,14 +7,9 @@
 ListFuncStatus ListCtor(list_t *list, int start_capa)
 {
     assert(list);
+    assert(start_capa > 0 && "start_capa =< 0 in ListCtor!");
 
-    if (start_capa <= 0)
-    {
-        fprintf(stderr, "start_capa <= 0!\n");
-        return LIST_FUNC_ERR;
-    }
-
-    list->capacity = start_capa;
+    list->capacity = start_capa + 1;        // нулевой элемент - управл€ющий
 
     // list->capacity =+ ((start_capa > BASE_LIST_CAPA) ? start_capa : BASE_LIST_CAPA);
     list->data = (ListElem_t *) calloc(list->capacity, sizeof(ListElem_t));
@@ -36,7 +31,7 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
     }
 
     if (list->capacity > 0)
-        list->next[list->capacity - 1] = END_OF_FREE;             // последн€€ свободна€ €чейка
+        list->next[list->capacity - 1] = END_OF_FREE;           // последн€€ свободна€ €чейка
 
     ON_LIST_DEBUG 
     (
