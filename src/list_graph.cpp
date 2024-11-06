@@ -145,9 +145,9 @@ GraphFuncStatus InitNodes(graph_t *graph, FILE *dotfile)
 
     for (size_t i = 1; i < graph->nodes_count; i++)
     {
-        char next_val_str[10] = {};                 // TODO куда деть 10
-        char node_val_str[10] = {};
-        char prev_val_str[10] = {};
+        char next_val_str[VALUE_STR_LEN] = {};
+        char node_val_str[VALUE_STR_LEN] = {};
+        char prev_val_str[VALUE_STR_LEN] = {};
 
         VALUE_TO_STR(nodes[i].next, INT_FORMAT,       NEXT_POISON, NEXT_POISON_MARK, next_val_str);
         VALUE_TO_STR(nodes[i].next, INT_FORMAT,       END_OF_FREE, END_OF_FREE_MARK, next_val_str);

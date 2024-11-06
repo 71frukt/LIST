@@ -5,14 +5,15 @@ enum ListError_t
 {
     LIST_OK = 0,
 
-    LIST_PTR_ERR        = 1 << 0,
-    LIST_DATA_PTR_ERR   = 1 << 1,
-    LIST_HEAD_UNDERFLOW = 1 << 2,
-    LIST_HEAD_OVERFLOW  = 1 << 3,
-    LIST_TAIL_UNDERFLOW = 1 << 4,
-    LIST_TAIL_OVERFLOW  = 1 << 5,
-    LIST_FREE_UNDERFLOW = 1 << 6,
-    LIST_FREE_OVERFLOW  = 1 << 7
+    LIST_PTR_ERR         = 1 << 0,
+    LIST_DATA_PTR_ERR    = 1 << 1,
+    LIST_HEAD_UNDERFLOW  = 1 << 2,
+    LIST_HEAD_OVERFLOW   = 1 << 3,
+    LIST_TAIL_UNDERFLOW  = 1 << 4,
+    LIST_TAIL_OVERFLOW   = 1 << 5,
+    LIST_FREE_UNDERFLOW  = 1 << 6,
+    LIST_FREE_OVERFLOW   = 1 << 7,
+    LIST_CONNECTIONS_ERR = 1 << 8
 };
 
 #define LOGFILE_NAME   "list_logfile.html"
@@ -21,6 +22,7 @@ enum ListError_t
 const int PATH_NAME_LEN   = 50;
 const int CMD_COMMAND_LEN = 100;
 const int NODE_TEXT_LEN   = 100;
+const int VALUE_STR_LEN   = 10;
 
 const ListElem_t  DATA_POISON = 0xDEDBEAF;
 const int         NEXT_POISON = 0xDEB11;

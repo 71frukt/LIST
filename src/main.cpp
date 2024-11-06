@@ -20,6 +20,8 @@ int main()
     ListPasteHead(&list, 100);
     ListPasteHead(&list, 200);
 
+    list.next[3] = 4;
+
     // ListDelElem(&list, 5);
     // ListDelElem(&list, 4);
     // ListDelElem(&list, 3);

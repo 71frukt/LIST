@@ -38,6 +38,24 @@ void ListFreeUsageInData(list_t *list, int index, const char *file, int line, co
     }
 }
 
+ListFuncStatus ListConnectionsVerify(list_t *list)
+{
+    int counter = 0;
+    int i = 0;
+    do
+    {
+        if (i != list->next[list->prev[i]] || counter >= list->capacity)
+            return LIST_FUNC_ERR;
+
+        i = list->next[i];
+
+        counter++;
+    }
+    while (i != 0);
+
+    return LIST_FUNC_OK;
+}
+
 void PrintListErr(int error)
 {   
     #define PRINT_ERROR(err, code)                      \
@@ -55,6 +73,7 @@ void PrintListErr(int error)
     PRINT_ERROR (error, LIST_TAIL_OVERFLOW);
     PRINT_ERROR (error, LIST_FREE_UNDERFLOW);
     PRINT_ERROR (error, LIST_FREE_OVERFLOW);
+    PRINT_ERROR (error, LIST_CONNECTIONS_ERR);
 
     #undef PRINT_ERROR  
 
@@ -89,7 +108,8 @@ int ListVerify(list_t *list)
     if (list->free < 1)
         res_err |= LIST_FREE_UNDERFLOW;
 
-    // TODO: check connections
+    if (ListConnectionsVerify(list) != LIST_FUNC_OK)
+        res_err |= LIST_CONNECTIONS_ERR;
 
     return res_err;
 }

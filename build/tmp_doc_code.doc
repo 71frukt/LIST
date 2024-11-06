@@ -1,0 +1,60 @@
+digraph G{           
+rankdir = LR;      
+bgcolor = "#FFF3D1";  
+NODE_0 [label = "manager"]
+NODE_1 [shape = "record", label = "No 1 | value = 10 | next = 0 | prev = 2"]
+NODE_2 [shape = "record", label = "No 2 | value = 20 | next = 1 | prev = 3"]
+NODE_3 [shape = "record", label = "No 3 | value = 30 | next = 2 | prev = 4"]
+NODE_4 [shape = "record", label = "No 4 | value = 100 | next = 3 | prev = 5"]
+NODE_5 [shape = "record", label = "No 5 | value = 200 | next = 4 | prev = 0"]
+NODE_6 [shape = "record", label = "No 6 | value = DATA# | next = 7 | prev = PREV#"]
+NODE_7 [shape = "record", label = "No 7 | value = DATA# | next = 8 | prev = PREV#"]
+NODE_8 [shape = "record", label = "No 8 | value = DATA# | next = 9 | prev = PREV#"]
+NODE_9 [shape = "record", label = "No 9 | value = DATA# | next = 10 | prev = PREV#"]
+NODE_10 [shape = "record", label = "No 10 | value = DATA# | next = 11 | prev = PREV#"]
+NODE_11 [shape = "record", label = "No 11 | value = DATA# | next = 12 | prev = PREV#"]
+NODE_12 [shape = "record", label = "No 12 | value = DATA# | next = 13 | prev = PREV#"]
+NODE_13 [shape = "record", label = "No 13 | value = DATA# | next = 14 | prev = PREV#"]
+NODE_14 [shape = "record", label = "No 14 | value = DATA# | next = 15 | prev = PREV#"]
+NODE_15 [shape = "record", label = "No 15 | value = DATA# | next = FREE_END | prev = PREV#"]
+NODE_0 -> NODE_1[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_1 -> NODE_2[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_2 -> NODE_3[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_3 -> NODE_4[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_4 -> NODE_5[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_5 -> NODE_6[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_6 -> NODE_7[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_7 -> NODE_8[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_8 -> NODE_9[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_9 -> NODE_10[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_10 -> NODE_11[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_11 -> NODE_12[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_12 -> NODE_13[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_13 -> NODE_14[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+NODE_14 -> NODE_15[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+head [shape = "component", label = "head:\n 5"]
+tail [shape = "component", label = "tail:\n 1"]
+free [shape = "component", label = "free:\n 6"]
+ { rank = same; head; tail; free; NODE_0; }
+head -> tail[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+tail -> free[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+free -> NODE_0[color = "#FFF3D1", style = "", arrowhead = "", weight = 1000]; 
+head -> NODE_5[color = "#0000CC", style = "", arrowhead = "dot", weight = 1]; 
+tail -> NODE_1[color = "#B701EF", style = "", arrowhead = "dot", weight = 1]; 
+free -> NODE_6[color = "darkgreen", style = "", arrowhead = "dot", weight = 1]; 
+NODE_0 -> NODE_5[color = "darkred", style = "dashed", arrowhead = "", weight = 1]; 
+NODE_1 -> NODE_0[color = "darkred", style = "dashed", arrowhead = "", weight = 1]; 
+NODE_5 -> NODE_4[color = "darkcyan", style = "", arrowhead = "", weight = 1]; 
+NODE_4 -> NODE_3[color = "darkcyan", style = "", arrowhead = "", weight = 1]; 
+NODE_3 -> NODE_2[color = "darkcyan", style = "", arrowhead = "", weight = 1]; 
+NODE_2 -> NODE_1[color = "darkcyan", style = "", arrowhead = "", weight = 1]; 
+NODE_6 -> NODE_7[color = "darkgreen", style = "", arrowhead = "", weight = 1]; 
+NODE_7 -> NODE_8[color = "darkgreen", style = "", arrowhead = "", weight = 1]; 
+NODE_8 -> NODE_9[color = "darkgreen", style = "", arrowhead = "", weight = 1]; 
+NODE_9 -> NODE_10[color = "darkgreen", style = "", arrowhead = "", weight = 1]; 
+NODE_10 -> NODE_11[color = "darkgreen", style = "", arrowhead = "", weight = 1]; 
+NODE_11 -> NODE_12[color = "darkgreen", style = "", arrowhead = "", weight = 1]; 
+NODE_12 -> NODE_13[color = "darkgreen", style = "", arrowhead = "", weight = 1]; 
+NODE_13 -> NODE_14[color = "darkgreen", style = "", arrowhead = "", weight = 1]; 
+NODE_14 -> NODE_15[color = "darkgreen", style = "", arrowhead = "", weight = 1]; 
+} 
