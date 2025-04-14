@@ -17,17 +17,16 @@ enum ListError_t
 };
 
 #define LOGFILE_NAME   "list_logfile.html"
-#define LOGFILE_FOLDER "logs/"  
+#define LOGFILE_FOLDER "build/logs/"  
 
 const int PATH_NAME_LEN   = 50;
 const int CMD_COMMAND_LEN = 100;
 const int NODE_TEXT_LEN   = 100;
 const int VALUE_STR_LEN   = 10;
 
-const ListElem_t  DATA_POISON = 0xDEDBEAF;
-const int         NEXT_POISON = 0xDEB11;
-const int         PREV_POISON = 0xEBA110B;
-const int         END_OF_FREE = 0xF3EEE7D;
+const int NEXT_POISON = 0xDEB11;
+const int PREV_POISON = 0xEBA110B;
+const int END_OF_FREE = 0xF3EEE7D;
 
 const char *const DATA_POISON_MARK = "DATA#";
 const char *const NEXT_POISON_MARK = "NEXT#";
@@ -49,14 +48,14 @@ const char *const END_OF_FREE_MARK = "FREE_END";
 #define LIST_DUMP(list)    ListDump  (list, __FILE__, __LINE__, __func__)
 #define LIST_ASSERT(list)  ListAssert(list, __FILE__, __LINE__, __func__)
 
-#define LIST_DREE_USAGE_ASSERT(list, index)  ListFreeUsageInData(list, index, __FILE__, __LINE__, __func__)            
+#define LIST_FREE_USAGE_ASSERT(list, index)  ListFreeUsageInData(list, index, __FILE__, __LINE__, __func__)            
 
 #else
 #define ON_LIST_DEBUG(...)
 #define LIST_DUMP(list_ptr)
 #define LIST_ASSERT(list)
 #define LIST_SEGFAULT_ASSERT(list, index)
-
+#define LIST_FREE_USAGE_ASSERT(list, index)
 #endif
 
 #endif

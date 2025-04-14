@@ -5,7 +5,9 @@
 
 #include "list.h"
 
-FILE *LogFile = NULL;
+
+#ifdef LIST_DEBUG
+FILE *ListLogFile = NULL;
 
 void ListAssert(list_t *list, const char *file, int line, const char *func)
 {
@@ -18,6 +20,8 @@ void ListAssert(list_t *list, const char *file, int line, const char *func)
     {
         fprintf(stderr, "my assertion failed in\t%s:%d\t(%s)\nErrors:\t", file, line, func);
         PrintListErr(list->error);
+
+        CloseLogFile();
         assert(0);
     }
 }
@@ -122,152 +126,157 @@ char *GetFilePath(const char *name, const char *folder, char *path)
 
 FILE *OpenLogFile()
 {
+    system("mkdir -p build/logs");
+
     char logfile_name[PATH_NAME_LEN] = {};
 
     GetFilePath(LOGFILE_NAME, LOGFILE_FOLDER, logfile_name);
 
-    LogFile = fopen(logfile_name, "w");
+    ListLogFile = fopen(logfile_name, "w");
 
-    fprintf(LogFile, "<html>                                                                                                            \n"
-                            "\t<head>                                                                                                   \n"
-                            "\t<title>List Logs</title>                                                                                 \n"
-                            "\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\"> \n"
-                            "\t</head>                                                                                                  \n"
-                            "\t<body>                                                                                                   \n"
-                            "\t<title>List Logs</title>                                                                                 \n"
-                            "\t<div class=\"jumbotron text-center\">                                                                    \n"
-                            "\t\t<h1>List logs</h1>                                                                                     \n"
-                            "\t</div>                                                                                                   \n"
-                            "\t<pre>                                                                                                    \n");
+    fprintf(ListLogFile, "<html>                                                                                                    \n"
+                    "\t<head>                                                                                                   \n"
+                    "\t<title>List Logs</title>                                                                                 \n"
+                    "\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\"> \n"
+                    "\t</head>                                                                                                  \n"
+                    "\t<body>                                                                                                   \n"
+                    "\t<title>List Logs</title>                                                                                 \n"
+                    "\t<div class=\"jumbotron text-center\">                                                                    \n"
+                    "\t\t<h1>List logs</h1>                                                                                     \n"
+                    "\t</div>                                                                                                   \n"
+                    "\t<pre>                                                                                                    \n");
     atexit(CloseLogFile);
 
-    return LogFile;
+    return ListLogFile;
 }
 
 void CloseLogFile(void)
 {
-    fprintf(LogFile,    "\t\t</pre>     \n"
+    fprintf(ListLogFile,    "\t\t</pre>     \n"
                         "\t</body       \n"
                         "</html>");
             
     fprintf(stderr, "CLOSE_LOG_FILE\n");
-    fclose(LogFile);
+    fclose(ListLogFile);
 }
 
 void ListDump(list_t *list, const char *file, int line, const char *func)
 {
     fprintf(stderr, "start of dump\n");
 
-    fprintf(LogFile, "  LIST_DUMP called from %s:%d  (%s)\n  {\n", file, line, func);
+    fprintf(ListLogFile, "  LIST_DUMP called from %s:%d  (%s)\n  {\n", file, line, func);
 
-    fprintf(LogFile, "\thead = %d\n\ttail = %d\n\tfree = %d\n\tcapacity = %d\n\n",
+    fprintf(ListLogFile, "\thead = %d\n\ttail = %d\n\tfree = %d\n\tcapacity = %d\n\n",
                        list->head, list->tail, list->free, list->capacity);
 
 // list
-    fprintf(LogFile, "\tlist [%p]:   ", list->prev);
+    fprintf(ListLogFile, "\tlist [%p]:   ", list->prev);
 
     int num = list->head;
 
     while (num != 0)
     {
         // fprintf(stderr, "data[%d] = %3" LIST_ELEM_FORMAT " \n", num, list->data[num]);
-        fprintf(LogFile, "%3" LIST_ELEM_FORMAT " ", list->data[num]);
+        fprintf(ListLogFile, "%3" LIST_ELEM_FORMAT " ", list->data[num]);
         num = list->next[num];
     } 
 
 // table
-    fprintf(LogFile, "</pre>\n<table border width = \"85%%\"style=\"margin-left: 3%%\">\n");
+    fprintf(ListLogFile, "</pre>\n<table border width = \"85%%\"style=\"margin-left: 3%%\">\n");
 
-    fprintf(LogFile, "<tr>\n");
+    fprintf(ListLogFile, "<tr>\n");
 
-    fprintf(LogFile, "<td>index</td>");
+    fprintf(ListLogFile, "<td>index</td>");
 
     for (int i = 0; i < list->capacity; i++)
-        fprintf(LogFile, "<td>%d</td>", i);
+        fprintf(ListLogFile, "<td>%d</td>", i);
 
-    fprintf(LogFile, "</tr>\n");
+    fprintf(ListLogFile, "</tr>\n");
 
 // data
-    fprintf(LogFile, "<tr>\n");
+    fprintf(ListLogFile, "<tr>\n");
 
-    // fprintf(LogFile, "\n\n\tdata [%p]:", list->data);
-    fprintf(LogFile, "<td>data [%p]:</td>", list->data);
+    // fprintf(ListLogFile, "\n\n\tdata [%p]:", list->data);
+    fprintf(ListLogFile, "<td>data [%p]:</td>", list->data);
 
-    fprintf(LogFile, "\t");
+    fprintf(ListLogFile, "\t");
 
     for (int i = 0; i < list->capacity; i++)
     {
-        fprintf(LogFile, "<td>");
+        fprintf(ListLogFile, "<td>");
 
         if (list->data[i] == DATA_POISON)
-            fprintf(LogFile, "DT#");
+            fprintf(ListLogFile, "DT#");
         
         else
-            fprintf(LogFile, "%3d", list->data[i]);
+            fprintf(ListLogFile, "%3d", list->data[i]);
 
-        fprintf(LogFile, "</td>\n");   
+        fprintf(ListLogFile, "</td>\n");   
     }
 
-    fprintf(LogFile, "</tr>\n");
+    fprintf(ListLogFile, "</tr>\n");
 
 // next
-    fprintf(LogFile, "<tr>\n");
+    fprintf(ListLogFile, "<tr>\n");
 
-    // fprintf(LogFile, "\n\tnext [%p]:", list->next);
-    fprintf(LogFile, "<td>next [%p]:</td>", list->next);
+    // fprintf(ListLogFile, "\n\tnext [%p]:", list->next);
+    fprintf(ListLogFile, "<td>next [%p]:</td>", list->next);
 
-    fprintf(LogFile, "\t");
+    fprintf(ListLogFile, "\t");
 
     for (int i = 0; i < list->capacity; i++)
     {
-        fprintf(LogFile, "<td>");
+        fprintf(ListLogFile, "<td>");
 
         if (list->next[i] == NEXT_POISON)
-            fprintf(LogFile, "NX# ");
+            fprintf(ListLogFile, "NX# ");
 
         if (list->next[i] == END_OF_FREE)
-            fprintf(LogFile, END_OF_FREE_MARK);
+            fprintf(ListLogFile, END_OF_FREE_MARK);
 
         else
-            fprintf(LogFile, "%3d ", list->next[i]);
+            fprintf(ListLogFile, "%3d ", list->next[i]);
 
-        fprintf(LogFile, "</td>\n");
+        fprintf(ListLogFile, "</td>\n");
     }
 
-    fprintf(LogFile, "</tr>\n");
+    fprintf(ListLogFile, "</tr>\n");
 
 // prev
-    fprintf(LogFile, "<tr>\n");
+    fprintf(ListLogFile, "<tr>\n");
 
-    fprintf(LogFile, "<td>prev [%p]:</td>", list->prev);
+    fprintf(ListLogFile, "<td>prev [%p]:</td>", list->prev);
 
-    fprintf(LogFile, "\t");
+    fprintf(ListLogFile, "\t");
 
     for (int i = 0; i < list->capacity; i++)
     {
-        fprintf(LogFile, "<td>");
+        fprintf(ListLogFile, "<td>");
 
         if (list->prev[i] == PREV_POISON)
-            fprintf(LogFile, "PR# ");
+            fprintf(ListLogFile, "PR# ");
 
         else
-            fprintf(LogFile, "%3d ", list->prev[i]);
+            fprintf(ListLogFile, "%3d ", list->prev[i]);
 
-        fprintf(LogFile, "</td>\n");
+        fprintf(ListLogFile, "</td>\n");
     }
 
-    fprintf(LogFile, "</tr>\n");
+    fprintf(ListLogFile, "</tr>\n");
 
-    fprintf(LogFile, "</table>\n<pre>\n");
+    fprintf(ListLogFile, "</table>\n<pre>\n");
 
-
-    fprintf(LogFile, "\n\n\tGraph\n");
+    #ifdef LIST_GRAPH_DEBUG
+    fprintf(ListLogFile, "\n\n\tGraph\n");
     MakeGraph(list);
 
-    fprintf(LogFile, "<img src = " GRAPH_FOLDER  "%s width = \"%d%%\" style=\"margin-left: 3%%\">", list->graphs.data[list->graphs.index - 1].name, GRAPH_PICTURE_WIDTH);
+    fprintf(ListLogFile, "<img src = " GRAPH_FOLDER  "%s width = \"%d%%\" style=\"margin-left: 3%%\">", list->graphs.data[list->graphs.index - 1].name, GRAPH_PICTURE_WIDTH);
     fprintf(stderr,  "<img src = " GRAPH_FOLDER  "%s width = \"%d%%\" style=\"margin-left: 3%%\">", list->graphs.data[list->graphs.index - 1].name, GRAPH_PICTURE_WIDTH);
+    #endif
 
-    fprintf(LogFile, "\n  }\n\n");
+    fprintf(ListLogFile, "\n  }\n\n");
 
     fprintf(stderr, "end of dump\n");
 }
+
+#endif

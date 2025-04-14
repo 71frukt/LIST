@@ -1,12 +1,11 @@
 #ifndef LIST_H
 #define LIST_H
 
-typedef int ListElem_t;
+typedef void* ListElem_t;
+
 #define LIST_ELEM_FORMAT "d"
 
 #define INT_FORMAT  "d"
-
-#define LIST_DEBUG
 
 #include "list_debug.h"
 #include "list_graph.h"
@@ -15,10 +14,12 @@ const int BASE_LIST_CAPA = 15;
 
 struct list_t
 {
-    ListElem_t *data;
-    int        *next;
-    int        *prev;
+    void *data;
+    int  *next;
+    int  *prev;
 
+    int item_size;
+    int size;
     int capacity;
     int head;
     int tail;
@@ -37,16 +38,19 @@ enum ListFuncStatus
     LIST_FUNC_ERR
 };
 
-ListFuncStatus ListCtor (list_t *list, int start_capa);
-ListFuncStatus ListDtor (list_t *list);
+ListFuncStatus ListCtor       (list_t *list, int start_capa, int item_size);
+ListFuncStatus ListDtor       (list_t *list);
+ListFuncStatus ListRealloc    (list_t *list, int new_capa);
 
-ListElem_t     GetHeadVal     (list_t *list);
-ListElem_t     GetTailVal     (list_t *list);
+void *GetHeadVal  (list_t *list);
+void *GetTailVal  (list_t *list);
+void *ListGetItem (list_t *list, int item_num);
+
 ListFuncStatus ListBind       (list_t *list, int prev_el_num, int next_el_num);
-ListFuncStatus ListPasteHead  (list_t *list, ListElem_t elem);
-ListFuncStatus ListPasteTail  (list_t *list, ListElem_t elem);
-ListFuncStatus ListPasteAfter (list_t *list, ListElem_t elem, int elem_num);
-ListFuncStatus ListDelElem    (list_t *list, int elem_num);
+ListFuncStatus ListPasteHead  (list_t *list, void *item);
+ListFuncStatus ListPasteTail  (list_t *list, void *item);
+ListFuncStatus ListPasteAfter (list_t *list, void *item, int item_num);
+ListFuncStatus ListDelElem    (list_t *list, int item_num);
 int            GetNumInData   (list_t *list, int num_in_list);
 
 // debug functions

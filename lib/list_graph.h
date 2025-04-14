@@ -26,7 +26,7 @@ const int GRAPH_PICTURE_WIDTH = 85;     // (%)
 
 struct node_t
 {
-    ListElem_t val;
+    void *val;
     char label[NODE_NAME_LEN];
     int  index;
     int  next;
@@ -47,7 +47,7 @@ struct graph_t
 
 struct graph_arr_t
 {
-    size_t index;           // указывает на первый пустой граф
+    size_t index;
     size_t size;
 
     graph_t *data;

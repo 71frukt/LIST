@@ -1,37 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <assert.h>
 
 #include "list.h"
 
-ListFuncStatus ListCtor(list_t *list, int start_capa)
+ListFuncStatus ListCtor(list_t *list, int start_capa, int item_size)
 {
     assert(list);
     assert(start_capa > 0 && "start_capa =< 0 in ListCtor!");
 
-    list->capacity = start_capa + 1;        // нулевой элемент - управл€ющий
+    list->item_size = item_size;
+    list->capacity  = start_capa + 1;
 
-    // list->capacity =+ ((start_capa > BASE_LIST_CAPA) ? start_capa : BASE_LIST_CAPA);
-    list->data = (ListElem_t *) calloc(list->capacity, sizeof(ListElem_t));
-    list->next = (int *)        calloc(list->capacity, sizeof(int));
-    list->prev = (int *)        calloc(list->capacity, sizeof(int));
+    // list->capacity = ((start_capa > BASE_LIST_CAPA) ? start_capa : BASE_LIST_CAPA);
+    list->data = (void *) calloc(list->capacity, item_size);
+    list->next = (int  *) calloc(list->capacity, sizeof(int));
+    list->prev = (int  *) calloc(list->capacity, sizeof(int));
 
     list->free     = 1;
 
     list->next[0]  = 0;                                         //aka head
     list->prev[0]  = 0;                                         //aka tail
-    list->data[0]  = DATA_POISON;
+    // list->data[0]  = NULL;
 
     list->head     = list->next[0];
     list->tail     = list->prev[0];
 
-    for (int i = 1; i < list->capacity - 1; i++)                // св€зный список свободных €чеек
+    for (int i = 1; i < list->capacity - 1; i++) 
     {
         list->next[i] = i + 1;
     }
 
     if (list->capacity > 0)
-        list->next[list->capacity - 1] = END_OF_FREE;           // последн€€ свободна€ €чейка
+        list->next[list->capacity - 1] = END_OF_FREE;
 
     ON_LIST_DEBUG 
     (
@@ -44,13 +46,12 @@ ListFuncStatus ListCtor(list_t *list, int start_capa)
         } 
 
         GraphsCtor(&list->graphs);
-
         for (size_t i = 0; i < list->graphs.size; i++)
         {
             list->graphs.data[i].nodes_count = list->capacity;
         }
     );
-
+    
     LIST_ASSERT(list);
     LIST_DUMP(list);
 
@@ -78,18 +79,45 @@ ListFuncStatus ListDtor(list_t *list)
     return LIST_FUNC_OK;
 }
 
-ListElem_t GetHeadVal(list_t *list)
+ListFuncStatus ListRealloc(list_t *list, int new_capa)
 {
-    LIST_ASSERT(list);
+    assert(list);
+    assert(new_capa > 0 && "new_capa =< 0 in ListRecalloc!");
+fprintf(stderr, "LIST_REALLOC!\n\n");
+    list->capacity = new_capa + 1;
 
-    return list->data[list->head];
+    list->data = (void **) realloc(list->data, list->capacity * list->item_size);
+    list->next = (int *)        realloc(list->next, list->capacity * sizeof(int));
+    list->prev = (int *)        realloc(list->prev, list->capacity * sizeof(int));
+
+
+    for (int i = list->free; i < list->capacity - 1; i++) 
+        list->next[i] = i + 1;
+
+    if (list->capacity > 0)
+        list->next[list->capacity - 1] = END_OF_FREE;
+
+    LIST_ASSERT(list);
+    return LIST_FUNC_OK;
 }
 
-ListElem_t GetTailVal(list_t *list)
+void *GetHeadVal(list_t *list)
 {
     LIST_ASSERT(list);
 
-    return list->data[list->tail];
+    return (void *) ((char *) list->data + list->head * list->item_size);
+}
+
+void *GetTailVal(list_t *list)
+{
+    LIST_ASSERT(list);
+
+    return (void *) ((char *) list->data + list->tail * list->item_size);
+}
+
+void *ListGetItem(list_t *list, int item_num)
+{
+    return (void *) ((char *) list->data + item_num * list->item_size);
 }
 
 int GetNumInData(list_t *list, int num_in_list)
@@ -108,42 +136,49 @@ int GetNumInData(list_t *list, int num_in_list)
     return num_in_data;
 }
 
-ListFuncStatus ListPasteHead(list_t *list, ListElem_t elem)
+ListFuncStatus ListPasteHead(list_t *list, void *item)
 {
     LIST_ASSERT(list);
 
-    ListPasteAfter(list, elem, 0);
+    ListPasteAfter(list, item, 0);
 
     return LIST_FUNC_OK;
 }
 
-ListFuncStatus ListPasteTail(list_t *list, ListElem_t elem)
+ListFuncStatus ListPasteTail(list_t *list, void *item)
 {
     LIST_ASSERT(list);
 
-    ListPasteAfter(list, elem, list->tail);
+    ListPasteAfter(list, item, list->tail);
 
     return LIST_FUNC_OK;
 }
 
-ListFuncStatus ListPasteAfter(list_t *list, ListElem_t elem, int elem_num)
+ListFuncStatus ListPasteAfter(list_t *list, void *item, int item_num)
 {
     LIST_ASSERT(list);
-    LIST_DREE_USAGE_ASSERT(list, elem_num);
-    assert(elem_num >= 0);
+    LIST_FREE_USAGE_ASSERT(list, item_num);
+    assert(item_num >= 0);
 
 fprintf(stderr, "\n\nin paste after\n");
+
+    if (list->size >= list->capacity - 1)
+        ListRealloc(list, list->capacity * 2);
 
     int free_cell_num = list->free;
     list->free = list->next[list->free];
 
-    ListBind(list, free_cell_num, list->next[elem_num]);    // queue is important !
-    ListBind(list, elem_num,      free_cell_num);
+    ListBind(list, free_cell_num, list->next[item_num]);    // queue is important !
+    ListBind(list, item_num,      free_cell_num);
 
     list->head = list->next[0];
     list->tail = list->prev[0];
 
-    list->data[free_cell_num] = elem;
+    memcpy(ListGetItem(list, item_num), item, list->item_size);
+    // list->data[free_cell_num] = item;
+
+    list->size++;
+
     LIST_ASSERT(list);
     LIST_DUMP(list);
     return LIST_FUNC_OK;
@@ -162,22 +197,24 @@ ListFuncStatus ListBind(list_t *list, int prev_el_num, int next_el_num)
     return LIST_FUNC_OK;
 }
 
-ListFuncStatus ListDelElem(list_t *list, int elem_num)
+ListFuncStatus ListDelElem(list_t *list, int item_num)
 {
     LIST_ASSERT(list);
-    assert(elem_num > 0);
+    assert(item_num > 0);
 
     ON_LIST_DEBUG (
-        list->data[elem_num] = DATA_POISON;
+        list->data[item_num] = DATA_POISON;
     )
 
-    int prev_free = list->free;                                     // добавить €чейку к списку пустых
-    list->free = elem_num;
-    ListBind(list, list->prev[elem_num], list->next[elem_num]);     // queue is important !
+    int prev_free = list->free;
+    list->free = item_num;
+    ListBind(list, list->prev[item_num], list->next[item_num]);     // queue is important !
     ListBind(list, list->free, prev_free);
 
     list->head = list->next[0];
     list->tail = list->prev[0];
+
+    list->size--;
 
     LIST_ASSERT(list);
     LIST_DUMP(list);

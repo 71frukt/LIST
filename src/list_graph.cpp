@@ -5,6 +5,8 @@
 #include "list.h"
 #include "list_graph.h"
 
+#ifdef LIST_GRAPH_DEBUG
+
 GraphFuncStatus GraphsCtor(graph_arr_t *graphs)
 {
     assert(graphs && "graphs == nullptr in GraphsCtor\n");
@@ -18,7 +20,9 @@ GraphFuncStatus GraphsCtor(graph_arr_t *graphs)
         return GRAPH_FUNC_ERR;
     }
 
-    system("cd logs/graphs\nrmdir . /s /q 2>nul\ncd ..\\ \n cd ..\\ \n");
+
+    system("mkdir -p build/logs/graphs"); // LOGFILE_FOLDER GRAPH_FOLDER);
+    // system("rm -rf " LOGFILE_FOLDER GRAPH_FOLDER "*");
 
     return GRAPH_FUNC_OK;
 }
@@ -50,12 +54,11 @@ GraphFuncStatus MakeGraph(list_t *list)
 
     WriteDotCode(cur_graph);
 
-    sprintf(cur_graph->name, GRAPH_NAME_PREFIX "%llu.png", graph_num);
+    sprintf(cur_graph->name, GRAPH_NAME_PREFIX "%lu.png", graph_num);
 
     // GetFilePath(graph_name, LOGFILE_FOLDER GRAPH_FOLDER, graph_name);
     char graph_file_fullname[PATH_NAME_LEN] = {};
     GetFilePath(cur_graph->name, LOGFILE_FOLDER GRAPH_FOLDER, graph_file_fullname);
-
     DrawGraphInFile(TMP_DOTFILE_NAME, graph_file_fullname);
 
     return GRAPH_FUNC_OK;
@@ -105,15 +108,13 @@ GraphFuncStatus WriteDotCode(graph_t *graph)
     MakeEdge(dot_file, nodes[0], nodes[nodes[0].next], EDGE_MANAGER_COLOR, "dashed", "", 1);
     MakeEdge(dot_file, nodes[nodes[0].prev], nodes[0], EDGE_MANAGER_COLOR, "dashed", "", 1);
 
-// зан€тые €чейки
     for (size_t i = nodes[0].next; nodes[i].index != nodes[0].index; i = nodes[i].next)
     {
-        fprintf(stderr, "NODES[%lld] NEXT = %d\n\n", i, nodes[i].next);
+        fprintf(stderr, "NODES[%ld] NEXT = %d\n\n", i, nodes[i].next);
         if (nodes[i].next != NEXT_POISON && nodes[i].next != nodes[0].index)
             MakeEdge(dot_file, nodes[i], nodes[nodes[i].next], EDGE_NEXT_COLOR, "", "", 1);
     }
 
-// свободные €чейки    
     for (size_t i = graph->node_free.next; nodes[i].next != END_OF_FREE; i = nodes[i].next)
     {
         // fprintf(stderr, "free: i = %lld, [i].next = %d, [0].prev = %d\n", i, nodes[i].next, nodes[0].prev);
@@ -219,8 +220,10 @@ GraphFuncStatus MakeEdge(FILE *dot_file, node_t node_from, node_t node_to, const
     assert(dot_file);
     assert(color);
 
-    fprintf(dot_file, "%s -> %s[color = \"%s\", style = \"%s\", arrowhead = \"%s\", weight = %lld]; \n", node_from.label, node_to.label, color, stile, arrowhead, weight);
+    fprintf(dot_file, "%s -> %s[color = \"%s\", style = \"%s\", arrowhead = \"%s\", weight = %ld]; \n", node_from.label, node_to.label, color, stile, arrowhead, weight);
     // fprintf(stderr, "%s -> %s; \n", node_from.label, node_to.label);
 
     return GRAPH_FUNC_OK;
 }
+
+#endif

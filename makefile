@@ -1,15 +1,56 @@
-FLAGS = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs \
-		-Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security \
-		-Wformat=2 -Wignored-qualifiers -Wlogical-op -Wno-missing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo \
-		-Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -Werror=vla -D_DEBUG -D_EJUDGE_CLIENT_SIDE
+USE_GDB			 ?= false
+LIST_GRAPH_DEBUG ?= false
 
-SOURCES = $(wildcard src/*.cpp)
-INCLUDE = -I lib
-BUILD_DIR = build
+CXX         = g++
+OPT_FLAGS   = -mavx2 -pg -g
+OPT_LEVEL   ?= -O3
+CXXFLAGS    = -Wall -Wextra -std=c++17 -I$(LIB_DIR) $(OPT_FLAGS) $(OPT_LEVEL)
 
-all:
-	g++ $(SOURCES) $(INCLUDE) $(FLAGS) -o $(BUILD_DIR)/main
+LDFLAGS  = -D _DEBUG -ggdb3 -std=c++17 -Wall -Wextra -Weffc++ -Waggressive-loop-optimizations -Wc++14-compat -Wmissing-declarations -Wcast-align -Wcast-qual                	\
+ -Wchar-subscripts -Wconditionally-supported -Wconversion -Wctor-dtor-privacy -Wempty-body -Wfloat-equal -Wformat-nonliteral -Wformat-security -Wformat-signedness               \
+ -Wformat=2 -Winline -Wlogical-op -Wnon-virtual-dtor -Wopenmp-simd -Woverloaded-virtual -Wpacked -Wpointer-arith -Winit-self -Wredundant-decls -Wshadow -Wsign-conversion         \
+ -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=2 -Wsuggest-attribute=noreturn -Wsuggest-final-methods -Wsuggest-final-types -Wsuggest-override -Wswitch-default            \
+ -Wswitch-enum -Wsync-nand -Wundef -Wunreachable-code -Wunused -Wuseless-cast -Wvariadic-macros -Wno-literal-suffix -Wno-missing-field-initializers -Wno-narrowing                  \
+ -Wno-old-style-cast -Wno-varargs -Wstack-protector -fcheck-new -fsized-deallocation -fstack-protector -fstrict-overflow -flto-odr-type-merging -fno-omit-frame-pointer              \
+ -Wlarger-than=81920 -Wstack-usage=81920 -pie -fPIE -Werror=vla -fsanitize=address,alignment,bool,bounds,enum,float-cast-overflow,float-divide-by-zero,integer-divide-by-zero,leak,nonnull-attribute,null,object-size,return,returns-nonnull-attribute,shift,signed-integer-overflow,undefined,unreachable,vla-bound,vptr
+
+
+ifeq (LIST_GRAPH_DEBUG, true)
+	CXXFLAGS += -D LIST_GRAPH_DEBUG
+endif
+
+ifeq (USE_GDB, true)
+	LDFLAGS +- -g
+endif
+
+SRC_DIR     = src
+LIB_DIR     = lib
+BIN_DIR     = obj
+BUILD_DIR   = build
+
+SRC_CPP     = $(wildcard $(SRC_DIR)/*.cpp)
+OBJ_CPP     = $(patsubst $(SRC_DIR)/%.cpp,$(BIN_DIR)/%.o,$(SRC_CPP))
+ARCHIVE     = $(BIN_DIR)/list.a
+
+.PHONY: all clean rebuild
+
+all: $(ARCHIVE)
+
+
+$(ARCHIVE): $(OBJ_CPP) | $(BUILD_DIR)
+	ar rcs $@ $(OBJ_CPP)
+	# $(CXX) $(OBJ_CPP) -o $@ $(LDFLAGS)
+
+$(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp | $(BIN_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(BIN_DIR):
+	mkdir -p $@
+
+$(BUILD_DIR):
+	mkdir -p $@
 
 clean:
-	rm -rf *.exe
-	rm -rf *.o
+	rm -rf $(BIN_DIR) $(TARGET)
+
+rebuild: clean all
